@@ -1,0 +1,91 @@
+<!DOCTYPE html><!--输入！即可出来HTML结构-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星球大战--前端是代码界的导演</title>
+    <style>
+    /*清空页面默认样式*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: url(./images/bg.jpg);
+            background-color: #000000;
+        }
+        .starwars{
+            height: 17em;/*简略输入：h17em*/
+            width: 34em;/*w34em*/
+            position:absolute;/*定位*/
+            left:55%;
+            top:50%;
+            /* background:red;调试时用来方便查看盒子 */
+            transform:translate(-50%,-50%);/*移动盒子*/
+            perspective:800px;
+            transform-style:preserve-3d;
+        }
+        .star,.wars{/*移动img元素到相应位置*/
+            position:absolute;
+        }
+        .star{
+            top:-0.75em;
+            /*动作效果*/
+            animation: star 10s ease-out infinite;
+        }
+        .wars{
+            bottom:-0.5em;
+             /*动作效果*/
+             animation: wars 10s ease-out infinite;
+        }
+       
+        @keyframes star{
+            0%{
+                opacity:0;
+                transform:scale(1.5);/*放大缩小*/
+            }
+            20%{
+                opacity:1;
+
+            }
+            89%{
+                opacity: 1;
+                transform:scale(1);
+            }
+            100%{
+                opacity:0;
+                transform: translateZ(-400em);/*向屏幕里面走*/
+            }
+        }
+        
+        @keyframes wars{
+            0%{
+                opacity:0;
+                transform:scale(1.5);/*放大缩小*/
+            }
+            20%{
+                opacity:1;
+            }
+            90%{/*慢那么一点，一前一后*/
+                opacity: 1;
+                transform:scale(1);
+            }
+            100%{
+                opacity:0;
+                transform: translateZ(-400em);/*向屏幕里面走*/
+            }
+        }
+    </style>
+</head>
+<body><!--输入标签加.类名就可快捷创建，id同理使用#-->
+    <div class="starwars">
+        <!-- 使用img.类名 快速创建img标签代码行-->
+        <img src="./images/star.svg" alt="上面图片" class="star">
+        <img src="./images/wars.svg" alt="下面图片" class="wars">
+    </div>
+    <!--img[src="./images/"]*2
+    .starwars>img.star+img.wars
+.starwars>img.star[src="./images/"]*2-->
+
+</body>
+</html>
