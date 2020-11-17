@@ -20,5 +20,6 @@
 - css知识点
 1.定位
 position：absolute；
-
+animation，实现动画效果
+在变化过程中，wars比star慢1%，显示前后略微差距，还原真实，不是同时发动
 2.调试技巧，背景调试法
