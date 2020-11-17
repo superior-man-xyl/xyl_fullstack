@@ -11,13 +11,13 @@
             padding: 0;
         }
         body{
-            background: url(./images/bg.jpg);
+            background: url(./images/bg.jpg);/*宇宙背景图片*/
             background-color: #000000;
         }
         .starwars{
             height: 17em;/*简略输入：h17em*/
             width: 34em;/*w34em*/
-            position:absolute;/*定位*/
+            position:absolute;/*绝对定位*/
             left:55%;
             top:50%;
             /* background:red;调试时用来方便查看盒子 */
@@ -37,6 +37,9 @@
             bottom:-0.5em;
              /*动作效果*/
              animation: wars 10s ease-out infinite;
+            /*css3动画，animation: name（规定需要绑定到选择器的 keyframe 名称） duration(规定完成动画所花费的时间，以秒或毫秒计,默认为零所以不要忘记设置)
+            timing-function（规定动画的速度曲线。（ease-out：动画以低速结束。）） delay（规定在动画开始之前的延迟） iteration-count（规定动画应该播放的次数。）
+            direction（规定是否应该轮流反向播放动画。（infinite：规定动画应该无限次播放。））;*/
         }
        
         @keyframes star{
@@ -57,7 +60,7 @@
                 transform: translateZ(-400em);/*向屏幕里面走*/
             }
         }
-        
+        /*使用@keyframes规则，你可以创建动画。创建动画是通过逐步改变从一个CSS样式设定到另一个。*/
         @keyframes wars{
             0%{
                 opacity:0;
