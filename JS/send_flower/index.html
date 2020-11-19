@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Flower{
+
+        }
+        //JSON Object//{}就是创建对象 []:数组
+        const fzq={
+            name:'范志强',
+            age:20,
+            hometown:'上饶',
+            isSingle:false,
+            girlFriend:'小仙女',
+            house:null
+        }
+        const hzq={//对象 Object
+            name:'黄志乾',//字符串 String
+            age:21,//数值类型 Number
+            hometown:'福州',
+            isSingle:true,//Boolean
+            hobbies:['练字','王者'],//数组Array，js中没有独立的数组对象（基本类型外其他都是对象，只是对象的种类不同）
+            girlFriend:undefined,//未定义  概念都没有
+            house:null, //为空
+            //函数对象
+            //gf：参数 形参，是对象JSON Object
+            sendFlower:function(gf,name){
+                const flowers=new Flower(11);
+                gf.receiveFlower(flowers,this);
+            }
+        }//array Object
+        const xm={
+            name:'小美',
+            age:19,
+            //心情
+            xq:50,
+            receiveFlower:function(flower,sender){
+                //xq<80,丑拒，>80,万达走一波
+                console.log(this.name+'收到了'+sender.name+'的花');
+            }
+        }
+        const xh={
+            name:'小红',
+            hometown:'福州',
+            receiveFlower:function(flower,sender){
+                // console.log('收到了花');
+                if(sender.name=='黄志乾'){
+                    // console.log('还是让我们在一起吧')
+                    //心情好和心情坏
+                    //定时器
+                    setTimeout(function(){
+                        xm.xq=100;
+                        xm.receiveFlower(flower,sender)
+                    },2000)
+                    xm.receiveFlower(flower,sender)
+                }else{
+                    console.log(this.name+'收到了'+sender.name+'花')
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>
