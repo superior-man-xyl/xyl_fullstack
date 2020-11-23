@@ -29,7 +29,7 @@
             house:null, //为空
             //函数对象
             //gf：参数 形参，是对象JSON Object
-            sendFlower:function(gf,name){
+            sendFlower:function(gf){
                 const flowers=new Flower(11);
                 gf.receiveFlower(flowers,this);
             }
@@ -39,8 +39,14 @@
             age:19,
             //心情
             xq:50,
-            receiveFlower:function(flower,sender){
+            receiveFlower:function(flower,sender,xq){
                 //xq<80,丑拒，>80,万达走一波
+                if(xm.xq<80){
+                    console.log('丑拒')
+                }
+                else{
+                    console.log('万达走一波')
+                }
                 console.log(this.name+'收到了'+sender.name+'的花');
             }
         }
@@ -55,9 +61,9 @@
                     //定时器
                     setTimeout(function(){
                         xm.xq=100;
-                        xm.receiveFlower(flower,sender)
+                        xm.receiveFlower(flower,sender,xm.xq)
                     },2000)
-                    xm.receiveFlower(flower,sender)
+                    // xm.receiveFlower(flower,sender)
                 }else{
                     console.log(this.name+'收到了'+sender.name+'花')
                 }
