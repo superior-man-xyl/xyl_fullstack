@@ -76,7 +76,7 @@ body{
      height: 356px; 
     /*设置背景底部阴影,底部居中不重复*/
     background: url(../img/banner-bj-shade.png) no-repeat bottom center;
-    /*为了圆点能相对父元素定位，所以开启绝对定位*/
+    /*为了圆点能相对父元素定位，所以开启相对定位*/
     position: relative;
 }
 /*设置pointer*/
