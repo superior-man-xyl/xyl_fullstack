@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.weui-cell {
+  padding: 16px;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+}
+.weui-cell .weui-cell_bd {
+  flex: 1px;
+  background-color: #f00;
+}
+.weui-cell .weui-cell_ft {
+  padding-left: 22px;
+  position: relative;
+}
+.weui-cell::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border: 1px solid #000;
+  border-bottom: none;
+  border-left: none;
+  transform: rotate(45dge);
+  position: absolute;
+  top: 2px;
+}

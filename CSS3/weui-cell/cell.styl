@@ -1,0 +1,26 @@
+*
+    margin 0
+    padding 0
+.weui-cell//代码模块化更好维护
+    padding 16px
+    text-decoration none
+    position relative
+    display flex//弹性布局
+    .weui-cell_bd
+        flex 1px//弹性为1就会占据所以
+        background-color red
+    .weui-cell_ft
+       padding-left 22px
+       position relative
+      &::after   //    content '结束伪元素'
+        content ''//为空时可以占一个位
+        width 12px
+        height 12px
+        border 1px solid rgba(0,0,0,5)
+        border-bottom none
+        border-left none
+        transform rotate(45dge)   
+        position absolute
+        top 2px
+    // &::before
+    //     content '开始伪元素'
