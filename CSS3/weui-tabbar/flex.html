@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .cc-news{
+            width: 100%;
+            height: 200px;
+            display: flex;
+            /*使用flex弹性布局元素，里面的子元素块级元素性质被干掉，
+            比float好用，float也可以实现，后者使用display:inline也可以;*/
+            
+        }
+        .cc-news_item{
+            width: 25%;
+            /* 使用w25p */
+            flex:1;
+            /* 每个子元素都设置为flex为1，那么就是等比 */
+            background-color: red;
+            height: 100%;
+            /* 使用display:inline也可以;使其失去块级元素性质，排到一行 */
+            /* 但是，inline元素不能设置宽高，只能由内容撑开，
+            使用inline-block就可避免不能设置宽高 */
+            /* display: inline-block; */
+            /* height: 200px; */
+            /* 因为四个行内块元素之间有换行，所以后显示为个空格，
+            还要把每个div之间的换行去除，所以还是使用弹性布局好，
+            弹性布局符合移动端开发要求 */
+        }
+        .cc-news_item:nth-child(odd){/*给偶数设置不同的元素*/
+            background-color:green;
+        }
+    </style>
+</head>
+<body>
+    <div class="cc-news">
+        <div class="cc-news_item"></div>
+        <div class="cc-news_item"></div>
+        <div class="cc-news_item"></div>
+        <div class="cc-news_item"></div>
+    </div>
+</body>
+</html>
