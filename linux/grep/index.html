@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- js方式提交表单 -->
+    <form name="telForm">
+        <label for="telInput">手机号：</label>
+        <!-- 使用HTML5的一些属性可以直接使用正则表达式，而不通过JavaScript，但是JavaScript也要有，因为有的浏览器不太支持HTML5 -->
+        <input type="text" name="telInput" id="telInput" placeholder="请输入手机号" maxlength="11" pattern="^1[345789][0-9]{9}$"/>
+        <button type="submit">提交按钮</button>
+    </form>
+    <script>
+        // 页面上所有的form都归document.forms
+        const oForm=document.forms["telForm"];
+        // console.log(oForm);
+        oForm.addEventListener("submit",(event)=>{
+            // alert("123");
+            // 使用阻止默认行为,使用后submit失效
+            event.preventDefault();
+            let tel=oForm["telInput"].value;
+            // console.log(tel);
+            // 正则表达式：/^1[345789][0-9]{9}$/ 前面是范围，后面是位数,限定开头和结尾，这些^$之间只能是数字和十一位，电话号码要限定开头,
+            //[]内可以是范围，也可以是全列出来
+            if(/^1[345789][0-9]{9}$/.test(tel)){
+                console.log("正确的手机号");
+            }else{
+                alert('手机号格式有误');
+            }
+        });
+    </script>
+</body>
+</html>
