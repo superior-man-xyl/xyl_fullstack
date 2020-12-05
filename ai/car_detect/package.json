@@ -1,0 +1,15 @@
+{
+  "name": "car_detect",
+  "version": "1.0.0",
+  "description": "- node 项目搭建\r     1.运行在后端\r     npm 命令集\r      - npm init 初始化命令\r      package.json\r      scripts(脚本)\r      - npm run dev\r      例如：node index.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xyl",
+  "license": "ISC",
+  "dependencies": {
+    "baidu-aip-sdk": "^2.4.6"
+  }
+}
