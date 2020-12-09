@@ -26,6 +26,6 @@
     }
   },
 
-  这里主要看index.js wxml  wxss
-  新键page，来做另一个页面
-  
+  这里主要看index.js wxml  wxss 这些来进行页面编辑
+  新键page，来做另一个页面，用于跳转，就像做网页一样
+  注意：删除page之后要在app.json这个配置文件中删除那一个被删除的page记录。
