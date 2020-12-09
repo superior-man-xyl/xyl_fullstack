@@ -1,0 +1,11 @@
+<!-- <map id="map" longitude="115.832777" latitude="28.724024" scale="14"  show-location style="width: 100%; height: 500rpx;"></map> -->
+<!-- 经纬度不要写死了，要做实时定位 -->
+<!-- 数据绑定 -->
+<!-- {{}}占位符，等待数据来，绑定到这里 -->
+<view class="map-box">
+  <map id="map" longitude="{{longitude}}"latitude="{{latitude}}" scale="14"  show-location style="width: 100%; height:100%"></map>
+</view>
+<!-- toScan监听程序 -->
+<view class="main-btn" bindtap="toScan">
+  <text class="main-text">扫码解锁</text>
+</view>
