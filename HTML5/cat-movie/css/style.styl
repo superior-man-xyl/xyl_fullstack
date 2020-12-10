@@ -1,0 +1,63 @@
+*
+    margin 0
+    padding 0
+// 100%:100p
+.movie
+    width 100%
+    &-head
+        width 100% 
+        height 40px
+        line-height 40px
+        background-color #1e2025
+        color#fff
+        padding 0 10px
+        box-sizing border-box
+        display: flex//设置弹性布局后，不论内联还是块级都会在同一行，按照比例划分空间
+        .iconfont
+            width:  16px
+        .title
+            flex:  1
+            text-align: center
+    &-info
+        background-color #1e2025
+        padding 15px
+        &_desc 
+            display: flex
+            .info-pic
+                width 122px
+                height 165px
+                overflow hidden
+                img
+                    width 100%
+            .info-container
+                flex: 1
+                color #9b9da2
+                font-size 12px
+                margin-left 10px
+                .name
+                    color #fff
+                    font-size 24px
+                    font-weight bold
+                .type 
+                    margin-top: 10px
+                    font-size 16px
+                .timer,.play-time
+                    font-size 16px
+                .btn-wrap
+                    display flex
+                    margin-top 10px
+                    .flex
+                        flex: 1
+                        background-color #9b9da2
+                        text-align: center
+                        height:32px
+                        line-height: 32px
+                        color #fff
+                        border-radius:4px
+                        &:first-child
+                            margin-right 10px
+                        .iconfont
+                            font-size: 16px
+                            margin-left: 6px
+
+
