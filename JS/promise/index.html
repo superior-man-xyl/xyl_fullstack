@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //方案一
+        //定时器是异步的
+        // setTimeout(function(){
+        //     console.log(1);
+        // },1000);
+       //方案二,更好的异步promise,有两个参数resolve,reject
+       const p1=new Promise((resolve,reject)=>{
+        // setTimeout(()=>{
+        //     console.log(1);
+        // },1000)
+       //这个函数里适合放费时的操作
+    //    异步的   I/O 比较耗时 因为要从内存中到硬盘 这些操作一般都放在promise里
+
+            // 去一个土味情话网站，(fetch("https://chp.shadiao.app/api.php"))给我们反馈一条情话，一来一回--HTTP本质？
+            // 封装了一个HTTP一个一来一回的请求 会比较花时间    花时间的事情放到promise里面
+            //使用fetch取出来
+    // fetch("http://127.0.0.1:8080/user.json")
+    // .then(data=>data.json())//把json代码给打印出来了
+    // .then(data=>{
+    //     // console.log(data);
+    //     resolve(data)//resolve实现了诺言
+    // }) 
+    console.log(3);
+    resolve(1);
+       })
+   
+          p1.then((data=>{
+           console.log(data);
+       })) 
+       console.log(2);
+        //不改变代码顺序下，如何先输出2再输出1
+        //方案一：使用定时器
+        //方案二：promise（许诺，预示）里放定时器，这里引出promise
+    </script>
+</body>
+</html>
