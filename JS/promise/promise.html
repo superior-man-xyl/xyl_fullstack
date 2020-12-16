@@ -10,25 +10,44 @@
         //花两秒钟做事A
         //两秒钟后做事B,花3秒钟做完
         //最后说做完了
+        /////////////////////////////////////////
+    // let p1 =new Promise((resolve,reject)=>{
+    //     console.log('开始任务');
+    //     setTimeout(()=>{
+    //         // console.log("完成了事件A");
+    //         resolve("完成了事件A");
+    //     },2000)
+    // });
+    // let p2 =new Promise((resolve,reject)=>{
+    //     setTimeout(()=>{
+    //         // console.log("完成了事件B");
+    //         resolve("完成了事件B");
+    //     },3000)
+    // });
+    // p1.then((data=>{
+    //        console.log(data);
+    // }))
+    // p2.then((data=>{
+    //        console.log(data);
+    // }))
+    /////////////////////////
     let p1 =new Promise((resolve,reject)=>{
         console.log('开始任务');
         setTimeout(()=>{
-            // console.log("完成了事件A");
-            resolve("完成了事件A");
+             console.log("完成了事件A");
+            resolve();
         },2000)
     });
-    let p2 =new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            // console.log("完成了事件B");
-            resolve("完成了事件B");
-        },3000)
-    });
-    p1.then((data=>{
-           console.log(data);
-    }))
-    p2.then((data=>{
-           console.log(data);
-    }))
+    p1.then(()=>{
+        let p2 = new Promise((resolve)=>{
+            setTimeout(()=>{
+                resolve();
+            },3000)
+        });
+        p2.then(()=>{
+            console.log('完成了事件B');
+        })
+    })
     </script>
 </body>
 </html>

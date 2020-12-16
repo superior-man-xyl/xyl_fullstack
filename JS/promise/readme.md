@@ -34,3 +34,6 @@ promise 与它的api-->fetch
 resolve():帮助异步任务回到执行流被解决，之前让别的先执行，后面再用resolve取回来执行，回到执行流
 let p1=new promise();
 let p2=new promise();
+
+promise了解：
+1.
