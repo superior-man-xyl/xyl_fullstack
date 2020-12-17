@@ -1,0 +1,56 @@
+/* pages/index/index.wxss */
+swiper{
+    height: 421rpx;
+    width: 100%;
+    /* 注意微信里rpx的换算，1rpx=0.5px */
+}
+.slide-image{
+    width: 100%;
+    height: 100%;
+}
+.select-title{
+    padding: 30rpx 0px;
+    text-align: center;
+    color: #ab956d;
+}
+.select-top,.select-bottom{
+    width: 100%;
+    height: 375rpx;
+    display: flex; 
+}
+.select-top_small{
+    width: 375rpx;
+    /* 375是手机的宽度 */
+    height: 100%;
+}
+.select-top_small navigator,
+.select-top_small image,
+.select-top_bottom navigator,
+.select-top_bottom image{
+    width: 100%;
+    height: 100%;
+}
+.select-bottom image{
+    height: 375rpx;
+    width: 100%;
+}
+.newest-box{
+    padding: 0 40rpx;
+}
+.newest-list{
+    display: inline-block;
+    width: 325rpx;
+    height: 325rpx;
+    margin: 0 20rpx 20rpx 0;
+    border-radius: 10px;
+    background-color: #f5f6f5;
+    text-align: center;
+}
+.newest-list image{
+    width: 175rpx;
+    height: 130rpx;
+    margin: 20px 0 10px;
+}
+.newest-list:nth-child(2n){
+    margin-right: 0rpx;
+}
