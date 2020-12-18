@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const users=[{
+            name:'棋枫',
+            avatar:'',
+            title:'FE@拼多多'
+        },
+        {
+            name:'棋枫2',
+            avatar:'',
+            title:'FE@拼多多'
+        },
+        {
+            name:'棋枫3',
+            avatar:'',
+            title:'FE@字节'
+        }]
+
+        function userItemElement(user){
+            let userItem=document.createElement('div');
+            userItem.className='item';
+            //还剩下部分没写，关于内容
+            return userItem;
+        }
+
+        let container=document.createElement("div");
+        container.className='recomment-author-block sticky-author-block';
+        let header =document.createElement('header');
+        header.className='user-block-header';
+        header.appendChild(document.createTextNode('作者榜'));
+        container.appendChild(header);
+        let list =document.createElement('div');
+        list.className='user-list';
+
+
+        for(let user of users){
+            let currentItem=userItemElement(user);
+            list.appendChild(currentItem);
+        }
+
+        container.appendChild(list);
+        document.body.appendChild(container);
+    </script>
+</body>
+</html>

@@ -8,7 +8,7 @@ function createPhoneNumber(numbers){
     for(var i=0;i<numbers.length;i++){//numbers.length获取长度
         format=format.replace("x",numbers[i]);
     }
-    console.log(format);
+    return format;
 }
-createPhoneNumber([1,2,3,4,5,6,7,8,9,0]);
+console.log(createPhoneNumber([1,2,3,4,5,6,7,8,9,0]));
 console.log("x9yz".replace(/[0-9]/,1));//正则表达式使用[]

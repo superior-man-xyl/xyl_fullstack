@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 实现显示players.json
+        // 现在这里有两个应用  1.json-server :3000/posts  /comments
+        // 2.静态网页服务应用 live-server 8080
+        // fetch("http://127.0.0.1:3000/players.json")
+        // 这里不对，不能用players.json  应该用里面的模块posts
+        // fetch("http://127.0.0.1:3000/posts")
+
+        // fetch("https://www.runoob.com/try/ajax/jsonp.php")
+        // .then(data=>data.json())
+        // .then(data=>{
+        //     console.log(data)
+        // })
+
+        // 定义一下，之后注释后看看
+        // data,传进去
+        window.callbackFunction=(data)=>{
+            console.log(data);
+        }
+        const script=document.createElement('script');
+        script.src="https://www.runoob.com/try/ajax/jsonp.php?jsoncallback=callbackFunction";
+        document.body.appendChild(script);
+    </script>
+</body>
+</html>
