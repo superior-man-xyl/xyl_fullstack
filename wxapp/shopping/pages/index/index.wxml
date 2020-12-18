@@ -14,7 +14,7 @@
         <block wx:for="{{imgUrls}}" wx:key="index">
             <!-- 使用for循环来使数据驱动页面 -->
             <swiper-item>
-                <image src="{{item}}" />
+                <image class="slide-image" src="{{item}}" />
                 <!-- item是对象，用来读取数组 -->
             </swiper-item>
         </block>
