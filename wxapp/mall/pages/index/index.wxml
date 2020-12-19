@@ -1,0 +1,17 @@
+<!-- 使用下vant框架 -->
+<!-- 演示 -->
+<!-- <van-button type="primary">按钮</van-button>
+<van-cell-group>
+  <van-cell title="单元格" value="内容" />
+  <van-cell title="单元格" value="内容" label="描述信息" border="{{ false }}" />
+</van-cell-group> -->
+
+<swiper class="swiper_box" bindchange="swiperchange" indicator-dots="{{true}}" indicator-active-color="#ffffff">
+  <swiper-item wx:for="{{banners}}" wx:key="id">
+    <image mode="aspectFill" src="{{item.picUrl}}"/>
+  </swiper-item>
+</swiper>
+<view class="btn">
+  <!-- <button class="weui-btn mini-">进入店铺</button> -->
+  <van-button type="primary">进入店铺</van-button>
+</view>

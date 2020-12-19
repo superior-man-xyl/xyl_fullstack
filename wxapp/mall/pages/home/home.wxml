@@ -1,0 +1,34 @@
+<!-- pages/home/home.wxml -->
+<view class="container">
+    <!-- banners -->
+    <view class="tm-banners">
+        <swiper class="tb-banners_swiper" indicator-dots="{{true}}" indicator-active-color="#ffffff" autoplay="{{true}}" circular="{{true}}">
+            <swiper-item wx:for="{{banners}}" wx:key="id">
+                <image mode="aspectFill" bindtap="tapBanner" src="{{item.picUrl}}" data-url="{{item.linkUrl}}" />
+            </swiper-item>
+        </swiper>
+    </view>
+    <!-- search -->
+    <view class="search">
+        <input type="text" placeholder="输入搜索关键字" value="{{keyword}}"
+        bindinput="doSerachInput" bindconfirm="doSearch" ></input>
+        <image src="/images/images/icon/search.svg" bindtap="doSearch"/>
+        <!-- 这个路径的表示是指从根目录开始，就不用../ -->
+        </view>
+<!-- notice -->
+<view class="notice-box" wx:if="{{noticeList}}">
+<view class="notice">
+    <image class="notice_icon" src="/images/images/notice.png"></image>
+    <swiper class="notice_swiper" vertical="{{true}}" autoplay="{{true}}" circular="{{true}}">
+        <navigator wx:for="{{noticeList.dataList}}" wx:key="id" url="/pages/notice/show?id={{item.id}}">
+        <swiper-item >
+            <view class="notice-item">{{item.title}}</view>
+        </swiper-item>
+        </navigator>
+         <swiper-item >
+            <view class="notice-item">东哥叫我打代码</view>
+        </swiper-item>
+    </swiper>
+</view>
+</view>
+</view>
