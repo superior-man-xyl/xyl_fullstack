@@ -1,0 +1,15 @@
+{
+  "name": "book",
+  "version": "1.0.0",
+  "description": "使用 vant 作为前端框架 + 工厂API  - 云开发 云端直接进行数据存储（不需要使用其他数据库）， 直接有个数据库，不用安装，就能直接使用。微信开发者工具中点击云开发，点击数据库，数据库中添加集合，再为集合中添加记录.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.6.4"
+  }
+}

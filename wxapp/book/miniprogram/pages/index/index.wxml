@@ -1,0 +1,13 @@
+<!-- 手机的产品数据到了前端 -->
+<view wx:for="{{phone_list}}" wx:key="index"  wx:for-item="phone"
+ bindtap="viewItem">
+  <van-card
+  tag="新品"
+  title="{{phone.title}}"
+  thumb="{{phone.image}}"
+  price="{{phone.price}}"
+  data-id="{{phone._id}}"
+  origin-price="88888"
+ 
+  />
+</view>
