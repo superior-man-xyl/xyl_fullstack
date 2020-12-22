@@ -1,0 +1,255 @@
+/* 单点练习 */
+body{
+   padding-left:100px;
+   padding-right: 100px;
+   padding-top: 100px;
+   display: flex;
+   flex-wrap: wrap;
+   /* flex-wrap: 属性定义，如果一条轴线排不下，如何换行 */
+    /* nowrap:默认，不换行
+    wrap：换行，第一行在上方
+    wrap-reverse:换行，第一行在下方 */
+}
+/* 基本色子样式 面样式 以及点样式*/
+.box{
+    height: 95px;
+    width: 95px;
+    background-color: rgb(184, 178, 178);
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-top:20px;
+}
+.item{
+    height: 23px;
+    width: 23px;
+    margin: 4px;
+    border-radius: 30px;
+    background-color: black;
+}
+
+/* 1个点的面*/
+/* 演示九种情况 */
+.face11{
+    display: flex;
+    justify-content:flex-start;
+      /* justify-content属性定义了项目在主轴上的对齐方式。 */
+        /* flex-start:在主轴上左对齐
+        flex-end:在主轴上右对齐
+        center：居中 
+        space-between：两端对齐，项目之间的间隔都相等。
+        space-around：每个项目两侧的间隔相等。所以，
+        项目之间的间隔比项目与边框的间隔大一倍*/
+}
+.face12{
+    display: flex;
+    justify-content:center;
+}
+.face13{
+    display: flex;
+    justify-content:flex-end;
+}
+.face14{
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+    /* align-items：属性定义项目在交叉轴上如何对齐。 */
+    /* flex-start：交叉轴的起点对齐。
+    flex-end：交叉轴的终点对齐。
+    center：交叉轴的中点对齐。
+    baseline: 项目的第一行文字的基线对齐。
+    stretch（默认值）：如果项目未设置高度或设为auto，
+    将占满整个容器的高度。 */
+}
+.face15{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.face16{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+.face17{
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-end;
+}
+.face17{
+    display: flex;
+    justify-content:center;
+    align-items: flex-end;
+}
+.face17{
+    display: flex;
+    justify-content:flex-end;
+    align-items: flex-end;
+}
+.face18{
+    display: flex;
+    justify-content:center;
+    align-items: flex-end;
+}
+.face19{
+    display: flex;
+    justify-content:flex-end;
+    align-items: flex-end;
+}
+/* 两个点 */
+.face21{
+    display: flex;
+    justify-content:space-between;
+}
+.face22{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.face23{
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-end;
+}
+.face24{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    /* flex-direction：属性决定主轴的方向（即项目的排列方向）。 */
+    /* row（默认值）：主轴为水平方向，起点在左端。
+    row-reverse：主轴为水平方向，起点在右端。
+    column：主轴为垂直方向，起点在上沿。
+    column-reverse：主轴为垂直方向，起点在下沿。 */
+}
+.face25{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+}
+.face26{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: flex-end;
+}
+/* 坐标(1,1)和(1,2) */
+.face27{
+    display: flex;
+}
+/* 坐标(1,1)和(2,2) */
+.face28{
+    display: flex;
+}
+.face28 .item:nth-child(2){
+    /* align-self属性允许单个项目有与其他项目不一样的对齐方式，
+    可覆盖align-items属性。默认值为auto，
+    表示继承父元素的align-items属性，
+    等于重新定义了align-items属性
+    如果没有父元素，则等同于stretch。
+    而justify-centent和原来一样 */
+
+    /* 要想单独改变一个,就要用align-self,align-items不能用于单个 */
+    align-self: center;
+}
+/* 坐标(1,1)(3,3) */
+.face29{
+    display: flex;
+    justify-content:space-between;
+}
+.face29 .item:nth-child(2){
+    align-self: flex-end;
+}
+
+/* 三个点 */
+.face31{
+    display: flex;
+}
+.face32{
+    display: flex;
+    align-items: flex-end;
+}
+/* 坐标(1,1)(2,2)(3,3) */
+.face33{
+    display: flex;
+}
+.face33 .item:nth-child(2){
+    align-self: center;
+}
+.face33 .item:nth-child(3){
+    align-self: flex-end;
+}
+/* 坐标(3,3)(2,2)(1,1) */
+.face34{
+    display: flex;
+}
+.face34 .item:nth-child(2){
+    align-self: center;
+}
+.face34 .item:nth-child(1){
+    align-self: flex-end;
+}
+
+/* 四个点 */
+.face41{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content:space-between;
+    /* align-content属性定义了多根轴线的对齐方式。
+    如果项目只有一根轴线，该属性不起作用 */
+    /* flex-start：与交叉轴的起点对齐。 */
+    /* flex-end：与交叉轴的终点对齐。
+    center：与交叉轴的中点对齐。
+    space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
+    space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+    stretch（默认值）：轴线占满整个交叉轴。 */
+}
+/* <!-- 坐标(1,1)(1,3)(3,1)(3,3) --> */
+.face42{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.column{
+    flex-basis: 100%;
+    /* flex-basis属性定义了在分配多余空间之前，
+    项目占据的主轴空间（main size）。 */
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 六个点 */
+.face61{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.face62{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+/* 坐标(1,1)(1,2)(1,3)(2,2)(3,1)(3,3) */
+.face63{
+    display: flex;
+    flex-wrap: wrap;
+}
+.row{
+    flex-basis: 100%;
+    display:flex;
+  }
+  .row:nth-child(2){
+    justify-content: center;
+  }
+  
+  .row:nth-child(3){
+    justify-content: space-between;
+  }
+
+  /* 九个 */
+  .face9{
+    display: flex;
+    flex-wrap: wrap;
+  }
