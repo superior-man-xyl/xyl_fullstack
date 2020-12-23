@@ -20,3 +20,11 @@ npm init -y//初始化
 npm i @vant/weapp -s --production//安装框架
 然后工具-构建npm,才能使用vant
 按照文档引入与使用
+
+
+
+
+- block:专门用于承载指令
+- wx:for   wx:key  优化
+- 尊重用户隐私 获取用户的头像，昵称等等 必须得到用户的认可
+使用属性 open-type="getUserInfo"

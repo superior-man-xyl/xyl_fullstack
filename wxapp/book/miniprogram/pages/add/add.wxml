@@ -1,0 +1,4 @@
+<!--miniprogram/pages/add/add.wxml-->
+<!-- 这里的upload与js文件中的对应 -->
+<!-- 微信小程序的事件 -->
+<van-button type="warning" round block bindtap="upload">上传图片</van-button>

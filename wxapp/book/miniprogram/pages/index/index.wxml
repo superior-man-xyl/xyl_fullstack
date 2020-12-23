@@ -1,4 +1,4 @@
-<!-- 手机的产品数据到了前端 -->
+<!-- 手机的产品数据到了前端
 <view wx:for="{{phone_list}}" wx:key="index"  wx:for-item="phone"
  bindtap="viewItem">
   <van-card
@@ -10,4 +10,20 @@
   origin-price="88888"
  
   />
+</view> -->
+
+
+<!-- block：在小程序里 用于承载指令 -->
+<block wx:for="{{userList}}" wx:key="index">
+  <text>{{index}}</text>
+</block>
+
+<view class='floatBtn'>
+  <button 
+    size="mini" 
+    bindtap='navigatTo' 
+    type="primary"
+    open-type="getUserInfo"
+    bindgetuserinfo="getUserInfo"
+    >+</button>
 </view>
