@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-12-27 10:15:25
+ * @LastEditTime: 2020-12-27 19:11:33
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \git_pro\xyl_fullstack\JS\ryf\readme.md
+-->
 - 阮一峰
 
 1. javascript变量的数据类型由值决定，

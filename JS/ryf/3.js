@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-12-27 11:50:19
+ * @LastEditTime: 2020-12-27 18:53:48
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \git_pro\xyl_fullstack\JS\ryf\3.js
+ */
 //对象
 // 抽象的概念 类
 // 在es6以前没有class的关键字 
@@ -9,7 +17,7 @@
 //         console.log('喵喵喵');
 //     }
 // }
-JS是基于原型的继承
+// JS是基于原型的继承
 var cat1={};
 cat1.name='大毛';
 cat1.color='黄色';
