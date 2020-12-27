@@ -1,2 +1,4 @@
 /**app.wxss**/
-
+.mb20 {
+    margin-bottom: 20rpx;
+  }

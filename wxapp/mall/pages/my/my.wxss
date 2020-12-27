@@ -1,0 +1,23 @@
+/* pages/my/my.wxss */
+.user-poster{
+    width: 100%;
+    height: 53vw;
+    /* 53vw:手机宽度的53% */
+}
+/* 框架样式不用写了 */
+/* vant之外 还要写一些业务样式 不能全用框架*/
+.user-links{
+    padding: 15px 0;
+    font-size: 12px;
+    text-align: center;
+    background-color: #fff;
+}
+.user-links .van-icon{
+    display: block;
+    font-size: 24px;
+    /* margin-bottom: 20px; */
+}
+.user-group,.user-group van-cell{
+    display: block;
+    margin-bottom: 20px;
+}
