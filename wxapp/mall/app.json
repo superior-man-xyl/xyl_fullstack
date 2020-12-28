@@ -1,7 +1,8 @@
 {
-  "pages": [ 
-    "pages/detail-demo/detail-demo",
+  "pages": [
     "pages/my/my",
+    "pages/detail-demo/detail-demo",
+    
     "pages/text/text",
     "pages/home/home",
     "pages/index/index",
