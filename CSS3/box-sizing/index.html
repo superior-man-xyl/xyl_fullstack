@@ -1,0 +1,43 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-12-28 19:14:15
+ * @LastEditTime: 2020-12-28 19:25:07
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \git_pro\xyl_fullstack\CSS3\box-sizing\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .row {
+    /* width: 100%; */
+    height: 200px;
+    background-color: green;
+  }
+  .col {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 50%;
+    height: 100px;
+    background-color: yellow;
+    padding: 0 10px;
+  }
+  .col:last-child {
+    background-color: red;
+  }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="col"></div><div class="col"></div>
+  </div>
+</body>
+</html>

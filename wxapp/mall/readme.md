@@ -27,3 +27,15 @@ apifm-wxapi 可以提供数据（api工厂）https://www.yuque.com/apifm/doc/ns2
 - 总结一下搜索体验，把自己当成小白来进行设计
 placeholder + padding-left(框内留白，文字不紧贴边) + bindinput + bindConfirm + search 图标
 
+
+- 业务
+1.搜索
+2.tabbar(前端)条件筛选页面（后端查询参数？order=price 用参数为其分类）
+3.列表业务 wx:for
+data:{
+  goods:[]
+}
+apifm:使用这个api，使用接口把数据都获取
+url：/goods?order=&page=${n}&size=20&keyword=addidas//分类 加 页面数 加 数量 加 搜索的关键字
+这里以search-result为例  
+

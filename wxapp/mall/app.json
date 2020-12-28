@@ -1,13 +1,13 @@
 {
   "pages": [
-    "pages/my/my",
-    "pages/detail-demo/detail-demo",
-    
-    "pages/text/text",
+    "pages/search-result/search-result",
     "pages/home/home",
     "pages/index/index",
-    "pages/logs/logs"
-   
+    "pages/my/my",
+    "pages/detail-demo/detail-demo",
+    "pages/text/text",
+    "pages/logs/logs",
+    "pages/search-result/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
