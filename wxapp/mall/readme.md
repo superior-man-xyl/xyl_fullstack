@@ -39,3 +39,9 @@ apifm:使用这个api，使用接口把数据都获取
 url：/goods?order=&page=${n}&size=20&keyword=addidas//分类 加 页面数 加 数量 加 搜索的关键字
 这里以search-result为例  
 
+- 生命周期
+  发生顺序？适合做什么
+  1.onLoad 加载wxml，wxss，js 花时间最少 ，只是读进去
+  2.onShow wxml加上wxss 进行渲染，这时js还没执行完，只是页面能看到，但因为js还没执行完，还不能交互
+  3.onReady 
+

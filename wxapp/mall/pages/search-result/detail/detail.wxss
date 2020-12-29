@@ -1,1 +1,99 @@
 /* pages/search-result/detail/detail.wxss */
+page,view,image,input,textarea {
+    display: block;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    background-color: #F2f2f2;
+    min-height: 100%;
+    padding-bottom: 100rpx;
+  }
+  .swiper-container{
+    width: 100%;
+    position: relative;  
+  }
+  .swiper_box {
+    width: 100%;
+    height:748rpx;
+  }
+  
+  swiper-item image {
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    height:748rpx;
+  }
+  .goods-info{
+    background-color: #fff;
+    padding-top: 35rpx;
+    width: 100%;
+    position: relative;
+  }
+  .goods-info-fx {
+    position: absolute;
+    right: 35rpx;
+    bottom: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 130rpx;
+  }
+  .goods-info-fx .item {
+    width: 50rpx;
+    height: 50rpx;
+    right: 130rpx;
+    top: 100rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24rpx;
+    background: #fff;
+    z-index: 20;
+  } 
+  .goods-info-fx .item image {
+    width: 50rpx;
+    height: 50rpx;
+  }
+  .goods-info-fx .item button {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 99;
+  }
+  .goods-info .goods-title{
+    box-sizing: border-box;
+    padding: 0 35rpx;
+    font-size: 32rpx;
+    line-height: 1.4;
+    color: #000;
+    margin-bottom: 28rpx;
+  }
+  .goods-info .goods-share{
+    box-sizing: border-box;
+    padding: 0 35rpx;
+    font-size: 25rpx;
+    line-height: 1.4;
+    color: #CC0000;
+    margin-bottom: 28rpx;
+  }
+  .goods-profile {
+    display: flex;
+    align-items:center;
+  }
+  .goods-profile .p{
+     color:#e64340;
+     font-size: 20pt;
+     margin-left: 30rpx;
+  }
+  .goods-profile .p text{
+     font-size: 12pt;
+  }
+  .goods-profile .r{
+     color:#ccc;
+     font-size: 10pt;
+     margin-left: 30rpx;
+  }
+  

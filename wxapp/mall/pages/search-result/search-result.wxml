@@ -16,11 +16,13 @@
   </view>
 
 </van-sticky>
-<block >
+<view wx:if="{{listType==1}}">
+  <block >
   <view class="list1" wx:for="{{goods}}" wx:key="id">
-    <navigator url="/pages/goods-details/index?id={{item.id}}"><image class="img" mode="aspectFill" src="{{item.pic}}"></image></navigator>
+    <!-- navigator的用法 -->
+    <navigator url="/pages/search-result/detail/detail?id={{item.id}}"><image class="img" mode="aspectFill" src="{{item.pic}}"></image></navigator>
     <view class="goods-info">
-      <view class="title ellipsis"><navigator url="/pages/goods-details/index?id={{item.id}}">{{item.name}}</navigator></view>
+      <view class="title ellipsis"><navigator url="/pages/search-result/detail/detail?id={{item.id}}">{{item.name}}</navigator></view>
       <view class="price">¥ {{item.minPrice}}</view>
       <view class="buy-info">
         <view class="num">已售出{{item.numberSells}}件</view>
@@ -29,4 +31,20 @@
     </view>
   </view>
 </block>
+</view>
+
+  <view wx:elif="{{listType==2}}" class="list2-box">
+  <view class="list2" wx:for="{{goods}}" wx:key="id">
+    <navigator url="/pages/search-result/detail/detail?id={{item.id}}"><image class="img" mode="aspectFill" src="{{item.pic}}"></image></navigator>
+    <view class="goods-info">
+      <view class="title"><navigator url="/pages/search-result/detail/detail?id={{item.id}}">{{item.name}}</navigator></view>
+      <view class="price">¥ {{item.minPrice}}</view>
+      <view class="buy-info">
+        <view class="num">{{item.numberOrders}}人已购{{item.numberSells}}件</view>
+        <image class="car" src="/images/images/icon/car.svg" data-id="{{item.id}}" bindtap="addShopCar"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
 
