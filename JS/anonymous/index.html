@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Book(isbn,title,author){
+            this.isbn=isbn;
+            this.title=title;
+            this.author=author;
+            // console.log(this);
+        }
+        Book.prototype.display=function(){
+            return this.isbn+this.title+this.author;
+        }
+        // Book();//输出window，指向window对象
+        // var jsbook=new Book("1111");//输出实例化后的对象，也就是Book类的jsbook
+        var jsbook=new Book("1111","habipote","J.K");
+        console.log(jsbook.display());
+        // 只要原型链上有的东西，就可以调用，自己没有这个方法就会取原型链上找，一层一层找，直到找到，没有就返回undefined
+
+        console.log(jsbook instanceof Book);//instanceof 判断是否存在jsbook实例//true
+        console.log(jsbook.__proto__);//任何一个js对象都有一个原型，__proto__属性会告诉我们它的原型是什么
+    </script>
+</body>
+</html>
