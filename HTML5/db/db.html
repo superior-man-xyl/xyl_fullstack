@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // indexedDB前端的数据库
+        const request = window.indexedDB.open('kft', 2);
+        //全局
+        let db;
+        request.onerror = function (event) {
+            console.log('数据库打开报错');
+        }
+        request.onsuccess = function (event) {
+            //函数局部变量
+            db = request.result;//数据库名柄
+            console.log('数据库打开成功');
+            add();
+            read();
+        }
+        request.onupgradeneeded = function (event) {
+            // console.log('upgrade')
+            db = event.target.result;
+            let objectStore;
+            if (!db.objectStoreNames.contains('person')) {
+                objectStore = db.createObjectStore('person', { keyPath: 'id' });
+                objectStore.createIndex('name', 'name', { unique: false });
+                objectStore.createIndex('email', 'email', { unique: false });
+            }
+        }
+        //提升网页打开速度
+        function add() {
+            var request=db.transaction(['person'],['readwrite'])
+            .objectStore('person')
+            .add({id:1,name:'张三',age:'24',email:'zhangsan@qq.com'})
+            request.onsuccess=function(event){
+                console.log('数据库写入成功');
+            }
+            request.onerror=function(event){
+                console.log('数据库写入失败');
+            }
+        }
+
+        function read(){
+            let transaction=db.transaction(['person']);
+            let objectStore=transaction.objectStore('person');
+            var request=objectStore.get(1);
+            request.onsuccess=function(event){
+                if(request.result){
+                    // 解构
+                    const{name,email}=request.result;
+                    console.log(request.result);
+                    console.log(name,email);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

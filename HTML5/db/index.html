@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<!-- <ul id="friends"></ul> -->
+
+<body>
+    <div class="container">
+        <table id='friends' class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>用户名</th>
+            <th>家乡</th>
+            <th>性别</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <form name="friendForm">
+        <div class="form-group" >
+          <label for="nameInput" >用户名</label>
+          <input type="text" class="form-control" id="nameInput" name="nameInput" placeholder="请输入用户名" required>
+        </div>
+        <div class="form-group">
+          <label for="hometownInput">家乡</label>
+          <input type="text" class="form-control" id="hometownInput" name="hometownInput" placeholder="请输入家乡" required>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="radio" checked="checked" name="sex" value="男"> 男
+          </label>
+          <label>
+            <input type="radio" name="sex" value="女"> 女
+          </label>
+        </div>
+        <button type="submit" class="btn btn-default">添加</button>
+      </form>
+    </div>
+    
+
+  <script>
+//   const friends = [{
+//     name: '黄伦',
+//     hometown: '丰城',
+//     sex: '男'
+//   }, {
+//     name: '谢林威',
+//     hometown: '赣州',
+//     sex: '男'
+//   }, {
+//     name: '王嘉新',
+//     howetown: '景德镇',
+//     sex: '女'
+//   }, {
+//     name: '杨康妍',
+//     howetown: '南昌',
+//     sex: '女'
+//   }];
+    // localStorage是一个重要的API
+//   window.localStorage.setItem('friends-info', JSON.stringify(friends))
+window.onload = function() {
+
+    function renderFriends(o,i){
+       return `
+        <tr>
+          <th>${i}</th>
+          <td>${o.name}</td>
+          <td>${o.hometown}</td>
+          <td>${o.sex}</td>
+        </tr>
+      `;
+    }
+
+ const friends = JSON.parse(localStorage.getItem('friends-info'));
+const oUL = document.querySelector('#friends tbody');
+    document
+    .forms['friendForm']
+    .addEventListener('submit',(event)=>{
+        event.preventDefault();
+        const name=document.forms['friendForm']['nameInput'].value;
+        const hometown=document.forms['friendForm']['hometownInput'].value;
+        const sex=document.forms['friendForm']['sex'].value;
+        
+        console.log(name,hometown,sex);
+        friends.push({name,hometown,sex});
+        localStorage.setItem('friends-info', JSON.stringify(friends));
+        oUL.innerHTML+=renderFriends(o,friends.length+1);
+    })
+   
+
+    console.log(typeof friends);
+    // const oUL=document.getElementById('#friends tbody');
+    
+    let i = 0; 
+    //   用函数实现下面
+    for (let friend  of friends) {
+      // es6字符串模板符号
+      i++;
+      oUL.innerHTML+=renderFriends(friend,i);
+    //   oUL.innerHTML += `
+    //     <tr>
+    //       <th>${i}</th>
+    //       <td>${friend.name}</td>
+    //       <td>${friend.hometown}</td>
+    //       <td>${friend.sex}</td>
+    //     </tr>
+    //   `
+    }
+  }
+  </script>
+</body>
+</html>
