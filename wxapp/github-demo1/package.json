@@ -1,0 +1,15 @@
+{
+  "name": "github-demo1",
+  "version": "1.0.0",
+  "description": "- github 小程序\r 小程序组件语法\r component\r 1.vant 框架开发\r 2.apifm 后台API\r 3.\r - 应用的截图和psd\r - 小程序的架构升级了\r 基本：/pages\r /components  组件（组件构成页面） 使用html标签构成页面，不利于分工协作，和做大型项目，效率不高（复用）\r 组件就像积木一样，不是一个页面，但是可以拼凑成一个页面，其复用性好，就像之前的search页，都是公用的\r page里调用了组件<component-name repo=\"item\"></component-name>\r component声明一下repo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.6.4"
+  }
+}

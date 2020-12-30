@@ -1,0 +1,16 @@
+<!--components/search/search.wxml-->
+<view
+  class="van-search {{ customClass }} {{ showAction || useActionSlot ? 'van-search--show-action' : '' }}"
+>
+  <view class="van-search__field">
+     <van-field
+      clearable
+      type="search"
+      left-icon="search"
+      confirm-type="search"
+      placeholder="{{ placeholder }}"
+      custom-style="padding: 3px 10px"
+    />
+  </view>
+</view>
+

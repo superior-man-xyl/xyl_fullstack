@@ -1,0 +1,69 @@
+/* components/trend-item/trend-item.wxss */
+@import '../../style/base.wxss';
+
+.repo {
+    padding: 12px;
+  }
+  
+  .repo {
+    border-top: thin solid rgba(128, 128, 128, 0.3);
+  }
+  
+  .repo .name {
+    word-break: break-all;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+  
+  .repo .desc {
+    font-size: 12px;
+    margin: 12rpx 0;
+    word-break: break-all;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+  
+  .bottom {
+    display: flex;
+    font-size: 12px;
+    margin: 12rpx 0;
+  }
+  
+  .bottom image {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .bottom view:not(:first-child) {
+    margin-left: 12px;
+  }
+  
+  .bottom view:not(:last-child) {
+    width: 20%;
+  }
+  
+  .bottom view {
+    display: flex;
+  }
+  
+  .bottom view text {
+    margin-left: 2px;
+    line-height: 16px;
+    font-weight: bold;
+  }
+  
+  .built-by {
+    margin-top: 12rpx;
+  }
+  
+  .built-by .avatar {
+    width: 50rpx;
+    height: 50rpx;
+  }
+  
+  .built-by .avatar:not(:first-of-type) {
+    margin-left: 8rpx;
+  }
+  

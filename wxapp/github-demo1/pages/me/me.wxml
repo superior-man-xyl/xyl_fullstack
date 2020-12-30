@@ -1,0 +1,7 @@
+<!--pages/me/me.wxml-->
+<wxs module='theming' src='../../filter/theming.wxs'/>
+<!-- WXS（WeiXin Script）是小程序的一套脚本语言，结合 WXML，可以构建出页面的结构 -->
+<view class='page {{ theme }}'>
+  <image mode='aspectFit' class='avatar' src='{{ theming.iconFolder(theme) }}/octoface.svg'></image>
+
+</view>

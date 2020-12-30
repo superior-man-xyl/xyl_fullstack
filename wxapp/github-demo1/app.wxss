@@ -1,0 +1,24 @@
+page {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.oled {
+  background-color: #000;
+  color: #fff;
+}
+/* 主题切换 */
+/* 用了个可变的类名{{theme}} */
+/* 夜间模式 */
+.dark {
+  background-color: #24292e;
+  color: #fff;
+}
+/* 白天模式 */
+.light {
+  background-color: #fff;
+  color: #333;
+}

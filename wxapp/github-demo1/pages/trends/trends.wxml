@@ -1,0 +1,9 @@
+<!--pages/trends/trends.wxml-->
+<view class='trends page '>
+    <!-- trends page为了方便设置相同样式和不同样式 {{theme}}theme='{{ theme }}'-->
+<search custom-class='elevation {{ theme }}' placeholder="Search Users or Repositories" bind:search="onSearch"></search>
+
+    <!-- 组件 -->
+  <trend  repo='{{item}}' wx:for="{{trends}}" wx:key="{{index}}"></trend>
+</view>
+

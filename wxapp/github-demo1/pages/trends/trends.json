@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "trend":"../../components/trend-item/trend-item",
+    "search":"../../components/search/search"
+    
+
+  }
+}
