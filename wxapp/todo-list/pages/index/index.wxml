@@ -1,0 +1,49 @@
+<!-- wxs:是微信程序的封装， -->
+<!-- module：服务于代码“复用” -->
+<wxs src="../../wxs/api.wxs" module="api"></wxs>
+<view class="container">
+  <view class="userinfo">
+    <button size='mini' open-type="getUserInfo" wx:if="{{!hasUserInfo && canIUse}}" bindgetuserinfo="getUserInfo">
+      登陆
+    </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+      <text class="userinfo-nickname"></text>
+    </block>
+  </view>
+  <view class="titleBar">
+    <view class="status">
+      <text class="{{status==='1'?'active':''}}" data-status="1" bindtap="showStatus">全部</text>
+    </view>
+    <view class="status">
+      <text class="{{status==='2'?'active':''}}" data-status="2" bindtap="showStatus">未完成</text>
+    </view>
+    <view class="status">
+      <text class="{{status==='3'?'active':''}}" data-status="3" bindtap="showStatus">已完成</text>
+    </view>
+    <view class="add">
+      <button class="mini-btn" size="mini" bindtap="addTodoShow" type="warn">+添加</button>
+    </view>
+  </view>
+</view>
+<!-- <text>{{api.formatTime(1609397067763)}}</text> -->
+<scroll-view class="lists" scroll-y="{{true}}">
+  <block wx:if="{{todos.length<1}}">
+    <view class="class">暂无数据</view>
+  </block>
+  <view class="item" wx:for="{{todos}}" wx:key="id">
+    <view class="content">
+      <text class="title {{item.status==='1'?'over':''}}">{{item.text}}</text>
+      <text >{{api.formatTime(item.id)}}</text>
+    </view>
+  </view>
+</scroll-view>
+<view class="addForm {{addShow?'':'hide'}}">
+  <view class="addForm-div">
+    <input type="text" class="weui-input" placeholder="请输入你的新年计划" value="{{addText}}" bindinput="setInput" focus="{{focus}}"/>
+    <view class="addForm-btn">
+      <button class="weui-btn mini-btn" type="warn" bindtap="addTodo" size="mini">确定添加</button>
+      <button class="weui-btn mini-btn" type="default" bindtap="addTodoHide">取消</button>
+    </view>
+  </view>
+</view>

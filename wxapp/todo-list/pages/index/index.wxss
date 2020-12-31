@@ -1,0 +1,106 @@
+.titleBar {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  padding: 0 30rpx 10rpx;
+  align-items: center;
+}
+.titleBar .status{
+  flex: 1;
+}
+.active{
+  color: #ca2100;
+}
+.addForm{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.4);
+  /* rgba设置透明度 */
+  z-index: 99;
+  /* transition: all 1s; */
+}
+.addForm.hide{
+  display: none;
+}
+.addForm .addForm-div {
+  background: #fff;
+  padding: 30rpx;
+}
+.addForm .addForm-div .weui-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5rpx 20rpx;
+  font-size: 12pt;
+  margin-bottom: 10rpx;
+}
+.addForm .addForm-div .addForm-btn button {
+  margin-right: 15rpx;
+}
+
+.lists {
+  height: 500px;
+  flex: 1;
+  padding-top: 15rpx;
+  padding-bottom: 10rpx;
+}
+.lists .item {
+  border-bottom: 1px dotted #eee;
+  position: relative;
+  overflow: hidden;
+}
+.lists .item .content {
+  padding: 15rpx 30rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 0;
+  top: 0;
+  transition: left .3s;
+  width: 694rpx;
+  z-index: 10;
+  background: #fff;
+}
+.lists .item icon {
+  padding: 15rpx 10rpx;
+  flex-shrink: 0;
+}
+.lists .item .title {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+.lists .item .time {
+  font-size: 9pt;
+  color: #999;
+  flex-shrink: 0;
+}
+.lists .item .del {
+  position: absolute;
+  z-index: 9;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #f53b60;
+  width: 120rpx;
+  display: flex;
+  align-items: center;
+}
+.lists .item .del text {
+  text-align: center;
+  font-size: 9pt;
+  color: #fff;
+  flex: 1;
+}
+.lists .item text {
+  font-size: 11pt;
+  color: #444;
+  padding: 0 10rpx;
+}
+.lists .item text.over {
+  text-decoration: line-through;
+  color: #999;
+}
