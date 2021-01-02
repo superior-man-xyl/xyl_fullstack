@@ -26,7 +26,7 @@ function getHoneyedWords(){
 // 把发邮件的事情封装给一个函数
 async function sendMail(words){
     let user="1433402960@qq.com"
-    let pass="oqnaqwycngipgffe";//授权码
+    let pass="xxxxxx";//授权码
     let to="978142348@qq.com";//目标邮箱
     let transporter=nodemailer.createTransport({//nodemailer拥有一个方法打开一个传送通道
         host:"smtp.qq.com",//qq发送文件的域名
