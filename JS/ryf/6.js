@@ -40,4 +40,4 @@ var cat2=new cat("二毛","黑色");
 // instanceof:表示判断某对象是否属于某构造函数
 // console.log(cat2 instanceof cat);
 
-cat1.__prototype__;//
+console.log(cat1.__proto__);//{ say: [Function (anonymous)] }

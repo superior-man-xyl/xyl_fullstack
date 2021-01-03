@@ -22,4 +22,4 @@ typeof可以正确（细致）的得到数据类型的，但不能区分对象�
 number string Boolean null undefined symbol object（array ，function）
 
 
-3.object.prototype.toString.call()核心
+3.object.prototype.toString.call()核心,call方法里第一个参数放一个对象，this就指向该对象。

@@ -1,7 +1,7 @@
 //使用构造函数来批量创建对象
 
 function cat(name,color){
-    this.nmae=name;//this指向构造函数的实例
+    this.name=name;//this指向构造函数的实例
     this.color=color;
 }
 // 实例化

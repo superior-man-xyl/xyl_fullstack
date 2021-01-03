@@ -24,10 +24,10 @@ function getHoneyedWords(){
     return Axios.get(url);
 }
 // 把发邮件的事情封装给一个函数
-async function sendMail(words){
-    let user="1433402960@qq.com"
-    let pass="xxxxxx";//授权码
-    let to="978142348@qq.com";//目标邮箱
+async function sendMail(words,i){
+    let user="1433402960@qq.com";
+    let pass="nmatkkpzxjnfbace";//授权码
+    let to="2052641042@qq.com";//目标邮箱
     let transporter=nodemailer.createTransport({//nodemailer拥有一个方法打开一个传送通道
         host:"smtp.qq.com",//qq发送文件的域名
         port:587,
@@ -40,15 +40,15 @@ async function sendMail(words){
     let info=await transporter.sendMail({
         from:`me<${user}>`,
         to:`hello<${to}>`,
-        subject:"hello,word",
+        subject:`当第${i}次见你`,
         text:words
     })
     console.log("发送成功");
 }
-// for(let i=0;i<50;i++){
+// for(let i=0;i<5;i++){
 //     getHoneyedWords()
 //     .then(res=>{
-//         sendMail(res.data);
+//         sendMail(res.data,i+1);
 //         //console.log(res.data);//输出获得的土味情话
 //     })
 // }
@@ -58,7 +58,7 @@ async function sendMail(words){
 //         //console.log(res.data);//输出获得的土味情话
 //     })
 // sendMail();
-schedule.scheduleJob({hour:17,minute:18},function(){//使用定时器进行发送，指定时与分，运行程序会一直在特定时间发送邮件，并且一直持续下去（程序不终止）
+schedule.scheduleJob({hour:18,minute:41},function(){//使用定时器进行发送，指定时与分，运行程序会一直在特定时间发送邮件，并且一直持续下去（程序不终止）
     console.log("启动任务：" + new Date());
     getHoneyedWords()
     .then(res=>{

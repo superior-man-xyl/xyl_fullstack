@@ -12,7 +12,7 @@
     </block>
   </view>
   <view class="titleBar">
-    <view class="status">
+    <view class="status"> 
       <text class="{{status==='1'?'active':''}}" data-status="1" bindtap="showStatus">全部</text>
     </view>
     <view class="status">

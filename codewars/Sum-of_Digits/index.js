@@ -1,6 +1,6 @@
 function digital_root(n) {
     var j;
-    while(n/10>=1){
+    while(n>=10){
         n=n.toString();
         n=n.split("");
         j=0;
@@ -19,4 +19,4 @@ function digital_root(n) {
     // console.log(typeof n)
    return n;
   }
-  console.log(digital_root(456));
+  console.log(digital_root(493193));
