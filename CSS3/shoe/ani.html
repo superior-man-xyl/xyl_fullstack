@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        .box:hover{
+            /* 怎么样让它慢慢增长 */
+            width: 300px;
+            /* 使用transition */
+            transition:width 1s ;
+            /* 或使用animation */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
