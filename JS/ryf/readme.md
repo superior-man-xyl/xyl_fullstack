@@ -23,3 +23,20 @@ number string Boolean null undefined symbol object（array ，function）
 
 
 3.object.prototype.toString.call()核心,call方法里第一个参数放一个对象，this就指向该对象。
+
+ call()和apply()的区别：第一个参数指定this，一样效果，
+    而第二个参数就是传的参数，call直接传，第二个参数，第三个参数，有多少，列多少参数，
+    而apply要用数组装下其他参数一起传
+
+- call apply 借用方法，fn.call(绑定this,参数1,参数2，参数3，参数4)
+fn.apply(绑定this，[参数1,参数2，参数3，参数4])
+
+# 继承的几种实现方式
+1.构造函数绑定  7.js  call apply实现
+2.原型函数prototype模式    8.js   
+3.直接继承prototype   9.js
+4.利用空对象作为中介    10.js
+
+2和3相比是，3的优点是效率比较高（不用执行和建立Animal的实例），
+缺点是Cat.prototype和Animal.prototype指向同一个对象，在理解上有点不妥，会改变父类的原型对象
+2的效率不高
