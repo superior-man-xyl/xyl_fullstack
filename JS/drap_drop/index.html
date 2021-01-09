@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 API Drag and Drop</title>
+    <style>
+        .src {
+            display: flex;
+        }
+        /* .dragable {
+            flex: 1; */
+            /* target使用了自己固定的位置后，剩下都给txt */
+        /* }  */
+
+        .txt {
+            color: green;
+        }
+
+        #target {
+            flex: 1;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            border: 1px solid gray;
+            color: red;
+        }
+        /* hover{
+            d
+        } */
+        p {
+            cursor: pointer;
+        }
+        #target.hover{
+            border: 3px dashed green;
+        }
+        .ds {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- source -->
+    <div class="src">
+        <div class="dragable">
+            <div class="txt" id="txt">
+                所有的文字都可以拖拽
+                <p draggable="true">此段文字设置了属性draggable="true"</p>
+                <!-- 加上draggable属性就能拖动 -->
+            </div>
+        </div>
+        <!-- des drop 目标地 -->
+        <div id="target">Drop here</div>
+    </div>
+    <script>
+        let dragSrc = document.getElementById('txt');//drag
+        let target = document.getElementById('target');//drop
+        //看看红宝书中 其与addEventListener有什么区别？ on加事件名 addEventListener 是什么级别的事件
+        dragSrc.ondragstart = handle_start;//事件 刚开始拖
+        dragSrc.ondrag=handle_drag;//拖拽中
+        dragSrc.ondragend=handle_end;//拖拽结束
+//靠事件完成一切
+    //drop 元素 添加监听事件
+        target.ondragenter=handle_enter;
+        target.ondragover=handle_over;
+        target.ondragleave=handle_leave;
+        target.ondrop=handle_drop;
+
+        function handle_drop(event){
+            //浏览器有默认行为，其默认的拖拽行为是用相应的解析器显示目的元素
+            //例如，把png图片拖入浏览器，会显示图片，拖入html文件，会显示网页
+            event.preventDefault();//非常重要
+            // target.appendChild(dragSrc);
+            target.innerHTML=dragSrc.innerText;
+            console.log('当前元素在目的地放下时触发');
+        }
+        function handle_enter(event){
+            event.preventDefault();
+            console.log('handle_enter当元素开始进入目的地时触发');
+            target.classList.add('hover')
+        }
+        function handle_over(event){
+            event.preventDefault();
+            // console.log('handle_over当元素进入完毕目的地时触发');
+        }
+        function handle_leave(event){
+            event.preventDefault();
+            target.classList.remove('hover');
+            console.log('handle_leave当元素在目的地放下时触发');
+        }
+        function handle_start(e) {
+            console.log('开始拖');
+            // console.log('--------');
+            // console.log(dragSrc.classList);//获得所有的类名的列表
+            //细分。 drag strat 事件
+            //使用css，添加个类名，调用css样式，制作效果
+            dragSrc.classList.add('ds');//添加个ds类名
+            console.log(dragSrc.classList);
+        }
+        function handle_drag() {
+            console.log('拖中');
+            dragSrc.classList.remove('ds');
+        }
+        function handle_end() {
+            console.log('放手了');
+        }
+    </script>
+</body>
+
+</html>
