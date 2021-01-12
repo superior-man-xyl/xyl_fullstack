@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            /* 下面的子元素要从父元素继承高度 */
+        }
+
+        body {
+            /* display: flex;
+            flex-direction: column; */
+            display: grid;
+            grid-template-rows: 50px 1fr 50px;
+        }
+
+        #header,
+        #footer {
+            /* height: 200px; */
+
+            background-color: lightblue;
+        }
+
+        .container {
+            /* flex: 1; */
+            background-color: cyan;
+        }
+
+        .column {
+            float: left;
+            height: 100%;
+        }
+
+        #center {
+            /* 中间要动态的  */
+            width: calc(100% - 400px);
+        }
+        #left,
+        #right {
+            background-color: red;
+            width: 200px;
+            /* height: 100%; */
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header"></header>
+    <div class="container">
+        <!-- 三列式布局 可使用flex grid float
+        上中下
+        <nav> 标签定义导航链接的部分
+        <aside> 标签定义 <article> 标签外的内容，aside 的内容应该与附近的内容相关
+        <nav> 标签定义导航链接的部分 -->
+
+        <!-- 去看看html语义化，总结一个文章，分析其各种应用的场景 -->
+        <nav id="left" class="column"></nav>
+        <main id="center" class="column"></main>
+        <aside id="right" class="column"></aside>
+    </div>
+    <footer class="" id="footer"></footer>
+</body>
+
+</html>

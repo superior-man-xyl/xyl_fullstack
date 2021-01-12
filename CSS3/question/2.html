@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=no">
+    <!-- meta里加了东西 
+    maximum-scale=1, user-scalable=no：不允许缩放
+-->
+    <title>苹果的专有属性</title>
+    <style>
+        body {
+            /* -webkit 是前缀 顺滑 在字体的边缘 */
+            /* antialiased：抗锯齿 */
+            /* 共同都是webkit内核 */ /* chrome:adroid使用的 *//* safari：ios */
+            
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+
+        设备(device)像素指的是物理像素
+        viewport 视窗 其是移动端专有，pc端没有
+        
+        在pc时代，页面比较大，基于img等比例缩放的理解，
+        一个大pc页，要显示在较小的手机里，页可以，但要缩放一下。看不清怎么办？
+        使用移动端特有的手势pinch（两手指撑开）放大看
+        那么为什么使用maximum-scale=1, user-scalable=no
+        因为现在已全面进入移动时代，pc网站都有了相应的手机网站了，就不需要放大看了。没有了那样的需求
+        viewport放大页面会使页面很不稳定，体验不加，故使用maximum-scale=1, user-scalable=no禁用
+
+    例子：www.taobao.com手机端-》请求服务器http协议-》设备是手机-》返回移动端官网-》main.m.taobao.com
+    怎么放回移动页面的呢？服务器http返回了一个302状态码。HTTP 302 Found 重定向状态码表明请求的资源被暂时的移动到了由Location 头部指定的 URL 上。
+    </p>
+</body>
+
+</html>
