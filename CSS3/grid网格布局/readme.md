@@ -40,3 +40,8 @@ alpha - 透明度	定义透明度 0（完全透明） ~ 1（完全不透明）
 
 - 在垂直方向做主元素分配高度
     display:grid+ grid-template-rows: 1fr auto;
+更加具有优势
+
+- fristChild lastChild
+ChildNodes  换行符 会作为空的文本节点(text)
+lastElementChild

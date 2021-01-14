@@ -38,6 +38,18 @@
             overflow:auto;
             /* -webkit-animation-duration: ; */
         }
+        button{
+            background-color: #ff0060;
+            color: white;
+            font-size:1rem;
+            padding: 20px;
+            transition: all 0.2s;
+        }
+        button[disabled]{
+            opacity: 0.1;
+            transform: translateX(-200%) scale(0.5);
+        }
+
     </style>
 </head>
 <body>
@@ -84,10 +96,29 @@
         // 怎么办？
         const terms=document.querySelector('.terms-and-conditions');
         const watch=document.querySelector('.watch');
-        const buttton=document.querySelector('.accept');
+        const button=document.querySelector('.accept');
         // buttton.removeAttribute('disabled');
         //IntersectionObserver 给我们监听视窗的能力，没有滚动条滚动到底的事件，但是可以监听视窗
-        const ob=new IntersectionObserver();
+        // 给我们监听视窗的能力，看某个元素是否在视窗中 Observer
+        // Observer：遵守者，观察者; 观察团; 观察员;
+        //实例化一个observer
+        function obCallback(payload){//定义回调函数
+            console.log(payload);//不使用这个payload就会立即执行
+            console.log(payload[0].intersectionRatio);
+            if(payload[0].intersectionRatio>0.5){//表示其已经进入到了视窗
+                button.disabled=false;//启用元素，使按钮可操作
+                // 或者，直接移除
+                // buttton.removeAttribute('disabled');
+                ob.unobserve(terms.lastElementChild);
+            }
+            // buttton.removeAttribute('disabled');//移除disabled禁止操作属性
+        }
+        const ob=new IntersectionObserver(obCallback,{
+            root:terms,
+            //触发回调函数的时机 0 从视窗消失  1 进入视窗
+            threshold:0.5//指一半进入视窗就可以，这里出了点问题，为1时不行？？？
+        });
+        ob.observe(terms.lastElementChild);//取最后一个子元素，作为监听对象视窗
     </script>
 </body>
 </html>

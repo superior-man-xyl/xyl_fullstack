@@ -1,0 +1,35 @@
+.offline {
+  height:100%;
+  width: 750rpx;/* iphone*/
+  background:white;
+  text-align: center;
+  line-height: 1200rpx;
+}
+
+/* 类型  */
+.type-container {
+  display:flex;
+  padding: 5rpx 20rpx 0 20rpx;
+  position: relative;
+  top: -93rpx;
+  background:rgba(0, 0, 0, 0.137);
+  margin-top: 15rpx;
+  justify-content: flex-start;
+}
+.type-container .type-item {
+  flex: 1;
+  height: 60rpx;
+}
+.type-container .type-item view{
+  font-size:25rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius:10rpx 10rpx 0 0;
+  margin:0 3rpx;
+  background-color: rgb(253, 173, 193);
+  color: rgba(255, 255, 255);
+}
+.type-container .type-item .type-item-on {
+  background-color: rgb(248, 71, 115);
+  box-shadow: 3rpx grey;
+}

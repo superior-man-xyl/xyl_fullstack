@@ -1,0 +1,25 @@
+<view class="offline" wx:if="{{offline}}" >
+  打烊了
+</view>
+<view class="myHomePage" wx:if="{{isShow&&!offline}}">
+  <!-- 搜索框 -->
+  <my-search></my-search>
+  <!-- 轮播图 -->
+  <view class="swiper-container">
+    <index-swiper imgUrls="{{imgUrls}}"></index-swiper>
+  </view>
+  <!-- 分类展示 -->
+  <view class="type-container">
+    <view class="type-item" 
+    wx:for="{{typeCat}}"
+    wx:key="id"
+    >
+      <view data-id="{{item.id}}"
+       class="type-name {{activeTypeId === item.id? 'type-item-on':''}}"
+       bindtap="typeSwitch"
+       >
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+</view>
