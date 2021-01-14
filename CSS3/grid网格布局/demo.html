@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            min-height: 100vh;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            font-family: -apple-system,sans-serif;
+            line-height: 2;
+            background: #ffc600;
+        }
+        .wrapper{
+            width: 400px;
+            height: 80vh;
+            padding: 20px;
+            border: 1px solid black;
+            background-color: white;
+            display: grid;
+            grid-template-rows: 1fr auto;/*占据按钮外的所有空间*/
+            /* 1fr有什么用？ */
+            /* 剩余空间分配数
+            fr单位被用于在一系列长度值中分配剩余空间，如果多个已指定了多个部分，则剩下的空间根据各自的数字按比例分配。 */
+            
+            /* grid-template-columns: 100px; */
+
+        }
+        .terms-and-conditions{
+            /* 高度 overflow:scroll 居中  */
+            overflow:auto;
+            /* -webkit-animation-duration: ; */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="terms-and-conditions">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, labore!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum assumenda, ullam, sed quo ipsam officia
+          asperiores minima excepturi eveniet reiciendis velit debitis temporibus explicabo. Incidunt sit itaque,
+          reprehenderit fuga voluptatem officiis corrupti ipsa eveniet architecto dolorem magni facere doloribus aut
+          veritatis sequi quia repellendus aperiam assumenda exercitationem optio praesentium debitis. Excepturi unde
+          minus dignissimos at totam tempora beatae cumque, voluptates adipisci repudiandae asperiores repellat delectus
+          tempore voluptatem veritatis atque quaerat optio! Quasi, possimus molestiae hic modi quia minus eius veniam
+          aperiam assumenda fugiat fugit optio odio quas esse quam architecto officiis sunt quis cupiditate vel
+          voluptate
+          consequuntur nam porro harum. Fuga distinctio voluptate provident molestias perspiciatis fugit esse corrupti
+          adipisci quas eos dolor non cum ipsam repudiandae dolorem, quasi necessitatibus iusto unde similique
+          repellendus praesentium tenetur? Obcaecati aliquam nostrum vero expedita fuga, quae et quaerat modi error
+          adipisci eligendi fugit alias quia nihil laudantium quam tenetur ipsam explicabo nisi natus, rerum omnis,
+          debitis provident! Dolorum sequi recusandae, necessitatibus eos nesciunt cupiditate accusantium illum unde
+          minima. Labore sit quos voluptatem illum qui. Veritatis quis a mollitia asperiores repudiandae consequatur
+          assumenda, at tempora, modi voluptate sit blanditiis hic dignissimos harum consequuntur quia ipsam, architecto
+          nesciunt. Praesentium, mollitia? Delectus quod laudantium doloremque nihil?</p>
+        <strong class="watch">watch for me</strong>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos ab, ea inventore commodi eligendi error
+          repellat impedit eum quod enim sequi, distinctio, qui eaque ipsam fugit asperiores eos laboriosam ex.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa id debitis ex eligendi rem unde consequuntur
+          natus omnis vel nulla sit commodi, quos distinctio doloremque doloribus veniam quis et dolore?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi laboriosam nulla est architecto eum,
+          dolorem
+          quam, unde quo fugit tempore ipsa qui provident, iste ratione quis dignissimos temporibus nostrum voluptatum
+          molestias? Blanditiis repellendus sapiente inventore aliquam qui error aliquid doloremque fugit consequuntur
+          laudantium. Sapiente doloribus ullam vel dicta doloremque iure, deleniti ipsum non. Rem repudiandae deleniti
+          ad
+          at laborum eaque, modi voluptas aut! Quam nihil deleniti velit excepturi, quidem, veniam aut doloremque iure
+          reprehenderit natus vel quia iusto? Magni veritatis provident libero hic quisquam, perferendis officia quasi
+          molestiae sit sunt fugiat, perspiciatis architecto velit unde molestias ratione totam, atque doloremque!</p>
+      </div>
+      <button class="accept" disabled>Accept</button>
+      <!-- disabled不可交互 -->
+    </div>
+    <script>
+        //使其文章不翻到最后不能点击按钮
+        // 滚动条滚动到底，就使其按钮可点击，但是没有这个 事件
+        // 怎么办？
+        const terms=document.querySelector('.terms-and-conditions');
+        const watch=document.querySelector('.watch');
+        const buttton=document.querySelector('.accept');
+        // buttton.removeAttribute('disabled');
+        //IntersectionObserver 给我们监听视窗的能力，没有滚动条滚动到底的事件，但是可以监听视窗
+        const ob=new IntersectionObserver();
+    </script>
+</body>
+</html>

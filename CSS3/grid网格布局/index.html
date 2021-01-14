@@ -4,6 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>css最新的布局方案Grid Flex兄弟</title>
+    <link rel="stylesheet" href="./grid.css">
+    <style>
+        .container{
+            height: 100vh;/*vh相对高度*/
+            display: grid;/*启动网格布局，写一个九宫格*/
+            justify-content: center;
+            align-content: center;/*flex align-items*/
+            grid-template-columns: 100px 100px 100px;/*每列宽度*/
+            grid-template-rows: 100px 100px 100px;/*每行高度*/
+        }
+        .box{
+            background-color: green;
+        }
+
+        /* 方法二 */
+        /*仅两种颜色*/
+        /*.box:nth-child(odd){
+            background-color: red;
+        }
+        .box:nth-child(even){
+            background-color: green;
+        }*/
+        
+        /*每个格子都不一样颜色*/
+       /* .box:nth-child(1){ background-color: red;}
+        .box:nth-child(2){ background-color: green;}
+        .box:nth-child(3){ background-color: yellow;}
+        .box:nth-child(4){ background-color: gray;}
+        .box:nth-child(5){ background-color: blue;}
+        .box:nth-child(6){ background-color: pink;}
+        .box:nth-child(7){ background-color: lightseagreen;}
+        .box:nth-child(8){ background-color: orange;}
+        .box:nth-child(9){ background-color: lightgrey;}*/
+        /*优化版*/
+        /* 使用stylus快速写出这么多行css代码 */
+    </style>
 </head>
 <body>
     <!-- grid是一个二维布局方案,  row  column -->
@@ -19,5 +55,18 @@
         <div class="box">8</div>
         <div class="box">9</div>
     </div>
+    <script>
+    // 写法一：
+        // const boxes=document.querySelectorAll('.box');
+        // let i=1;
+        // for(let box of boxes){
+        //     // 在js里可以操作一切的css
+        //     // html document.createElement
+        //     // css ele.style
+        //     i++
+        //     box.style.backgroundColor=`rgba(${i*20},${i*10},${i*5})`
+        // }
+        
+    </script>
 </body>
 </html>

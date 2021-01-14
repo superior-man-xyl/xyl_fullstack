@@ -1,0 +1,20 @@
+// .box
+//     color white
+//     display flex
+//     align-items center
+//     justify-content center
+//     for n in (1..9)
+//         &:nth-child({n})
+//             background-color rgba(n*20,n*5,n*9,n*0.1)
+// 更加优秀的方法，box的数量不确定
+nBgc(num)
+    for n in (1..num)
+        &:nth-child({n})
+            background-color rgba(n*20,n*5,n*9,n*0.1)
+.box
+    color white
+    display flex
+    align-items center
+    justify-content center
+    nBgc(9)
+    
