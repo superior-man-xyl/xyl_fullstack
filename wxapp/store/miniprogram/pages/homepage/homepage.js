@@ -9,7 +9,7 @@ Page({
   data: {
     fruitInfo: [],
     offline: false, // 打烊
-    isShow: true,
+    isShow: false,
     imgUrls: [
       'https://m.360buyimg.com/mobilecms/s843x843_jfs/t1/152869/36/733/129848/5f6da644E8c640b50/35117f17f08456ad.jpg!q70.dpg.webp',
       'https://m.360buyimg.com/mobilecms/s843x843_jfs/t1/149571/38/9289/117895/5f6da644E784f911b/21a284afecffdb4f.jpg!q70.dpg.webp'
@@ -30,10 +30,82 @@ Page({
       }
     ]
   },
+  // 加入购物车
+  addCartByHome(e) {
+    const id = e.currentTarget.dataset.fid;
+    // console.log(id);
+    // 1. 去app.js carts 有没有? 
+    // 2. 加入购物车或数量加一
+    let newItem = {}
+    // 全局的云数据库操作 where 
+    // 传统后端  全局的CRUD 
+    app.getInfoWhere('fruit-board', {_id: id}, e => {
+      // console.log(e)
+      let newCartItem = e.data[0];
+      newCartItem.num = 1;
+      app.isNotRepeteToCart(newCartItem)
+      wx.showToast({
+        title: '已添加至购物车'
+      })
+      
+    })
+
+
+  },
+  // 去详情页 
+  tapToDetail(e) {
+    console.log('+++++');
+    const id = e.currentTarget.dataset.fid;
+    console.log(id);
+    wx.navigateTo({
+      url: '/pages/detail/detail?_id='+id,
+    })
+  },
   typeSwitch(e) {
     this.setData({
       activeTypeId: e.currentTarget.dataset.id
     })
+    // 重新取数据库，刷新列表
+    wx.showLoading({
+      title:'数据加载中。。。。'
+    });
+    switch(e.currentTarget.dataset.id){
+      case 0:app.getInfoByOrder('fruit-board','time','desc',e=>{
+        this.setData({
+          fruitInfo:e.data
+        })
+        wx.hideLoading();
+      })
+      break;
+      //今日特惠
+      case 1:
+        app.getInfoWhere('fruit-board',{myClass:'1'},e=>{
+          this.setData({
+            fruitInfo:e.data
+          })
+        })
+        wx.hideLoading();
+        break;
+        //新鲜上架
+        case 2:
+          app.getInfoByOrder('fruit-board','time','desc',e=>{
+            this.setData({
+              fruitInfo:Element.data
+            })
+          })
+          wx.hideLoading();
+          break;
+        //店主推荐
+        case 3:
+          app.getInfoWhere('fruit-board',{recommend:'1'},e=>{
+            this.setData({
+              fruitInfo:e.data
+            })
+          })
+          wx.hideLoading();
+          break;
+    }
+
   },
 
   /**
@@ -41,6 +113,9 @@ Page({
    */
   onLoad: function (options) {
     console.log('load') // wxml wxss
+    wx.showLoading({
+      title: '正在加载中...',
+    })
   },
 
   /**
@@ -68,6 +143,7 @@ Page({
         fruitInfo: e.data,
         isShow:true
       })
+      wx.hideLoading(); // 
     })
   },
 

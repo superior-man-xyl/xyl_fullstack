@@ -28,9 +28,31 @@ shop（店） <-  水果
   - css flex  1/4 
     位置怎么做？  
 
-7.数据库设计
+7. 数据库设计
   - fruit-board
-  支持where操作
-  myClass 0 1 2 3
-  onShow 是否上架
-  详情页 swiper
+    支持where 操作
+    myClass  0 1  2 3 
+    onShow  是否上架
+    详情页 swiper 
+  
+  - 封装云开发数据操作的能力
+    1. app.js 是天然的公用js 方法的地方 
+      const app = getApp(); // 微信的定义
+      app.get
+    2. 抽象了某个表某种排序方式，得到结果后做某种操作
+      高效 
+
+
+- flex 里怎么让元素下去 
+
+- 设计一下购物车？  数组  某项商品  数量
+购物车功能
+首先，要加入购物车 加入后改数量
+购物车里展示商品
+详情页时就要能够加入购物车
+关于购物车的数据，是不是要超出页面化（数据不止属于页面）
+比页面的级别更大的是？
+层次：
+view|image 标签 -》component -》page -》application
+
+gloabalData promise 是否有重复的判断
