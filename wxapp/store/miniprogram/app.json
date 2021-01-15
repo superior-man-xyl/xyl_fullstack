@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/detail/detail",
     "pages/homepage/homepage",
     "pages/cart/cart",
     "pages/me/me"
+    
   ],
   "window": {
     "backgroundColor": "#F0F0F0",
