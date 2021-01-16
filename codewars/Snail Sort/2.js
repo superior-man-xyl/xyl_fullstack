@@ -2,12 +2,12 @@ function snail(array) {
     var results = [];
  
     while (array.length > 0) {
-        //使用shift返回当前数组中的第一个元素
+        //shift() 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。
         // 使用concat方法连接被弹出的第一个元素，将其放在最后一位
         results = results.concat(array.shift());
         //forEach方法进行数组的遍历
         array.forEach(function (current) {
-            //使用pop方法弹出最后一个元素，并进行在数组尾添加该元素
+            //pop()方法删除并返回数组的最后一个元素，并进行在数组尾添加该元素
             results.push(current.pop());
         });
  
