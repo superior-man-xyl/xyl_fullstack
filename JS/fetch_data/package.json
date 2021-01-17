@@ -1,0 +1,15 @@
+{
+  "name": "fetch_data",
+  "version": "1.0.0",
+  "description": "js是个单线程的语言，今天学习与数据通信相关\r - promise  五星  异步\r -",
+  "main": "index.js",
+  "scripts": {
+   "server:json":"json-server db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  }
+}

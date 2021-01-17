@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //http://localhost:3000/users url path 暴露了用户资源
+        //GET 请求 POST  add
+        //XMLHttprequest
+        const xhr=new XMLHttpRequest();//实例化
+        let name='张三'
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState===XMLHttpRequest.DONE){
+                console.log('保存成功');
+            }
+        }
+        xhr.open('open','http://localhost:3000/users')//建立一个链接
+        //如果是post 带表单数据，
+        // // POST请求比GET 请求更安全，会使用encode进行编码
+        // encodeURIComponent('谢永良')
+        // "%E8%B0%A2%E6%B0%B8%E8%89%AF"
+        // decodeURIComponent('%E8%B0%A2%E6%B0%B8%E8%89%AF')
+        // "谢永良"
+        // 没有发送成功怎么办？看下面代码
+        //设置请求头
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencode');
+        xhr.send('name='+encodeURIComponent(name));//如果是post请求的话是要带表单数据的
+        
+
+        
+    </script>
+</body>
+</html>
