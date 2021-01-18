@@ -1,0 +1,20 @@
+/* app下全局引入的css可以全局访问
+这里选择的是样式框架 例如：weui-cell
+*/
+@import "weui/weui.wxss";
+/* colorui 提供色彩和界面弥补了没有设计师的缺陷 */
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+@import "colorui/animation.wxss";
+
+page{
+  background-color: #f8f8f8;
+  font-size: 16px;
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  /* -apple-system:苹果字体 */
+}
+.page{
+  width: 100px;
+  height: 100vh;
+  overflow-x: hidden;
+}
