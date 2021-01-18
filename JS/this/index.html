@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script src="./1.js"></script> -->
+    <script>
+        //对象this，内存挂钩，c语言的指针
+        var a=1;//内存 内存中开辟空间 number &a 1
+        var obj={//内存中开辟的空间比较大-》map空间 字典里查
+            foo:5,
+            //特别处理了
+            //内存操作：首先把我们的代码， 通过文件系统读取到内存，
+            // 地址，执行 CPU
+            // func();函数中，重新的分配一个执行空间，进入执行堆栈，
+            // 创建一个作用域 scope 变量的查找链 this
+            func: function(){
+                cnosnole.log(this.foo);
+            }
+        }
+        var foo=6;
+        var func=obj.func;
+        obj.func();//从 . 运算符 到对象属性查找-》对于地址的不断查找
+        func();
+    </script>
+</body>
+</html>
