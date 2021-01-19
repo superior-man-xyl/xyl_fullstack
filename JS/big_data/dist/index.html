@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/common.404fed7b.css">
+    <link rel="stylesheet" href="/data.a0fd01f6.css">
+<script src="/common.404fed7b.js"></script><script src="/data.a0fd01f6.js"></script></head>
+<body>
+    <!-- 10000条新闻 ipv4 32位  ipv6 128位-->
+    <!-- 例如拍照的摄像头，物联网设备 会生产很多数据 -->
+    <div class="news-header"></div>
+    <div class="news"></div>
+    <!-- 新闻的container -->
+    <div class="news-footer"></div>
+    <script src="/src.a2b27638.js"></script>
+    <!-- 将JavaScript代码放外面去了，用个专门的文件夹src -->
+    <!-- <script>
+        //怎么生成10000条数据？  Array.from  用内存来放，才10000条，
+        //和一个4kyu的题目很像，分页 originNews 分成200个数组（二维） [[50][50]]
+        let page=0;//页码
+        let pageNum=Math.ceil(window.innerHeight/50);//引入一个新的api window.innerHeight
+        const chunk=(arr,size)=>Array.from({
+            length:Math.ceil(arr.length/size)
+        },(v,i)=>
+        arr.slice(i * size, i * size + size)
+        )
+        const originNews=Array.from({
+            length:10000
+        },(v,k)=>({
+            content:`新闻${k}`//一个json object
+        }))
+        let news=chunk(originNews,pageNum);//当前页需要的数据
+        console.log(news);
+
+        const element=document.querySelector('.news');
+        const loadObserver=new IntersectionObserver(()=>{
+
+        },{})//监听
+    </script> -->
+</body>
+</html>
