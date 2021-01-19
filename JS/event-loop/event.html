@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // js单线程 ，遇到耗时操作 fs I/O ajax
+        //会默认往后排，就算是不花更多时间  setTimeout()=>{}被挂起
+        console.log('event-loop');//1
+        setTimeout(()=>{//event-loop event-task 任务队列-》属于主线程  其是队列结构 靠事件信息运作
+            //当主线程停下来后 ，轮询event-loop 
+            // task-queue  主线程之外，还存在一个"任务队列"（task queue）。只要异步任务有了运行结果，就在"任务队列"之中放置一个事件。
+            // 一旦"执行栈"中的所有同步任务执行完毕，系统就会读取"任务队列"，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。
+            console.log('setTimeout1');//2
+            Promise.resolve().then(data=>{//promise
+                console.log(2222);
+            })
+        },0);//为0一样排后面
+        setTimeout(()=>{//这是个宏任务，微任务先执行，宏任务后执行
+            console.log('setTimeout2');
+        },0);
+        Promise.resolve().then(data=>{//这里的promise是一个微任务
+            console.log(111);
+        })
+        console.log('event-loop end'); //3
+        // 总结：普通-》微任务-》宏任务 队列中任务完成后换排队的下一个进入
+        //最后输出顺序
+        // event-loop
+        //  event-loop end
+        //  111
+        // setTimeout1 
+        // 2222
+        // setTimeout2
+    </script>
+</body>
+</html>

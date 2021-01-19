@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="root">
+
+    </div>
+    <script>
+        // js是单线程的，同时只能执行一项任务
+        // 当初就负责dom的操作，style，addEventLisTextEncoder
+        // js最初要求简单进行 process进程:线程 是 1：n的 多线程，而js是单线程的就有一个主线程
+        // 主|单线程 页面只需要html css 渲染+js脚本，要求尽量简单
+        // event 事件 js基于事件
+        const ele=document.getElementById('root');
+        //主线程上有个任务队列 (task queue)
+        //setTimeout promise进行耗时的任务，理解同步 异步
+        //event-loop设计
+        // 有阻塞概念
+        els.addEventListener('click',function(){
+
+        });
+    </script>
+</body>
+</html>
