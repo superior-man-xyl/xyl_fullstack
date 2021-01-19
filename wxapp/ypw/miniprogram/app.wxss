@@ -14,7 +14,7 @@ page{
   /* -apple-system:苹果字体 */
 }
 .page{
-  width: 100px;
+  width: 100vw;
   height: 100vh;
   overflow-x: hidden;
 }

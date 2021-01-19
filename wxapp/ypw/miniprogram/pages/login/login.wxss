@@ -1,1 +1,10 @@
 /* pages/login/login.wxss */
+.bg-img{
+    background-image:url('https://7375-superiorman-xyl-8g71qql117cb38ec-1304585133.tcb.qcloud.la/EvhHKI.png?sign=b8df46fa4e2cb057c62a0158b302ec10&t=1611013404');   
+}
+.mt200{
+    margin-top:200rpx;
+}
+.mt200 image{
+    width: 20%;
+}

@@ -5,7 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    loading: false
+  },
+  getuserinfo(event) {
+    console.log(event);
+    this.setData({
+      loading: true
+    })
+let userInfo=event.detail.userInfo;
+    wx.cloud.callFunction({
+      name:'ypwlogin',
+      data:{
+        avatarUrl:userInfo.avatarUrl,
+        nickName:userInfo.nickName,
+        gender:userInfo.gender
+      },
+      success:(res)=>{
+        this.setData({
+          loading:false
+        })
+        //使用下面的api来切换页面
+        wx.switchTab({
+          url:'/page/index/index'
+        })
+      },
+    })
   },
 
   /**
