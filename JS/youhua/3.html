@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>懒加载</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .img{
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 这个网页主要以图片为主，src  http 下载线程 img   data-src里是真正的图片地址，防止页面打开速度太慢  -->
+    <!-- http的并发数   每个img都会独立的打开一个http通道，耗性能，n个打开n个并发  要减少并发数， 优化网页打开速度的做法？-->
+    <!-- 1.将src改为data-src -->
+    <!-- 静态资源 第一次请求，后一次请求，使用缓存的 -->
+    <div class="container">
+        <div class="img"><img src="./loading.svg" data-src="https://img.36krcdn.com/20210122/v2_7d557e30f1254bdc8597f5eccdeb8e29_img_png?x-oss-process=image/resize,m_mfit,w_600,h_400,limit_0/crop,w_600,h_400,g_center" alt="加载中" class="pic"></div>
+        <div class="img"><img src="./loading.svg" data-src="https://img.36krcdn.com/20210122/v2_8327e6797c2745f99e8ecc6bae1958b4_img_png" alt="加载中" class="pic"></div>
+        <div class="img"><img src="./loading.svg" data-src="https://img.36krcdn.com/20210122/v2_6c513ab4937d456d9554deca27e9f5f0_img_000?x-oss-process=image/resize,m_mfit,w_600,h_400,limit_0/crop,w_600,h_400,g_center" alt="加载中" class="pic"></div>
+        <div class="img"><img src="./loading.svg" data-src="https://img.36krcdn.com/20210122/v2_2ef591c9986a47099c5905682fb6365f_img_png?x-oss-process=image/resize,m_mfit,w_600,h_400,limit_0/crop,w_600,h_400,g_center" alt="加载中" class="pic"></div>
+        <div class="img"><img src="./loading.svg" data-src="https://img.36krcdn.com/20210122/v2_f91f15ae0804422da41dce10a1ce37ad_img_jpg?x-oss-process=image/resize,m_mfit,w_600,h_400,limit_0/crop,w_600,h_400,g_center" alt="加载中" class="pic"></div>
+        <div class="img"><img src="./loading.svg" data-src="https://img.36krcdn.com/20210121/v2_73ef9df5c01c4210a01aa46b85b0fd8a_img_jpg" alt="加载中" class="pic"></div>
+        <div class="img"><img src="./loading.svg" data-src="https://img.36krcdn.com/20210122/v2_2ee8b63dde624520836e412e40251df5_img_000?x-oss-process=image/resize,m_mfit,w_600,h_400,limit_0/crop,w_600,h_400,g_center" alt="加载中" class="pic"></div>
+        <div class="img"><img src="./loading.svg" data-src="https://img.36krcdn.com/20210122/v2_d500f1a71d9d414c9cd631f138f5f769_img_png" alt="加载中" class="pic"></div>
+        <div class="img"><img src="./loading.svg" data-src="https://img.36krcdn.com/20210122/v2_3789126b279e4889ae75988a7523c57b_img_000?x-oss-process=image/resize,m_mfit,w_600,h_400,limit_0/crop,w_600,h_400,g_center" alt="加载中" class="pic"></div>
+        <div class="img"><img src="./loading.svg" data-src="https://img.36krcdn.com/20210122/v2_d4fac7849276424f89522946e8ffb128_img_000?x-oss-process=image/resize,m_mfit,w_600,h_400,limit_0/crop,w_600,h_400,g_center" alt="加载中" class="pic"></div>
+    </div>
+    <script>
+        /**
+         * throttle函数在interval时间内，执行fn一次，scroll事件有很多请求，大部分拒绝掉，节约了执行次数
+         * 这throttle就是一个闭包  高阶函数 addEve函数 scroll执行
+        */
+        const throttle=(fn,interval)=>{
+            let last=0;//上一次触发回调的时间
+            return function(){//需要返回一个函数，因为原来位置就是要执行一个函数
+                // fn();throttle在这完成了封装，还不能节流
+                let now= +new Date();//返回时间戳
+                if(now-last>=interval){//在一定时间内只会执行一次，这样就能节流了
+                    last=now;//闭包中last这个局部变量会一直存在着
+                    fn();
+                }
+            }
+        }
+        document.addEventListener('DOMContentLoaded',()=>{
+            const imgs=document.getElementsByTagName('img');//把所有的图片抓住
+            console.log(imgs);
+            //viewHeight:视窗高度，页面放大缩小都会改变
+            const viewHeight=window.innerHeight||document.documentElement.clientHeight;//JS浏览器嗅探，(document.documentElement.clientHeight)兼容低版本浏览器
+            console.log(viewHeight);
+            function lazyload(){
+                //都是先显示了一个占位图，现在将其替换成data-src的真实地址
+                // 哪些图片要出来？看页面滚动到了哪里，视窗检查 viewport detect
+                for(let i=0;i<imgs.length;i++){
+                    // console.log(imgs);
+                    //有个概念模糊，却是判断或计算的核心，定义一个变量
+                    let distance=viewHeight-imgs[i].getBoundingClientRect().top;
+                    if(distance>0){//图片开始从底部出现在视窗当中，或已经出现过了，
+                        console.log('图片出现了');
+                        imgs[i].src=imgs[i].getAttribute('data-src');
+                    }
+                }
+                // console.log(imgs[1].getBoundingClientRect().top);//返回元素的大小及其相对于视口的位置
+            }
+            //怎么样做到首屏图片加载？（第一眼看到的东西不用滚动就出现）
+            window.addEventListener('load',lazyload,false);//马上加载lazyload，不用滚就加载，就触发一次
+            //这段代码有性能问题，怎么优化?  一次微笑的滚动就要执行很多次，要减少lazyload的执行次数，同时不影响lazyload效果，
+            //创建一个throttle函数  节流  lazyload成为其回调函数
+            window.addEventListener('scroll',throttle(lazyload,200),false);//scroll事件  滚动时一直都会检测所有的元素，lazyload函数
+        },false)
+    </script>
+</body>
+</html>

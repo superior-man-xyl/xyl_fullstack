@@ -27,3 +27,5 @@ js只有其1/5的速度，
 document.getElementById('')巨大的开销
 js(语言世界)-》html+css DOM树世界
 别的语言没有的结构,两边来回跑，就要优化性能
+
+3.研究分屏加载html
