@@ -20,7 +20,7 @@ webpack --mode=development  webpack命令
 操作流程：
  npm init -y
  "scripts": {
-    "build":"webpack --mode=development"
+    "build":"webpack --mode=production"
   },
   npm i webpack
 
