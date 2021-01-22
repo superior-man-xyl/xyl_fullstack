@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM操作测试</title>
+  <script>
+    //   //先从http协议-》file 
+    //   let oContainer=document.getElementById('container');
+    //   console.log(oContainer);//输出null，因为这时候DOM树还没有出来
+
+    // 加一个DomConttentLoaded包裹
+//     document.addEventListener('DOMContentLoaded', () => {
+//         let oContainer=document.getElementById('container');
+//       console.log(oContainer);//输出<div id="container"></div>，因为这时候DOM树出来了
+//   }, false);
+  </script>
+</head>
+<body>
+  <div id="container"></div>
+  <!-- script脚本放在最后面也是一种优化，这样静态页面可以马上出来 -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+      //dom+css结合完成了
+    console.log('DomContentLoaded')
+  }, false);
+  window.addEventListener('load', () => {
+      //各种资源加载完成了，
+    console.log('loaded')
+  }, false);
+
+
+      //因为一万次输出，一直加载不出页面，js阻塞了。为什么？怎么优化
+  
+//       for (var count = 0; count < 1000; count++) {
+//     document
+//       .getElementById('container')
+//       .innerHTML += '<span>我是一个小测试</span>';
+//   }
+
+//查找元素，可以先提出来,这样就不用每次循环都查找一遍
+let oContainer=document.getElementById('container');
+let content='';
+for (var count = 0; count < 10000; count++) {
+    content += '<span>我是一个小测试</span>';
+  }
+//   写入也放出来
+oContainer.innerHTML +=content;
+//这样就秒出了，耗时间的DOM操作，从一万次变到1次
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .reveal{
+            width:100px; 
+            height: 200px;
+            border:10px solid red;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        //怎么优化?这里来回跑了5次
+        let container=document.getElementById('container');
+        // container.style.width='100px';
+        // container.style.height='200px';
+        // container.style.border='10px solid red';
+        // container.style.color='red';
+        // 方案一
+        // container.style.cssText = "width:100px; height: 200px;border:10px solid red;color:red";
+        // console.log(container.style.cssText);
+
+        //方案二 使用.reveal（把这一些个样式先放到渲染树上，然后直接启用）,只需要在js和DOM树之间跑一遍就行了
+        container.classList.add('reveal');//reveal只是个名字
+        //使用classList.add
+    </script>
+</body>
+</html>

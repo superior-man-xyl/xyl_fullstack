@@ -1,9 +1,11 @@
 - 在提交代码前需要注意什么？
 1.check检查一下代码 看bug 
  review一下代码  
+
  git中有哪个代码可以review代码？
  git diff unique.js
  查看后没有问题就可以提交了
+　git diff 不加参数即默认比较工作区与暂存区
 
  2.测试驱动开发 mocha
 
