@@ -23,4 +23,4 @@ webpack.config.js 配置 编译  http dev server
   entry -> module (CSS|JS?|PNG|VUE) -> output
 
 
-  出错：webpack版本不兼容  删除node_modules 再npm i重新安装
+  出错：webpack版本不兼容  更改webpack版本为"webpack-cli": "^3.3.12", 删除node_modules 再npm i重新安装
