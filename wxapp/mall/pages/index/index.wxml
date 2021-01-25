@@ -9,7 +9,7 @@
 <swiper class="swiper_box" bindchange="swiperchange" indicator-dots="{{true}}" indicator-active-color="#ffffff">
   <swiper-item wx:for="{{banners}}" wx:key="id">
     <image mode="aspectFill" src="{{item.picUrl}}"/>
-  </swiper-item>
+  </swiper-item> 
 </swiper>
 <view class="btn">
   <!-- <button class="weui-btn mini-">进入店铺</button> -->

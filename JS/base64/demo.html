@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js启动新的线程</title>
+</head>
+<body>
+    js是单线程语言，这是它的特性，备受异议，说其是个玩具语言
+    其实js可以多线程，根据HTML5的新特性，web Worker()
+    <script>
+        //一部分工作交给 worker线程去做
+        let worker = new Worker('work.js');//启动一个worker线程(thread)
+        //work.js是另一个程序
+        //线程间通信
+        worker.postMessage('Hello world');//子线程向主线程通信
+        worker.addEventListener('message',e=>{
+            console.log(e);
+        })
+    </script>
+</body>
+</html>

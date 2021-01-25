@@ -1,9 +1,9 @@
 {
-  "pages": ["pages/search-result/search-result",
+  "pages": ["pages/index/index","pages/search-result/search-result",
      "pages/search-result/detail/detail",
     
     "pages/home/home",
-    "pages/index/index",
+    
     "pages/my/my",
     "pages/detail-demo/detail-demo",
     "pages/text/text",
