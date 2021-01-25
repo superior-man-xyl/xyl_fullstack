@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn">点击</button>
+    <script>
+        const btn = document.querySelector('.btn');
+        let xhr = new XMLHttpRequest();//ajax 耗时任务
+        //虽然定时器定的的是0，但是执行时浏览器不会认可，一遍有十几毫秒
+        setTimeout(() => {
+            console.log('setTimeout');
+        }, 0)
+
+        btn.addEventListener('click', () => {
+            console.log('btn clicked');
+        }, false)
+        //封装Ajax的请求，回调函数
+        function loadAjaxContent(url, callback) {
+            console.log(xhr.readyState, 'GET前0');
+            xhr.open('GET', url);//一般用GET请求 http 三次握手 建立好通信通道
+            console.log(xhr.readyState, 'GET后1');
+            xhr.onreadystatechange = function () {
+                console.log(xhr.readyState, '------2->3->4');
+                //readyState有哪几个值？
+                // 0 － （未初始化）还没有调用open()方法
+                // 1 － （载入）请求建立，还没有发送
+                // 2 － （载入完成）请求已经发送，正在处理中，pending  服务器计算中
+                // 3 － （交互）请求在处理中，已有部分数据，大的数据包 分片  断点续传
+                // 4 － （完成）响应内容解析完成，可以获取并使用服务器的响应了
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    callback(JSON.parse(xhr.responseText));//xhr时代是ie6的时候，那时还没有json
+                    //json 作为数据传输的格式，比xml更加轻量例如：<userInfo><login>me</login></userInfo>，多余数据多，但是也有好处
+                }
+            }
+            console.log(xhr.readyState, 'send()前1');
+            xhr.send();
+            console.log(xhr.readyState, 'send后1');
+        };
+        //更精细化的处理异步任务  顺序执行
+        //异步任务的同步化
+        //异步任务 callback->promise+then->generator->async await
+        //要先得到阮一峰的git info
+        //然后得到阮一峰所有的repo
+        //之后就出现了promise，这基于回调函数的异步，太复杂，不好读
+        // loadAjaxContent('https://api.github.com/users/ruanyf', (user) => {//回调函数的异步
+        //     console.log(user, 'users');
+        //回调地狱
+        //     loadAjaxContent('https://api.github.com/users/ruanyf/repos', (repos) => {
+        //         console.log(repos, 'repos');
+        //         loadAjaxContent('https://api.github.com/search/issues?q=ruanyf', (results) => {
+        //             console.log(results, 'results');
+        //             // loadAjaxContent('https://api.github.com/search/issues?q=ruanyf', (results) => {
+        //             //     console.log(results, 'results');
+        //             //     loadAjaxContent('https://api.github.com/search/issues?q=ruanyf', (results) => {
+        //             //         console.log(results, 'results');
+        //             //     })
+        //             // })
+        //         });
+        //     });
+        // });
+
+        //resolve reject 就算交出执行的控制权
+        // let p1=new Promise((resolve,reject)=>{
+        //     console.log('bbbbbb');//promise函数是立即执行的
+        //     //都立即执行了还为什么用promise
+        //     //耗时的任务封装到promise内部
+        //     xhr.open('GET','https://api.github.com/users/ruanyf');
+        //     xhr.onreadystatechange=function(){
+        //         if(xhr.readyState==4&&xhr.status==200){
+        //             resolve(JSON.parse(xhr.responseText));
+        //         }
+        //     }
+        //     xhr.send();
+        // })
+
+        // let p2=new Promise((resolve,reject)=>{
+        //     console.log('ccccccc');
+        //     xhr.open('GET','https://api.github.com/users/ruanyf/repos');
+        //     xhr.onreadystatechange=function(){
+        //         if(xhr.readyState==4&&xhr.status==200){
+        //             resolve(JSON.parse(xhr.responseText));
+        //         }
+        //     }
+        //     xhr.send();
+        // })
+
+        // p1.then(data=>{
+        //     //users
+        //     console.log('users',data);
+        // p2.then(data=>{
+        //     //repos
+        //     console.log('repos',data);
+        // })
+        // })
+
+
+        // console.log('aaaaa');
+
+        // ajax->fetch   ajax太复杂了
+        // console.log(fetch('https://api.github.com/users/ruanyf'));
+        fetch('https://api.github.com/users/ruanyf')
+        //promise
+            .then(data => data.json) //readstream 二进制流 json化成 编程json对象，这也是要花时间的
+            .then(data=>{
+                //then回调函数里，return promise 实例，继续thenable
+                console.log('user',data);
+                //回调地狱的写法，有问题，不可
+                // fetch('https://api.github.com/users/ruanyf/repos')
+                // .then(data=>data.json)    
+                // .then(data => {
+                //     console.log('repos',data);
+                //     })
+                //更改
+                return fetch('https://api.github.com/users/ruanyf/repos')
+            })//因为这个return值
+            .then(data=>data.json)    
+            .then(data => {
+                    console.log('repos',data);
+                    })
+
+            .catch(err=>{
+                console.log(err);
+            })
+            // .then(data => {//这样写有问题
+            //     console.log('users',data);
+            //     fetch('https://api.github.com/users/ruanyf/repos')
+            //         .then(data => {
+            //             console.log('repos',data);
+
+            //         })
+            // })
+    </script>
+</body>
+
+</html>
