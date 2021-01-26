@@ -48,3 +48,7 @@ npm i babel-loader -D  :-D devDependencies  开发依赖，
     "@babel/preset-react": "^7.12.10",
     "babel-loader": "^8.2.2"
   }
+
+  npm i -g create-react-app  安装react应用程序,脚手架
+
+  create-react-app comment-app
