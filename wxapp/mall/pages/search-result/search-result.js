@@ -15,13 +15,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goods:[],
-    listType:1,
+    goods: [],
+    listType: 1,
     name: '', //搜索
-    orderBy: '',//排序条件
+    orderBy: '', //排序条件
   },
-//点击后转换图片
-  changeShowType(){
+  //点击后转换图片
+  changeShowType() {
     if (this.data.listType == 1) {
       this.setData({
         listType: 2
@@ -33,12 +33,12 @@ Page({
     }
   },
   // e是传来的事件对象
-  bindinput(e){
+  bindinput(e) {
     this.setData({
       name: e.detail.value
     })
   },
-  bindconfirm(e){
+  bindconfirm(e) {
     this.setData({
       name: e.detail.value
     })
@@ -61,17 +61,17 @@ Page({
     // WXAPI需要引入，在最上面
     //  /goods?k=addidas&page=1&pageSize=20
     // async和await
-    const res = await WXAPI.goods(_data);//使用WXAPI里的goods数据
+    const res = await WXAPI.goods(_data); //使用WXAPI里的goods数据
     console.log(res);
     this.setData({
-      goods:res.data
+      goods: res.data
     })
     // 数据取完了关闭loading效果
     wx.hideLoading();
 
   },
-  
-  filter(e){
+
+  filter(e) {
     this.setData({
       orderBy: e.currentTarget.dataset.val
     })
