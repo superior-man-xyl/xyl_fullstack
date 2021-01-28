@@ -1,0 +1,9 @@
+/* 应用样式 */
+.wrapper{
+    width: 500px;
+    margin: 10px auto;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #f1f1f1;
+    padding: 20px;
+}
