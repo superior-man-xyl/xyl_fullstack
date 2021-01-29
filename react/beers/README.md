@@ -12,4 +12,11 @@ react就复杂点要安装
 我们要启动前端路由功能（不是标配）也就是前端想有路由功能就安装这些
 用BrowerRouter包住route的配置，接管整个项目
 
-3.使用<Router path="" component=""/>匹配到path=""部分，显示component=""组件
+3. 使用<Router path="" component=""/>匹配到path=""部分，显示component=""组件
+location.path
+
+4. Main.js 组件化 切图
+html结构挂钩 大体上的 和section很像  没个部分封装成组件
+本项目分成：header+loader+list+beer(Item.js卡片)
+
+npm i prop-types  安装检测工具  如果父组件没有传参就报错

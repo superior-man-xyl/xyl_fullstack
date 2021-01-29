@@ -1,7 +1,19 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+//引入组件
+import Header from './Header';
+import Item from './Item';
+import Loader from './Loader';
+import List from './List'
 
 export default class Main extends Component{
+    constructor() {
+        super()
+        this.state = {
+          isLoading: true
+        }
+      }
+
     render(){
         // return (
         //     <div>
@@ -14,6 +26,11 @@ export default class Main extends Component{
         // )
         return (
             <div>
+                {/* 为子组件传参 */}
+                <Header siteName="Beer me!" />
+                <Loader />
+                <List />
+                <Item />
                 {/* 首页  组件化 */}
             </div>
         )
