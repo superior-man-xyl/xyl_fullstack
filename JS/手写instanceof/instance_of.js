@@ -11,7 +11,7 @@ function instance_of(L,R){
         var o=R.prototype;//构造函数的原型对象
       L= L.__proto__;
       while(true){//一直循环往上找
-        if(L===null) return false;
+        if(L===null) return false;//到末尾就是null,说明没有继承关系
         if(L===o){
             return true;
         }
