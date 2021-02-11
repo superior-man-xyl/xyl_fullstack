@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .direction{
+            width: 300px;
+            height: 50px;
+            background-color: green;
+            display: flex;
+            flex-direction: row;
+        }
+        .item{
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            margin: 1px 5px;
+        }
+        .item1{
+            order: 1;
+        }
+        .item2{
+            order: -2;
+        }
+        .item3{
+            order: 3;
+        }
+        .item4{
+            order: -1;
+        }
+        .item5{
+            order: 2;
+        }
+        .item6{
+            order: -3;
+        }
+        .item7{
+            order: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="direction">
+        <div class="item1 item">1</div>
+        <div class="item2 item">-2</div>
+        <div class="item3 item">3</div>
+        <div class="item4 item">-1</div>
+        <div class="item5 item">2</div>
+        <div class="item6 item">-3</div>
+        <div class="item7 item">0</div>
+    </div>
+</body>
+</html>

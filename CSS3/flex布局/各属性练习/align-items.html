@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .direction{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .item{
+            width: 30%;
+            height: 40%;
+            background-color: red;
+            margin: 1px;
+        }
+        .outer{
+            align-self:flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="direction">
+        <h1 class="item" >text1</h1>
+        <h2 class="item outer">text2</h2>
+        <h3 class="item">text3</h3>
+    </div>
+</body>
+</html>
