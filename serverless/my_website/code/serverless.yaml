@@ -1,0 +1,14 @@
+myWebSite:
+  component:"@serverless/tencent-website"
+  # 使用腾讯的tencent-website
+  inputs:
+    code:
+      src: ./code
+      # 代码地址
+      index: index.html
+      # 首页
+      error: index.html
+      # 出错时给的页面
+    region: ap-guangzhou
+    # 区域
+    bucketName: my-bucket
