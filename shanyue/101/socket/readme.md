@@ -1,4 +1,6 @@
-1.npm i express   安装node的开发框架，express  MVC
+https://www.w3cschool.cn/socket/socket-ulbj2eii.html
+
+1.npm i express   安装基于 Node.JS 的 web 框架 express  MVC
     - 引入express require('express')
     - app = express() 中小型应用适合用node
     - http服务 简单， 传输完就断开的 简单协议
