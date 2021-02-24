@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./common.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd,C","file":"main.css","sourcesContent":["*{\r\n    margin: 0;\r\n    padding: 0;\r\n}"],"sourceRoot":""}
