@@ -1,9 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { App } from './app';
 
-import { HelloComponent } from './hello';//该组件写在hello.tsx里
+// import { HelloComponent } from './hello';
 
 ReactDOM.render(
-    <HelloComponent username="传参名"/>,
+    <App />,
     document.getElementById('root')
 );

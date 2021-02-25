@@ -62,3 +62,29 @@ npm i @types/react @types/react-dom --save-dev
 
 
 运行流程理解： webpack通过配置文件webpack.config.js :从入口index.tsx->hello.tsx->配置文件中modules部分->awesome-typescript-loader->tyescript组件->tsconfig.json->jsx->babel-core->.babelrc->es5
+
+
+- 新建一个 app.tsx
+
+- index.tsx
+入口文件 webpack entry
+
+- react 16 后。可以在函数组件里直接使用状态
+全面拥抱函数式编程   useState
+使用 useState 超级函数
+1. 创建了name状态
+2. setName 修改状态
+3. 初始值
+
+- ts就是js加类型约束
+
+围绕着name状态 两个组件开发实现
+  App父组件中    状态name：defaultUserName
+ 使用的是
+ //老办法
+ this.state={
+   name:'defaultUserName'
+ }
+ //es6中 出了个魔法函数 方便  this.   this.setState......都变成了下面那种形式
+  const [name, setName] = React.useState('defaultUserName')
+  //setName相当于this.setState({})
