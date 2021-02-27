@@ -4,6 +4,8 @@ import Index from './Pages/Index'
 import List from './Pages/List'
 import Home from './Pages/Home'
 
+//这是个主页组件，用于配置路由，所以叫AppRouter.js
+
 // function Index() {
 //   return <h2>JSPang.com</h2>;
 // }
