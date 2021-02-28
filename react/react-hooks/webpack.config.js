@@ -6,14 +6,26 @@ var path = require("path");
 var basePath = __dirname;
 
 module.exports = {
-  context: path.join(basePath, "src"),
+  context: path.join(basePath, "src"),//基础路径在src，所以下面用../node_modules/
   resolve: {
     extensions: [".js", ".ts", ".tsx"]
   },
-  entry: ["@babel/polyfill", "./index.tsx"],//更改了下入口文件
+  // entry: ["@babel/polyfill", "./index.tsx"],//更改了下入口文件
+  entry:{//入口可以不止一个
+    app:'./index.tsx',
+    vender:[
+      'react',
+      'react-dom',
+      'react-router-dom'
+    ],
+    venderStyles:[
+      '../node_modules/bootstrap/dist/css/bootstrap.css'
+    ]
+  },
   output: {
     path: path.join(basePath, "dist"),
-    filename: "bundle.js"
+    filename: "[name].js"
+    // filename: "bundle.js"
   },
   devtool: "source-map",
   devServer: {
