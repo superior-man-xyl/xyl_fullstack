@@ -37,3 +37,55 @@
              将 root         /usr/share/nginx/html;
              改为 /www/blog
              nginx -s reload 重启一下，就能看到刚刚编辑的blog页面了
+
+搭建动态网页：
+1. centos安装 node
+- cd /
+cd /usr/local/bin/  通常在这里安装软件
+使用wget下载node的安装包，taobao的mirrors .tar
+ wget https://npm.taobao.org/mirrors/node/v12.16.1/node-v12.16.1-linux-x64.tar.gz
+ 解压缩：tar -xvf node-v12.16.1-linux-x64.tar.gz
+ 删除安装包：rm -rf node-v12.16.1-linux-x64.tar.gz
+ 新建一个文件夹,放入 node-v12.16.1-linux-x64到文件夹：mv node-v12.16.1-linux-x64/ node
+ - node现在在 /user/local/bin/node/bin
+ - 使其变为全局命令，像Windows添加全局path这样的，配置软链接 
+ ln是linux中一个非常重要命令,它的功能是为某一个文件在另外一个位置建立一个同不的链接，
+ 这个命令最常用的参数是-s,(symbolic代号的意思)
+具体用法是：ln -s 源文件 目标文件
+    in -s /user/local/bin/node/bin/node /user/bin/node
+    ln -s /usr/local/bin/node/bin/npx  /usr/bin/npx
+    ln -s /usr/local/bin/node/bin/npm  /usr/bin/npm
+    这样全局就能使用node npm npx
+
+ rm -rf /usr/bin/npx  删除链接
+
+ 2. 学koa code
+ cd /www/
+ mkdoir koa-demo
+ cd koa-demo
+ npm init -y
+  npm i koa --save
+  vi app.js
+esc退出后按 a  最后 o  换行  dd 删除一行
+```
+const Koa = require('koa');//引入最好的node开发框架
+const app = new Koa();
+//下面的就是中间件(middlewares)，app.use
+app.use(async ctx => {//这一次http服务流程
+        ctx.body = 'Hello World';
+})
+app.listen(3000);//在3000端口服务
+
+```
+怎么样访问3000端口？
+node app.js运行后 命令行就会被霸占，
+在3000端口上 等待着任何人发出请求，ctx伺服
+所以就要把服务放到后台运行，不占用命令行
+//npm i -g pm2 安装pm2   
+// PM2是node进程管理工具，可以利用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。
+// 使用pm2 start app.js  就行了
+停止:pm2 stop app.js
+
+服务器上使用淘宝源：npm config set registry https://registry.npm.taobao.org
+./node_modules/.bin/pm2 start app.js  这样运行，就能够在3000端口看到内容了
+
