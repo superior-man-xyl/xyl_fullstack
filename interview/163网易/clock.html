@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css考题——时钟</title>
+    <style>
+        .container{
+            width: 100%;
+        }
+        .line{
+            width: 20px;
+            height: 400px;
+            margin: 50px auto;
+            background:red;
+            position: relative;
+            /* 设置一个基点，动画中是不动的，就是时钟的中心点 */
+            transform-origin:top center;
+            /* 添加动画 */
+            animation: swing 5s infinite linear;
+            /* animation-iteration-count: infinite;
+            animation-timing-function: linner; */
+        }
+        @keyframes swing{
+            0%{
+                transform: rotate(45deg);
+            }
+            25%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(-45deg);
+            }
+            75%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(45deg);
+            }
+        }
+        .ball{
+            position:absolute;
+            bottom: -60px;
+            left: -20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="line">
+            <!-- 时钟的针 -->
+            <div class="ball">
+                <!-- 指针下的圆球 -->
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

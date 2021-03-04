@@ -26,8 +26,12 @@ class Xiaojiejie extends Component{
                     <li>正骨疗伤</li> */}
                     {
                         this.state.list.map((item,index)=>{
-                            return <li onClick={this.deleteItem.bind(this,index)} key={index+item}>{item}</li>
+                            // return <li onClick={this.deleteItem.bind(this,index)} key={index+item}>{item}</li>
                             //key要唯一值，直接用index不行，因为item里可能不止一项，多选时就有很多是同一index
+                            //解析html代码的写法：当列出的字符串含有HTML代码会解析，默认不解析，太危险
+                            return(
+                                <li onClick={this.deleteItem.bind(this,index)} ke={index+item} dangerouslySetInnerHTML={{__html:item}} ></li>
+                            )//第二个大括号代表的是一个对象
                         })
                     }
                 </ul>
