@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./compiled.js">
+  </script>
+  <script>
+    // console.log(MyClass.annotated);
+    var xyl=new Person();
+    xyl.first='永良';
+    xyl.last='谢';
+    console.log(xyl.name());
+    xyl.name='ssss';//现在是可写的,后面a.js里改成了不可写，sss就写不入了
+    console.log(xyl.name());
+  </script>
+</body>
+</html>
