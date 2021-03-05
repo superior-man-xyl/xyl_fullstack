@@ -1,3 +1,5 @@
+@import '~semantic-ui-css/semantic.min.css';
+
 .wrapper{
     width: 500px;
     margin: 10px auto;

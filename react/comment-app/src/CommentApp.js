@@ -4,6 +4,8 @@ import React from 'react';
 import './CommentApp.css';//webpack 一切资源皆可打包
 import CommentForm from './CommentForm.js';//引入组件，就像json
 import CommentList from './CommentList.js';
+import Notes from './components/Notes'
+
 
 class CommentApp extends React.Component{//通过继承快速创建类
     constructor(){
@@ -18,9 +20,10 @@ class CommentApp extends React.Component{//通过继承快速创建类
             // html也叫XML 用于网页标签的XML叫HTML
             // React中有个JSX来放模板
             <div className="wrapper">
-                {this.state.name}
+                <Notes />
+                {/* {this.state.name}
                 <CommentForm/>
-                <CommentList/>
+                <CommentList/> */}
             </div>
         )
 

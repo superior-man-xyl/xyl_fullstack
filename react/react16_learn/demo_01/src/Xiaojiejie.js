@@ -12,7 +12,24 @@ class Xiaojiejie extends Component{
             quantity:2
         }
     }
+    componentWillMount(){
+        console.log("componentWillMount---页面即将被挂载");
+    }
+    componentDidMount(){
+        console.log("componentDidMount----页面挂载完成");
+    }
+    shouldComponentUpdate(){
+        console.log("shouldComponentUpdate---在组件更新之前，自动被执行");
+        return true;//需要返回一个布尔值，true代表组件会更新，false代表组件不更新(比如文本框输入后，只输入却显示不出来)
+    }
+    componentWillUpdate(){
+        console.log("componentWillUpdate----组件即将更新");
+    }
+    componentDidUpdate(){
+        console.log("componentDidUpdate----组件更新完毕");
+    }
     render(){
+        console.log("render----页面挂载中");
         return(
             // 为什么使用Fragment呢？因为React语法中必须将将组件包裹到一起，即组件包裹原则，
             // 使用div可能会影响flex，使用Fragment，在网页中代码外部就没有div包裹，且不报错
