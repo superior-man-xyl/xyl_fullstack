@@ -2,6 +2,9 @@ import React,{Component,Fragment} from 'react'
 import './style.css'
 //基于webpack，所以能这样引入样式
 import XiaojiejieItem from './XiaojiejieItem'
+import axios from 'axios'
+import Boss from './Boss'
+
 
 class Xiaojiejie extends Component{
     constructor(props){
@@ -16,6 +19,11 @@ class Xiaojiejie extends Component{
         console.log("componentWillMount---页面即将被挂载");
     }
     componentDidMount(){
+//axios 在render中请求的话会出现很多问题，比如说一直都会渲染的，那么就会一直请求，服务器受不了，
+// 放到componentWillMount中，又会在使用react-Native时起冲突。所以推荐在componentDidMount中请求。
+        // axios.post('https://web-api.juejin.im/v3/web/wbbr/bgeda')
+        //     .then((res)=>{console.log("axios 掘金数据请求成功："+JSON.stringify(res))})
+        //     .catch((error)=>{console.log("axios 数据请求失败："+error)})//error:错误原因
         console.log("componentDidMount----页面挂载完成");
     }
     shouldComponentUpdate(){
@@ -68,6 +76,7 @@ class Xiaojiejie extends Component{
                     }
                 </ul>
                 <div>共{this.state.quantity}项服务</div>
+                <Boss />
             </Fragment>
         )
     }
