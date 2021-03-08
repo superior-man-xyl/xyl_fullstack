@@ -1,5 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+// import Logo from "../images/lemoncode.png";
+
 
 export const Header: React.StatelessComponent<{}> = () => {
   return (
@@ -8,11 +10,11 @@ export const Header: React.StatelessComponent<{}> = () => {
         className="navbar navbar-expand-lg navbar-light bg-white"
         id="navbar"
       >
-        <img
+        {/* <img
           className="navbar-icon"
-          src={require("../images/lemoncode.png")}
+          src={ Logo}
           alt="logo"
-        />
+        /> */}
         <a className="navbar-brand" href="#">
           Lemoncode
         </a>
