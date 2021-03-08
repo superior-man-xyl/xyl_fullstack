@@ -1,0 +1,16 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "前端和后端的接口\r mongodb  存的是json  文档",
+  "main": "index.js",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev":"json-server db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

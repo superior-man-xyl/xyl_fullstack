@@ -1,0 +1,18 @@
+{
+  "name": "everywhere",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env PORT=1314 nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "nodeman": "^1.1.2",
+    "nodemon": "^2.0.7"
+  }
+}

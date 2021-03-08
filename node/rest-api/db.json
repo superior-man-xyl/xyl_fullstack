@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "cccc",
+      "author": "eeee"
+    },
+    {
+      "name": "陈玉珏",
+      "id": "_xLT8WP"
+    },
+    {
+      "name": "陈玉珏",
+      "id": "F_QJe6T"
+    },
+    {
+      "name": "陈玉珏",
+      "id": "Xk7VfSe"
+    },
+    {
+      "id": "4",
+      "title": "水水飒飒",
+      "author": "尚水水"
+    },
+    {
+      "id": "3",
+      "title": "拼多多面试",
+      "author": "水水"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "body": "hello react",
+      "postId": "1",
+      "id": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
