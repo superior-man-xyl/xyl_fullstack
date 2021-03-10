@@ -3,7 +3,7 @@ import 'antd/dist/antd.css'//引入antdcss样式，才能使UI组件正常显示
 // import {List, Input, Button} from 'antd' //UI分离后没用了
 import store from './store/index'
 // import { CHANGE_INPUT , ADD_ITEM , DELETE_ITEM } from './store/actionTypes'
-import { changeInputAction , addItemAction ,deleteItemAction} from './store/actionCreatores'
+import { changeInputAction , addItemAction ,deleteItemAction , getListAction} from './store/actionCreatores'
 import ToDoListUI from './ToDoListUI'
 import axios from 'axios'
 
@@ -27,11 +27,19 @@ class ToDoList extends Component {
         store.subscribe(this.storeChange);//订阅redux的变化,一定要在上面的绑定的后面执行
 
     }
+
+    //由axios获得数据
     componentDidMount(){//下面的get就是指get请求
         axios.get('https://www.easy-mock.com/mock/5cfcce489dc7c36bd6da2c99/xiaojiejie/getList').then((res)=>{
-            console.log(res)
+            // console.log(res)
+            const data=res.data;
+            const action=getListAction(data);
+            store.dispatch(action);
         })
     }
+
+
+
     render() { 
         return ( //父组件向子组件传值
             <ToDoListUI

@@ -1,6 +1,6 @@
 //index.js中虽然创建好了数据储存仓库，但是很混乱，
 // 需要一个具有管理能力的模块进行管理，就是reducer
-import { CHANGE_INPUT , ADD_ITEM , DELETE_ITEM } from './actionTypes'
+import { CHANGE_INPUT , ADD_ITEM , DELETE_ITEM , GET_LIST } from './actionTypes'
 
 //reducer 必须是纯函数 即返回值必须与传入值有关
 const defaultState={
@@ -32,5 +32,10 @@ export default (state=defaultState,action)=>{
         newState.list.splice(action.index,1);
         return newState;
     }
+    //接口的数据失效了，就不用axios请求的数据了
+    // if(action.type===GET_LIST){
+    //     newState.list = action.data.data.list //复制性的List数组进去
+    //     return newState
+    // }
     return state;
 }
