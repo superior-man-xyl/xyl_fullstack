@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'antd/dist/antd.css'//引入antdcss样式，才能使UI组件正常显示
 import { Input, Button,Select} from 'antd';
 const { Option, OptGroup } = Select;
@@ -21,7 +21,7 @@ const InputText =(props)=>{
                     <Option value="7">星期日</Option>
                 </OptGroup>
             </Select>
-                <Input placeholder="请输入你的计划" onChange={props.changeInputValue}/>
+                <Input placeholder="计划踢一天球" onChange={props.changeInputValue}/>
                 <Button type="primary" onClick={props.handleClick}>添加</Button>
             </div>
          );

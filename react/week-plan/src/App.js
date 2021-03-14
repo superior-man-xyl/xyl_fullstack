@@ -21,6 +21,9 @@ class App extends Component {
         this.handleClick=this.handleClick.bind(this);
         this.changeInputValue=this.changeInputValue.bind(this);
         this.handleChange=this.handleChange.bind(this);
+        
+        this.storeChange=this.storeChange.bind(this);//转变this指向
+        store.subscribe(this.storeChange);//订阅redux状态
     }
     render() { 
         const week=[
@@ -37,19 +40,27 @@ class App extends Component {
                 <InputText 
                 handleClick={this.handleClick}
                 changeInputValue={this.changeInputValue}
-                handleChange={this.handleClick}
+                handleChange={this.handleChange}
                 />
                 <div className="zero"></div>
                 <Router>
                 <div className="main">
                 <div className="leftNav">
+                <Menu
+                defaultSelectedKeys={['1']}
+                defaultOpenKeys={['sub1']}
+                mode="inline"
+                theme="dark"
+                inlineCollapsed={this.state.collapsed}
+                >
                     {
                     week.map((item,index)=>{
                         return (
-                            <Menu.Item  key={index}><Link to={item.path}>{item.title}</Link></Menu.Item >
+                            <Menu.Item  key={index+1}><Link to={item.path}>{item.title}</Link></Menu.Item >
                         )
                     })
                     }
+                </Menu>
                 </div>
                 <div className="rightList">
                     {
@@ -67,13 +78,31 @@ class App extends Component {
         )
     }
     changeInputValue(e){
-
+        const action={
+            type:'changeInput',
+            value:e.target.value
+        }
+        store.dispatch(action);
     }
     handleChange(value){
-        console.log(`selected ${value}`);
+        // console.log(`selected ${value}`);
+        const action={
+            type:'day',
+            value:value
+        }
+        store.dispatch(action)
     }
     handleClick(){
         console.log("提交");
+        const action={
+            type:'clickBtn'
+        }
+        store.dispatch(action)
+    }
+    //用于=更新state，数据来自reducer
+    storeChange(){
+        this.setState(store.getState)
+        console.log(this.state);
     }
 }
  
