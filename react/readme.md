@@ -17,3 +17,7 @@ npm install react-transition-group --save
 - Transition
 - CSSTransition
 - TransitionGroup
+
+1. react 全家桶 做一个前端的
+
+2. react + koa 做一个全栈的  技术胖blog开发
