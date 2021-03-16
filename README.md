@@ -32,4 +32,21 @@ npm install -g moduleName  # -g 的意思是将模块安装到全局，具体安
 npm install --save moduleName  # --save 的意思是将模块安装到项目目录下，并在package文件的dependencies节点写入依赖。
 npm install --save-dev moduleName  # --save-dev 的意思是将模块安装到项目目录下，并在package文件的devDependencies节点写入依赖。
 
-
+对应mobx-todo-list
+- 1. url 在浏览器上输入后，发生了什么，越详细越好
+- 2. 要在react 项目中完成article 数据得展示，你会怎么设计，越详细越好
+article model mongodb mysql 
+Article 组件
+1. Store
+2. API前后端
+3. 组件MVVM
+过程：
+1. url设计   /articles  /articles/:id
+2. react-router-dom  router 配置 前端路由SPA（Single Page Application）
+3. 使用mobx 数据管理
+provider Store 做一个分支 Article  (把一个大仓库分成多个部分，不同部分子分支负责不同类型的事情)
+mobx observerable @action getAticles getArticleById
+4. API 
+后端URL 在哪里？
+5. Article相关组件 @observe store
+componentDidMount
