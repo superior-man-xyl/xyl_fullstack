@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2079768_2oql7pr49rm.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+            background: #0f0e18;
+        }
+
+        .container {
+            margin: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #ea4dc5;
+        }
+
+        #board {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            background: #2d2f42;
+            border: 1px solid #0f0e18;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 500ms ease;
+        }
+
+        .cell:hover {
+            background: #454966;
+        }
+
+        .cell .iconfont {
+            background: transparent;
+            width: 100%;
+            height: 100%;
+            font-size: 50px;
+            line-height: 100px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .blue {
+            color: #7ceefc;
+        }
+
+        .purple {
+            color: #ea4dc5;
+        }
+
+        #tips p {
+            color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tic-toc-toe Simulator</h1>
+        <div id="board"></div>
+        <div id="tips"></div>
+    </div>
+    <script>
+        //流程化  MVVM
+        let hasWinner = false;//组件的设计就有了  判断是否赢了
+        let pattern = [//棋盘就是个二维数组 0为空，1，2各代表一方
+            [2, 0, 0],
+            [0, 1, 0],
+            [0, 0, 0]
+        ];
+        let chess = 1;//表示当前谁下
+        /**
+         * 
+        */
+        function build() {
+            let board = document.getElementById('board');
+            board.innerHTML = '';//  react
+            for (let y = 0; y < 3; y++) {
+                for (let x = 0; x < 3; x++) {
+                    let cell = document.createElement('div')
+                    cell.classList.add('cell');
+                    //cell有三种情况
+                    let circle = document.createElement('i')
+                    circle.classList.add('iconfont', 'icon-circle', 'blue')//阿里图标库的
+
+                    let cross = document.createElement('i');
+                    cross.classList.add('iconfont', 'icon-cross', 'purple');
+
+                    let empty = document.createElement('i');
+
+                    let chessIcon = pattern[y][x] == 2 ? cross : pattern[y][x] == 1 ? circle : empty;
+
+                    cell.appendChild(chessIcon);
+
+                    cell.addEventListener('click', () => move(x, y));
+
+                    board.appendChild(cell);
+                }
+            }
+        }
+        build();//画棋盘
+        /**
+        *@param {Number} x
+        *@param {number} y
+        * 
+        */
+        function move(x, y) {
+            if (pattern[y][x] || hasWinner) return; //下过的地方不能再下
+            pattern[y][x] = chess
+            if (check(pattern, chess)) {
+                tips(chess == 2 ? 'X is Winner!' : 'O is the Winner!');
+                hasWinner=true
+            }
+            chess = 3 - chess
+            build()
+        }
+
+        function tips(message) {
+            let tips = document.getElementById('tips');
+            tips.innerHTML = '';
+            let text = document.createElement('p');
+            text.innerText = message;
+            tips.appendChild(text);
+        }
+
+        function check(pattern, chess) {
+            // 首先检查所有横行
+            for (let i = 0; i < 3; i++) {
+                let win = true;
+                for (let j = 0; j < 3; j++) {
+                    if (pattern[i][j] !== chess) win = false;
+                }
+                if (win) return true;
+            }
+
+            // 检查竖行
+            for (let i = 0; i < 3; i++) {
+                let win = true;
+                for (let j = 0; j < 3; j++) {
+                    if (pattern[j][i] !== chess) win = false;
+                }
+                if (win) return true;
+            }
+
+            // 检查交叉行
+            // 这里用花括号 "{}" 可以让 win 变量
+            // 变成独立作用域的变量，不受外面的
+            // win 变量影响
+
+            // "反斜行 \ 检测" 00 11 22
+            {
+                let win = true;
+                for (let j = 0; j < 3; j++) {
+                    if (pattern[j][j] !== chess) win = false;
+                }
+                if (win) return true;
+            }
+
+            // "正斜行 / 检测"
+            {
+                let win = true;
+                for (let j = 0; j < 3; j++) {
+                    if (pattern[j][2 - j] !== chess) win = false;
+                }
+                if (win) return true;
+            }
+
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>
