@@ -67,7 +67,7 @@ class Game extends React.Component{
     // const history=this.state.history;
     const history =this.state.history.slice(0,this.state.stepNumber+1)
     const current=history[history.length-1];//上一步
-    const squares =current.squares.slice();//？使用slice()无参数可以返回一个新的数组，这是引用赋值的问题
+    const squares =current.squares.slice();//使用slice()无参数可以返回一个新的数组，这是引用赋值的问题,使其能得到一个数组，而不是一个数组的地址
     console.log(squares);
     squares[i]=this.state.XIsNext?'x':'o';
     this.setState({
