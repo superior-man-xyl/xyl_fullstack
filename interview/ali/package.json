@@ -1,0 +1,18 @@
+{
+  "name": "ali",
+  "version": "1.0.0",
+  "description": "- 1. flex\r 考察的是：\r - 分割线打理的专业度，用个元素来做分割线\r - flex布局\r display:flex  子元素布局就由flex接管了\r 就像index.html里的.divider  使用border-right\r - min-width的用法 这个元素特别灵活",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "koa": "^2.13.1",
+    "koa-mount": "^4.0.0",
+    "koa-static": "^5.0.0",
+    "nodemon": "^2.0.7"
+  }
+}

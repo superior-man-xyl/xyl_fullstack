@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            margin: 10px;
+            display: flex;
+            width: 500px;
+            height: 200px;
+            background-color: #eee;
+            color: #666;
+            text-align: center;
+        }
+        .a{
+            background-color: #f46;
+            width: 300px;
+            flex-shrink: 1;
+            /* 减小37.5px  按(加权运算)多出来的150px */
+            /* 300*1+150*2+200*3=1200 */
+            /* a减少 300px*1/1200=0.25  150*0.25=37.5 */
+            /* b减少 150*2/1200=0.25 150*0.25=37.5 */
+            /* c减少 200*3/1200=0.5 150*0.5=75 */
+        }
+        .b{
+            width: 150px;
+            background-color: #426983;
+            flex-shrink: 2;
+            /* 减小37.5px */
+        }
+        .c{
+            width: 200px;
+            background-color: #61dafb;
+            flex-shrink: 3;
+            /* 减小75px */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item a"></div>
+        <div class="item b"></div>
+        <div class="item c"></div>
+    </div>
+</body>
+</html>
