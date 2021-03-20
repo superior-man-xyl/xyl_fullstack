@@ -1,44 +1,26 @@
-import React, { useState } from 'react'
-import logo from './logo.svg'
+import React, { useState , useEffect} from 'react'
+// import { getBannerRequest } from './api/request'//解构出想要的
+import {Provider} from 'react-redux'
+import store from './store'
+import Recommend from './pages/Recommend'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  // useEffect(()=>{
+  //   console.log('---------');
+  //   getBannerRequest()
+  //   .then(data=>{
+  //     // console.log(data);
+  //     // 1.  action->dispath(reducer)->Store(state)   写的
+  //     // 2. store 取出来->components 用了  读的
+  //     // 3. connect({dispactch,state get })(Component)
+  //   })
+  // },[])//相当于生命周期的总和
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Recommend />
+    </Provider>
   )
 }
 
