@@ -2,7 +2,7 @@
 
 import React, { useState,Fragment } from 'react';
 function App(){
-    const [count,setCount]=useState(0);//数组解构
+    const [count,setCount]=useState(0);//数组解构  0为赋初值
     return(
         <Fragment>
             <div>this is {count} times</div>
