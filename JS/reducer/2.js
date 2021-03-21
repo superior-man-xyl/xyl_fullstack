@@ -27,5 +27,5 @@ let result=bills.reduce((acc,cur)=>{
     }
     acc[cur.type].push(cur)
     return acc;
-},{})
+},[])
 console.log(result);
