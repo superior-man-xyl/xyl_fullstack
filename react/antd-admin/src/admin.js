@@ -3,6 +3,7 @@ import { Row, Col }  from 'antd';
 import Header from './components/Header';
 import NavLeft from './components/NavLeft';
 import NavRight from './components/NavRight';
+import CenterContainer from './components/CenterContainer'
 const Admin = (props) => {
   return (
     // 后台的界面架构
@@ -14,7 +15,7 @@ const Admin = (props) => {
             <NavLeft />
           </Col>
           <Col span={10}>
-            {props.children}
+            <CenterContainer />
           </Col>
           <Col span={5}>
               <NavRight />

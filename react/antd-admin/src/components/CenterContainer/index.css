@@ -1,0 +1,8 @@
+.Center{
+    display: flex;
+    background-color: rgb(236, 236, 236);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
