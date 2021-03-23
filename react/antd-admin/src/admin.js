@@ -15,6 +15,7 @@ const Admin = (props) => {
             <NavLeft />
           </Col>
           <Col span={10}>
+            {props.children}
             <CenterContainer />
           </Col>
           <Col span={5}>

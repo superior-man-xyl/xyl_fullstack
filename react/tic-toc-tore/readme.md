@@ -25,3 +25,5 @@
     stepNumber： 0++ i
     current history[stepNumber]
     onclick 之后就会通过 slice 把悔棋到的那一步的后面部分舍弃  
+
+    [为什么使用.slice()](https://zh-hans.reactjs.org/tutorial/tutorial.html#why-immutability-is-important)

@@ -28,10 +28,12 @@ const CenterContainer=()=>{
                         return (
                             <Card
                                 hoverable
-                                style={{ width: 150 }}
+                                style={{ width: 160 }}
                                 cover={<img alt="example" src={item.pic} />}
                             >
-                                <Meta title={item.name} description={item.tag} />
+                                <Meta title={item.name} description={item.tag} 
+                                className="card-meta"
+                                />
                             </Card>
                         )
                     })

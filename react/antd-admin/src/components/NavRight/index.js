@@ -31,9 +31,7 @@ const NavRight=()=>{
                     {
                         item.list.map((item2)=>{
                             return(
-                                
                                     <Tag color="magenta">{item2.name}</Tag>
-                                
                             )
                         })
                     }
