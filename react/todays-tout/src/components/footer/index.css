@@ -1,0 +1,38 @@
+.footer {
+    position: fixed;
+    bottom: -1232%;
+    left: 0;
+    width: 100%;
+  }
+  .footer ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #505050;
+    background-color: #fff;
+    border-top: 1px solid #eeeeee;
+  }
+  .footer ul .item {
+    text-align: center;
+    width: 25%;
+    padding: 0.03rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #505050;
+  }
+  .footer ul .item .icons {
+    width: 0.2rem;
+    height: 0.2rem;
+  }
+  .footer ul .item span {
+    font-size: 0.12rem;
+    display: block;
+    padding-top: 0.03rem;
+  }
+  .footer ul .active {
+    color: #f85959;
+  }
+  

@@ -1,0 +1,51 @@
+html,
+body {
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+span,
+h1,
+h2,
+p,
+a,
+i,
+ul,
+li,
+textarea,
+input {
+  margin: 0;
+  padding: 0;
+}
+i {
+  font-style: normal;
+}
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'Microsoft Yahei', 'simsun', 'arial', 'tahoma';
+  color: #333;
+  box-sizing: border-box;
+}
+input {
+  font-size: 100%;
+}
+img {
+  border: 0;
+}
+img {
+  -webkit-touch-callout: none;
+}
+input[type=password],
+input[type=text],
+ul {
+  list-style: none;
+}
+:focus {
+  outline: none;
+}
+input {
+  outline: 0 none;
+  border: 0 none;
+}
