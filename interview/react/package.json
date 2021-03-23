@@ -1,0 +1,15 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "如果一个函数会直接修改全局对象，我们认为这是不应该的，是不纯的\r redux中的reducer就是要求纯函数",
+  "main": "1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "immutable": "^4.0.0-rc.12"
+  }
+}
