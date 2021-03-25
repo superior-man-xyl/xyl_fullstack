@@ -1,0 +1,19 @@
+{
+  "name": "maven",
+  "version": "1.0.0",
+  "description": "- 全栈 node+ts\r 大厂需要这种的\r - 数据库\r     端口之间的通信 3306(数据库)->3000\r     就像node里的fs http 模块 比较复杂和慢",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc-watch --onSuccess \"node dist/main.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.11",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "tsc-watch": "^4.2.9",
+    "typescript": "^4.2.3"
+  }
+}
