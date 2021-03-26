@@ -24,3 +24,21 @@ mysql post POST方式添加一条记录   /posts
 
 
 yarn add body-parser  中间件bodyParse安装，用于协助读取body里的值
+
+数据库操作的sql代码：
+CREATE TABLE `post` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+// AUTO_INCREMENT=26   指的是自增初始值为26
+
+ - mysql 先建表  再操作  关系型数据库  用SQL
+    而 mongodb是先操作后建表  也是NOSQL 不需要sql语句
+
+    使用[mysql2](https://segmentfault.com/a/1190000020965182)
+
+
+    yarn add dotenv   环境变量加载工具

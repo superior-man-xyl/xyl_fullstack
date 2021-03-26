@@ -50,3 +50,6 @@ mobx observerable @action getAticles getArticleById
 后端URL 在哪里？
 5. Article相关组件 @observe store
 componentDidMount
+
+
+MVC模式中，M是指业务模型，V是指用户界面，C则是控制器，使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式。其中，View的定义比较清晰，就是用户界面。

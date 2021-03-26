@@ -436,28 +436,128 @@
         "signature": "ec52b1bbb5d182a0d19867f72c6c1bfb076812345eb7cd147d5303b4791f8cbb",
         "affectsGlobalScope": false
       },
+      "../node_modules/mysql2/promise.d.ts": {
+        "version": "0b15545be7aacfbbf364443eeec8508c9565771149ed6ca5edef17fdbc62d740",
+        "signature": "0b15545be7aacfbbf364443eeec8508c9565771149ed6ca5edef17fdbc62d740",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/sequence.d.ts": {
+        "version": "0506328b96bdd546742da97b70a92514b1e4847b9387758f44c7e7052443f98e",
+        "signature": "0506328b96bdd546742da97b70a92514b1e4847b9387758f44c7e7052443f98e",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/mysql2/typings/mysql/lib/protocol/packets/okpacket.d.ts": {
+        "version": "5ba455ec6f0b9b40e71225a835df1c4830eabbc661c0bcdcae29b62b5dce7deb",
+        "signature": "5ba455ec6f0b9b40e71225a835df1c4830eabbc661c0bcdcae29b62b5dce7deb",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/mysql2/typings/mysql/lib/protocol/packets/rowdatapacket.d.ts": {
+        "version": "4dce711bd3eb8ef017e35ff1ed0957cf748c2f504777bfa935382f376932fd3a",
+        "signature": "4dce711bd3eb8ef017e35ff1ed0957cf748c2f504777bfa935382f376932fd3a",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/mysql2/typings/mysql/lib/protocol/packets/fieldpacket.d.ts": {
+        "version": "d5df920a5da67836acb16e8a4db65135351be93302fb0072d657e671e2d92220",
+        "signature": "d5df920a5da67836acb16e8a4db65135351be93302fb0072d657e671e2d92220",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/mysql2/typings/mysql/lib/protocol/packets/field.d.ts": {
+        "version": "4c749621a8903239d5d8b683a23816198135456b1d07c6bb208edc9d490e5b9e",
+        "signature": "4c749621a8903239d5d8b683a23816198135456b1d07c6bb208edc9d490e5b9e",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/mysql2/typings/mysql/lib/protocol/packets/resultsetheader.d.ts": {
+        "version": "6160926b9a7b7157737005fd181d44d38e66614cefef9bd9e1c0ac05e58fbe54",
+        "signature": "6160926b9a7b7157737005fd181d44d38e66614cefef9bd9e1c0ac05e58fbe54",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/mysql2/typings/mysql/lib/protocol/packets/index.d.ts": {
+        "version": "0a496ad0243a1a24d109ca5d318cdded7f402e7e80e56bb6bd7c9e30f32b6254",
+        "signature": "0a496ad0243a1a24d109ca5d318cdded7f402e7e80e56bb6bd7c9e30f32b6254",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/query.d.ts": {
+        "version": "a9ea7b461ac39461b7ac8f2aa326ea1375b03fda1f2db8749dc507e0c291ad7c",
+        "signature": "a9ea7b461ac39461b7ac8f2aa326ea1375b03fda1f2db8749dc507e0c291ad7c",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/mysql2/typings/mysql/lib/connection.d.ts": {
+        "version": "0fdf7d31f6023debd6c0c53c822ac9b9e2ae98f2dcd9a1c26d89964ea99d65e4",
+        "signature": "0fdf7d31f6023debd6c0c53c822ac9b9e2ae98f2dcd9a1c26d89964ea99d65e4",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/mysql2/typings/mysql/lib/poolconnection.d.ts": {
+        "version": "617a866591d14eafd5f4d4d02b5e144d58fec2ea863a8399736e6769273c616d",
+        "signature": "617a866591d14eafd5f4d4d02b5e144d58fec2ea863a8399736e6769273c616d",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/mysql2/typings/mysql/lib/pool.d.ts": {
+        "version": "870c0af6962c426fd9418ba3134b95a55d8ab72f46fbd97447e831d65b14586f",
+        "signature": "870c0af6962c426fd9418ba3134b95a55d8ab72f46fbd97447e831d65b14586f",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/mysql2/typings/mysql/lib/poolcluster.d.ts": {
+        "version": "411f5ee863896acd5ce198869f8394c7dc541bbf363cde2d4f4124471b1ca6dd",
+        "signature": "411f5ee863896acd5ce198869f8394c7dc541bbf363cde2d4f4124471b1ca6dd",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/mysql2/typings/mysql/index.d.ts": {
+        "version": "61f03616b31fd67e19be9872092238ed2b443b0e1a5bda7c61be52c34ec68e89",
+        "signature": "61f03616b31fd67e19be9872092238ed2b443b0e1a5bda7c61be52c34ec68e89",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/mysql2/index.d.ts": {
+        "version": "9e509157d11e7843e0c7b59ea3351ce2071940776fe54d621848c87f97f17b72",
+        "signature": "9e509157d11e7843e0c7b59ea3351ce2071940776fe54d621848c87f97f17b72",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/dotenv/types/index.d.ts": {
+        "version": "c9ae0b351a07b52f29a28e869d8c7c8d29743bbb5eeddc7c0b5b2a69a2450528",
+        "signature": "c9ae0b351a07b52f29a28e869d8c7c8d29743bbb5eeddc7c0b5b2a69a2450528",
+        "affectsGlobalScope": false
+      },
+      "../src/app/app.config.ts": {
+        "version": "3f34b27c6695635661419c54c79abf2de123cfa94f3165cca85852794a2ad788",
+        "signature": "ec28289125e086a01a0785cc1378535faecc20c05b9c3b66e318437b2f444f42",
+        "affectsGlobalScope": false
+      },
+      "../src/app/database/mysql.ts": {
+        "version": "f02cedffdb6537810a99a2d7fe44fb7e6f07c84956a2ef1aee38e1ab3325dbe3",
+        "signature": "95f454c087dff868c3775a63e79cd2f4a5ca0f68495e7b2ab486a3a39723c609",
+        "affectsGlobalScope": false
+      },
       "../src/post/post.service.ts": {
-        "version": "bc3ebcb3e75b5631b6c9a831066b9396abe0f126ad730211e5abbc34c56b00d0",
-        "signature": "cb204e4d66b0221a7d464c5c4ad68f2ecee8fd661cfcd7478992eac878f1abb2",
+        "version": "7f8f4f36b700a52f6d438f60e134b470fc57bf7e6108035cbecf739e703f2146",
+        "signature": "a979c804cac90334ad96e49b25d3964c694794abf197067e594b400a650f5d16",
         "affectsGlobalScope": false
       },
       "../src/post/post.controller.ts": {
-        "version": "ebec6f6bd772a4cf3b3fb66c22f071afcf2352c42077b6db2b3d3604c85d7065",
-        "signature": "c087a5e58268a5567fa633e33111ee9bd690fe1dd676b1f49405bb143aa042f2",
+        "version": "9336f071eb592e35f85dbda3c57f12b405f7c3f52c48a858cbed31e5fb2f0c79",
+        "signature": "4e3f66a09729becc6e05a12cfa8f2409b2f4db51572d9335ffc6d83fdf9328e0",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/auth.middleware.ts": {
+        "version": "8d6b770b96973e951bcf2144ac02ba24a2e3d6442b9868a8b740e6e8a6c81770",
+        "signature": "54adb114e7e2bc41599dfbef8bd51b5935ad414daa9329e6f9af06c47cf63258",
         "affectsGlobalScope": false
       },
       "../src/post/post.router.ts": {
-        "version": "a729a638d5485c363ca6933570291b539be110fa52accd7b55a87accfd2efe06",
+        "version": "619fccce5b2328869ff97997fec57c3d94ee57ef7618defa09247d71cef81fad",
         "signature": "0747134fc57c8e4a12d6144952ae1f47f54848f1ca110e997bd81ec1cc7b76e6",
         "affectsGlobalScope": false
       },
+      "../src/app/app.middleware.ts": {
+        "version": "f7b34d614a23fb2878e68afeecc5faffb1652f6888614022899ec282b0c39012",
+        "signature": "152f26526d435ae3487f21ccc6347e0e415b42db2c0dbde269cb8a99227f57a4",
+        "affectsGlobalScope": false
+      },
       "../src/app/index.ts": {
-        "version": "17b19e00a3947e7e897beeb13105d93587d1d6424d5d5492a5ccb5589f796ffb",
+        "version": "be854daf146638f15f978085f9df72cb46a10053e90abb37394da02897420652",
         "signature": "629a4ade941bd431c195407a5afd3602c6461fdcc0f65735b7e4a68f8d5d3d51",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "72242bc3bcf7e0d7a1e2741d708b64e2153aa596837d39dcc07d5db620ba02e3",
+        "version": "394510b77a2e95a0c2b356630244c0fbf6c39848c125c8a099706da31b7ab9d7",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       }
@@ -734,11 +834,81 @@
         "../node_modules/@types/node/http.d.ts",
         "../node_modules/@types/node/index.d.ts"
       ],
+      "../node_modules/dotenv/types/index.d.ts": [
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../node_modules/mysql2/index.d.ts": [
+        "../node_modules/mysql2/promise.d.ts",
+        "../node_modules/mysql2/typings/mysql/index.d.ts"
+      ],
+      "../node_modules/mysql2/promise.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/mysql2/index.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/index.d.ts": [
+        "../node_modules/mysql2/typings/mysql/lib/connection.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/pool.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/poolcluster.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/poolconnection.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/index.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/query.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/lib/connection.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/index.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/query.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/lib/pool.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/connection.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/poolconnection.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/index.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/query.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/lib/poolcluster.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/connection.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/poolconnection.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/lib/poolconnection.d.ts": [
+        "../node_modules/mysql2/typings/mysql/lib/connection.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/lib/protocol/packets/index.d.ts": [
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/field.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/fieldpacket.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/okpacket.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/resultsetheader.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/rowdatapacket.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/query.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/index.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/sequence.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/sequence.d.ts": [
+        "../node_modules/@types/node/events.d.ts"
+      ],
+      "../src/app/app.config.ts": [
+        "../node_modules/dotenv/types/index.d.ts"
+      ],
+      "../src/app/app.middleware.ts": [
+        "../node_modules/@types/express/index.d.ts"
+      ],
+      "../src/app/database/mysql.ts": [
+        "../node_modules/mysql2/index.d.ts",
+        "../src/app/app.config.ts"
+      ],
       "../src/app/index.ts": [
         "../node_modules/@types/express/index.d.ts",
+        "../src/app/app.middleware.ts",
         "../src/post/post.router.ts"
       ],
+      "../src/auth/auth.middleware.ts": [
+        "../node_modules/@types/express/index.d.ts"
+      ],
       "../src/main.ts": [
+        "../src/app/app.config.ts",
+        "../src/app/database/mysql.ts",
         "../src/app/index.ts"
       ],
       "../src/post/post.controller.ts": [
@@ -747,9 +917,11 @@
       ],
       "../src/post/post.router.ts": [
         "../node_modules/@types/express/index.d.ts",
+        "../src/auth/auth.middleware.ts",
         "../src/post/post.controller.ts"
       ],
       "../src/post/post.service.ts": [
+        "../src/app/database/mysql.ts",
         "../src/post/post.model.ts"
       ]
     },
@@ -1009,8 +1181,71 @@
         "../node_modules/@types/node/http.d.ts",
         "../node_modules/@types/node/index.d.ts"
       ],
+      "../node_modules/dotenv/types/index.d.ts": [
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../node_modules/mysql2/index.d.ts": [
+        "../node_modules/mysql2/promise.d.ts",
+        "../node_modules/mysql2/typings/mysql/index.d.ts"
+      ],
+      "../node_modules/mysql2/promise.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/mysql2/index.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/index.d.ts": [
+        "../node_modules/mysql2/typings/mysql/lib/connection.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/pool.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/poolcluster.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/poolconnection.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/index.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/query.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/lib/connection.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/index.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/query.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/lib/pool.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/connection.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/poolconnection.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/index.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/query.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/lib/poolcluster.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/connection.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/poolconnection.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/lib/poolconnection.d.ts": [
+        "../node_modules/mysql2/typings/mysql/lib/connection.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/lib/protocol/packets/index.d.ts": [
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/field.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/fieldpacket.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/okpacket.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/resultsetheader.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/rowdatapacket.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/query.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/index.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/sequence.d.ts"
+      ],
+      "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/sequence.d.ts": [
+        "../node_modules/@types/node/events.d.ts"
+      ],
+      "../src/app/app.middleware.ts": [
+        "../node_modules/@types/express/index.d.ts"
+      ],
+      "../src/app/database/mysql.ts": [
+        "../node_modules/mysql2/index.d.ts"
+      ],
       "../src/app/index.ts": [
         "../node_modules/@types/express-serve-static-core/index.d.ts"
+      ],
+      "../src/auth/auth.middleware.ts": [
+        "../node_modules/@types/express/index.d.ts"
       ],
       "../src/post/post.controller.ts": [
         "../node_modules/@types/express/index.d.ts"
@@ -1019,6 +1254,9 @@
         "../node_modules/@types/express-serve-static-core/index.d.ts"
       ],
       "../src/post/post.service.ts": [
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/okpacket.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/resultsetheader.d.ts",
+        "../node_modules/mysql2/typings/mysql/lib/protocol/packets/rowdatapacket.d.ts",
         "../src/post/post.model.ts"
       ]
     },
@@ -1077,6 +1315,22 @@
       "../node_modules/@types/qs/index.d.ts",
       "../node_modules/@types/range-parser/index.d.ts",
       "../node_modules/@types/serve-static/index.d.ts",
+      "../node_modules/dotenv/types/index.d.ts",
+      "../node_modules/mysql2/index.d.ts",
+      "../node_modules/mysql2/promise.d.ts",
+      "../node_modules/mysql2/typings/mysql/index.d.ts",
+      "../node_modules/mysql2/typings/mysql/lib/connection.d.ts",
+      "../node_modules/mysql2/typings/mysql/lib/pool.d.ts",
+      "../node_modules/mysql2/typings/mysql/lib/poolcluster.d.ts",
+      "../node_modules/mysql2/typings/mysql/lib/poolconnection.d.ts",
+      "../node_modules/mysql2/typings/mysql/lib/protocol/packets/field.d.ts",
+      "../node_modules/mysql2/typings/mysql/lib/protocol/packets/fieldpacket.d.ts",
+      "../node_modules/mysql2/typings/mysql/lib/protocol/packets/index.d.ts",
+      "../node_modules/mysql2/typings/mysql/lib/protocol/packets/okpacket.d.ts",
+      "../node_modules/mysql2/typings/mysql/lib/protocol/packets/resultsetheader.d.ts",
+      "../node_modules/mysql2/typings/mysql/lib/protocol/packets/rowdatapacket.d.ts",
+      "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/query.d.ts",
+      "../node_modules/mysql2/typings/mysql/lib/protocol/sequences/sequence.d.ts",
       "../node_modules/typescript/lib/lib.dom.d.ts",
       "../node_modules/typescript/lib/lib.dom.iterable.d.ts",
       "../node_modules/typescript/lib/lib.es2015.collection.d.ts",
@@ -1109,7 +1363,11 @@
       "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "../node_modules/typescript/lib/lib.scripthost.d.ts",
       "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
+      "../src/app/app.config.ts",
+      "../src/app/app.middleware.ts",
+      "../src/app/database/mysql.ts",
       "../src/app/index.ts",
+      "../src/auth/auth.middleware.ts",
       "../src/main.ts",
       "../src/post/post.controller.ts",
       "../src/post/post.model.ts",

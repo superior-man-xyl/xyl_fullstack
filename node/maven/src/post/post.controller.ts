@@ -4,11 +4,11 @@ import {createPost} from './post.service'
 
 export const store=async(
     request:Request,//ts的写法，一方面是类型约束，另一方面是会提供代码提示，即后面泄漏个.会弹出可能的选择
-    // response:Response
+    response:Response
     // request,
-    response
+    // response
 )=>{
-    console.log(request.body,'//////////');
+    console.log(request.body,'//////////////////////');
     const { title,content }=request.body
     //存 -》 数据存储服务service
     const data=await createPost({ title,content

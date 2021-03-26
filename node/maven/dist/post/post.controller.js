@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.store = void 0;
 const post_service_1 = require("./post.service");
 const store = async (request, response) => {
-    console.log(request.body, '//////////');
+    console.log(request.body, '//////////////////////');
     const { title, content } = request.body;
     const data = await post_service_1.createPost({ title, content
     });
