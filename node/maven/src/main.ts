@@ -5,6 +5,7 @@ import {connection} from './app/database/mysql';
 import {APP_PORT}from './app/app.config';
 //app 路由，  上传文件，json化等等 将交给app.js去做
 //也负责数据库的连接
+console.log(APP_PORT);
 app.listen(APP_PORT,()=>{
     console.log('服务已启动');
 });

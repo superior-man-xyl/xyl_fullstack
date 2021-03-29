@@ -42,3 +42,14 @@ CREATE TABLE `post` (
 
 
     yarn add dotenv   环境变量加载工具
+
+  - user业务
+  1. user.router.ts 入口  POST  /registrer
+  2. user.controller.ts 用户名或密码不为空， 这是绝对不能存的，会带来数据库的问题，用户端 管理数据库
+  3. user.service.ts 存数据
+  4. user.middleware.ts 检测是否有存在的用户名？  注册
+  POST /register  checkIsNameExist 然后 next() 然后 register
+
+  数据库里不能存明文的密码  yarn add bcrypt  安装这个第三方库
+
+  next函数主要负责将控制权交给下一个中间件，如果当前中间件没有终结请求，并且next没有被调用，那么请求将被挂起，后边定义的中间件将得不到被执行的机会。

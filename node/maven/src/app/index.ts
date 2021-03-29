@@ -2,6 +2,7 @@
 // 使用es6 module typescript会编译回es5 node的commonjs语法
 import express from 'express';
 import postRouter from '../post/post.router';
+import userRouter from '../user/user.router'
 import {defaultErrorHandler}from './app.middleware'
 const app=express();
 const bodyParser=require('body-parser');
@@ -17,9 +18,12 @@ app.use(//函数
     postRouter,
     //用户相关的路由
     //其他路由。。。。
+    userRouter
+
 
 )
 //用于处理各种错误
 app.use(defaultErrorHandler);
+
 
 export default app;

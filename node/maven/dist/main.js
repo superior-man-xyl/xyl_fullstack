@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const app_1 = __importDefault(require("./app"));
 const mysql_1 = require("./app/database/mysql");
 const app_config_1 = require("./app/app.config");
+console.log(app_config_1.APP_PORT);
 app_1.default.listen(app_config_1.APP_PORT, () => {
     console.log('服务已启动');
 });
