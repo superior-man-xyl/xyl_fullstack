@@ -13,8 +13,8 @@ class Tuesday extends Component {
     render() { 
         return ( 
             <Fragment>
-                 <div>星期二计划</div>
-            <div style={{margin:'30px',width:'600px'}}>
+                 <div style={{marginTop:'15%'}}>星期二计划</div>
+            <div style={{margin:'5%',width:'70%'}}>
             <List
              header={<div className="time-color">早上九点开始</div>}
              footer={<div className="time-color">晚上九点结束</div>}
