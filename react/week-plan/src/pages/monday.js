@@ -14,7 +14,7 @@ class Monday extends Component {
         return ( 
             <Fragment>
                  <div>星期一计划</div>
-            <div style={{margin:'10px',width:'300px'}}>
+            <div style={{margin:'30px',width:'600px'}}>
             <List
             header={<div className="time-color">早上九点开始</div>}
             footer={<div className="time-color">晚上九点结束</div>}
@@ -31,6 +31,14 @@ class Monday extends Component {
     }
     storeChange(){
         this.setState(store.getState)
+    }
+    deleteItem(index){
+        console.log('1');
+        const action={
+            type:'delete-item1',
+            value:index
+        }
+        store.dispatch(action);
     }
 }
  

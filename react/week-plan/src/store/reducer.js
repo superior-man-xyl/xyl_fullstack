@@ -7,16 +7,22 @@ const defaultState={
         '使用身体玩耍，玩耍到吃饭'
     ],
     list2:[
+        '使用牙刷刷牙，刷够五分钟'
     ],
     list3:[
+        '使用牙刷刷牙，刷够五分钟'
     ],
     list4:[
+        '使用牙刷刷牙，刷够五分钟'
     ],
     list5:[
+        '使用牙刷刷牙，刷够五分钟'
     ],
     list6:[
+        '使用牙刷刷牙，刷够五分钟'
     ],
     list7:[
+        '使用牙刷刷牙，刷够五分钟'
     ],
 };//默认数据
 export default (state=defaultState,action)=>{
@@ -33,7 +39,7 @@ export default (state=defaultState,action)=>{
     }
     if(action.type==='clickBtn'){
         let newState = JSON.parse(JSON.stringify(state)) //深度拷贝state
-        switch(newState.dayValue){
+        switch(parseInt(newState.dayValue)){
             case 1:newState.list1.push(newState.inputValue);
             break;
             case 2:newState.list2.push(newState.inputValue);
@@ -49,6 +55,41 @@ export default (state=defaultState,action)=>{
             case 7:newState.list7.push(newState.inputValue);
             break;
         }
+        return newState;
+    }
+    if(action.type==="delete-item1"){
+        let newState=JSON.parse(JSON.stringify(state));
+        newState.list1.splice(action.value,1);
+        return newState;
+    }
+    if(action.type==="delete-item2"){
+        let newState=JSON.parse(JSON.stringify(state));
+        newState.list2.splice(action.value,1);
+        return newState;
+    }
+    if(action.type==="delete-item3"){
+        let newState=JSON.parse(JSON.stringify(state));
+        newState.list3.splice(action.value,1);
+        return newState;
+    }
+    if(action.type==="delete-item4"){
+        let newState=JSON.parse(JSON.stringify(state));
+        newState.list4.splice(action.value,1);
+        return newState;
+    }
+    if(action.type==="delete-item5"){
+        let newState=JSON.parse(JSON.stringify(state));
+        newState.list5.splice(action.value,1);
+        return newState;
+    }
+    if(action.type==="delete-item6"){
+        let newState=JSON.parse(JSON.stringify(state));
+        newState.list6.splice(action.value,1);
+        return newState;
+    }
+    if(action.type==="delete-item7"){
+        let newState=JSON.parse(JSON.stringify(state));
+        newState.list7.splice(action.value,1);
         return newState;
     }
     return state;

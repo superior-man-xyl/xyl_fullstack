@@ -102,7 +102,7 @@ class App extends Component {
     //用于=更新state，数据来自reducer
     storeChange(){
         this.setState(store.getState)
-        console.log(this.state);
+        // console.log(this.state);
     }
 }
  
