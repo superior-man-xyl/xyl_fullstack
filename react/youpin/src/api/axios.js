@@ -1,9 +1,13 @@
 import axios from 'axios';
 import qs from 'qs';
+//axios配置文件
 axios.defaults.baseURL = "http://127.0.0.1:3002";
-axios.defaults.timeout = 10000;
+axios.defaults.timeout = 10000;//10秒
 axios.defaults.withCredentials = true;
-axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+//某种请求的时候，headers?  请求 分为请求头，请求体
+//Content-Type 内容类型
+// ？ 发送给服务器  使其能知道怎么处理这些请求体  application/x-www-form-urlencoded是默认的头部值
+axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';//全局添加
 // axios.defaults.transformRequest = data => qs.stringify(data);
 /* 
 axios.interceptors.request.use(config => {

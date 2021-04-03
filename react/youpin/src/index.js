@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import store from './store/index';
 
 ReactDOM.render(<Provider store={store}>
+	{/* 使用hash路由 */}
 	<HashRouter>
 		<App />
 	</HashRouter>
