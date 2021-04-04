@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="./zhanwei.jpg" alt="" data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=356729307,4069453690&fm=26&gp=0.jpg"><br/>
+    <img src="./zhanwei.jpg" alt="" data-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3710650262,1181062705&fm=26&gp=0.jpg"><br/>
+    <img src="./zhanwei.jpg" alt="" data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3230329964,3648626334&fm=26&gp=0.jpg"><br/>
+    <img src="./zhanwei.jpg" alt="" data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=356729307,4069453690&fm=26&gp=0.jpg"><br/>
+    <img src="./zhanwei.jpg" alt="" data-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3710650262,1181062705&fm=26&gp=0.jpg"><br/>
+    <img src="./zhanwei.jpg" alt="" data-src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1056629638,148331236&fm=26&gp=0.jpg"><br/>
+    <img src="./zhanwei.jpg" alt="" data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=356729307,4069453690&fm=26&gp=0.jpg"><br/>
+    <img src="./zhanwei.jpg" alt="" data-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3710650262,1181062705&fm=26&gp=0.jpg"><br/>
+    <img src="./zhanwei.jpg" alt="" data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3230329964,3648626334&fm=26&gp=0.jpg"><br/>
+    <img src="./zhanwei.jpg" alt="" data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=356729307,4069453690&fm=26&gp=0.jpg"><br/>
+    <img src="./zhanwei.jpg" alt="" data-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3710650262,1181062705&fm=26&gp=0.jpg"><br/>
+    <img src="./zhanwei.jpg" alt="" data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3230329964,3648626334&fm=26&gp=0.jpg"><br/>
+    <script>
+        let imgList=[...document.querySelectorAll('img')];
+        let length=imgList.length;
+        console.log(imgList[0].dataset.src);
+        function imgLazyload(){
+            let count=0;//看有多少张图片已近加载了
+            return function(){
+                let deleteIndexList=[];
+                imgList.forEach((img,index)=>{
+                    let rect=img.getBoundingClientRect()
+                    console.log(img);
+                    if(rect.top<window.innerHeight){
+                        img.src=img.dataset.src;
+                        deleteIndexList.push(index);
+                        count++;
+                        if(count===length){
+                            document.removeEventListener('scroll',imgLazyload)
+                        }
+                    }
+                })
+                imgList=imgList.filter((img,index)=>{
+                    return !deleteIndexList.includes(index)
+                })
+            }
+        }
+        document.addEventListener('scroll',imgLazyload());
+        </script>
+</body>
+
+</html>
