@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 使用script标签请求后，会返回text/js文件，fetch搞不定的，JSONP搞定了 -->
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/react/17.0.1/cjs/react.production.min.js"></script> -->
+    <!-- 做了一个跨域请求 注意后面加的callback JSONP访问方式-->
+    <script src="a.js"></script>
+    <!-- 都是请求 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function callback(data){
+            console.log(data);
+        }
+    </script>
+    <script src="https://photo.sina.cn/aj/index?page=1&cate=recommend&callback=callback"></script>
+    <!-- 不加callback同源 -->
+    <!-- 加&callback=callback   后面这个是自己写的函数，可以是任何名字，等于告诉对方，自己的处理函数叫上面名字  -->
+    <!--返回的文件开头，是一个callback，参数为数据  —— ;callback({"data":[{"ch":"4 -->
+    <!-- 加&callback=func    得到   ;func({"data":[{"ch":"4","sid" -->
+    <!-- 表示返回一个callback(data),data被包裹着，以使请求者能运行callback自己的callback（写了个输出data）得到数据 -->
+<!-- 
+    <script>
+        fetch("https://photo.sina.cn/aj/index?page=1&cate=recommend")
+        .then(function (data) {
+            console.log(data);
+        });
+    </script> -->
+
+</body>
+
+</html>
