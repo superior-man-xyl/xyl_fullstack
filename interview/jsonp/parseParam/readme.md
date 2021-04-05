@@ -38,24 +38,3 @@ paramsObj[key]=[].concat(paramsObj[key],val);
 值都需要解码，重复出现的key组成数组，只有key没有值的默认为true
 
 
-- 虚拟DOM树的表现形式，是递归JSON
-```
-{
-    tag:'ul',
-    props{
-        class:'list'
-    },
-    children:[
-        tag:'li',
-        props:{
-            class:'item'
-        },
-        children:['name']
-    ]
-}
-```
-
-- 利用createElement\setAttribute\appendChild
-  将在内存中生成虚拟DOM树
-
-- 首次渲染
