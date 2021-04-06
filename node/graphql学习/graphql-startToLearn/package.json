@@ -1,0 +1,15 @@
+{
+  "name": "graphql-startToLearn",
+  "version": "1.0.0",
+  "description": "restful的替代品\r 来自Facebook出品的查询方案 2015年",
+  "main": "index.js",
+  "scripts": {
+    "dev":"json-server --watch --port 3001 db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  }
+}
