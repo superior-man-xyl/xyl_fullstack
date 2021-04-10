@@ -12,4 +12,5 @@ function flatten(arr){
     return arr;
 }
 console.log(flatten([1,[1],[[2]]]));//输出[ 1, 1, 2 ]
+console.log([].concat(...[1,[1],[[2]]]));//输出[ 1, 1, [ 2 ] ]
 console.log([].concat(...[].concat(...[1,[1],[[2]]])));//[ 1, 1, 2 ]
