@@ -1,6 +1,5 @@
 <template>
   <div id="app"> 
-    hello
     <!-- 直接就用下面的代码代入了路由 -->
     <router-view></router-view>
   </div>

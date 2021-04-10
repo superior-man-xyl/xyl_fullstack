@@ -1,19 +1,8 @@
-# shop
+vue create shop
 
-## Project setup
-```
-npm install
-```
+适配方案
+npm i flexible
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+npm i vant@next -S
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+npm i vue-img-verify

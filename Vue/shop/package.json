@@ -8,7 +8,11 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "flexible": "^0.1.20",
+    "lib-flexible": "^0.3.2",
+    "vant": "^3.0.12",
     "vue": "^3.0.0",
+    "vue-img-verify": "^1.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },
