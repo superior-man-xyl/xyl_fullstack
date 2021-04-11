@@ -7,4 +7,5 @@ import Vant from 'vant';
 import 'vant/lib/index.css';
 import './common/style/base.less'
 
+
 createApp(App).use(store).use(Vant).use(router).mount('#app')

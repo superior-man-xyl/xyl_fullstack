@@ -1,7 +1,7 @@
 <template>
   <div class="simple-header">
-     <van-icon name="arrow-left" />
-     <div class="simple-header-name" @click="goBack">{{name}}</div>
+     <van-icon name="arrow-left" @click="goBack"/>
+     <div class="simple-header-name">{{name}}</div>
      <van-icon name="weapp-nav" />
   </div>
 </template>

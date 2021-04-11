@@ -1,8 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import Home from '@/views/Home.vue'//@就是表示src
+import Home from '@/views/Home.vue'//@就是表示src
 import Login from '@/views/Login'
 //配置路由
 const routes = [
+  {
+    path:'/',
+    redirect:'/Home'//重定向
+  },
+  {
+    path:'/home',
+    name:'home',
+    component:Home
+  },
   {
     path: '/Login',
     name: 'Login',
