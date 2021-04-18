@@ -3,4 +3,4 @@ let response={
 
 }
 
-module.export=response;
+module.exports=response;

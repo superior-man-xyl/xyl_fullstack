@@ -4,7 +4,7 @@ let proto={
 }
 
 function defineGetter(prop,name){
-    prop.__defineGetter__(name,function(){
+    proto.__defineGetter__(name,function(){
         return this[prop][name]
     })
 }

@@ -10,4 +10,4 @@ let request={
       }//和url不同的是/abc?a=0  url拿到全部，path只拿到/abc
 }
 
-module.export=request;
+module.exports=request;
