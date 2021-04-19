@@ -11,7 +11,7 @@ function getNums36(){
             nums36.push(String.fromCharCode(i+87));
         }
     }
-    console.log(nums36,'-----+')//得到要用的[0,   1,   2,   3,   4,   5,   6,   7,  8,   9,   'a', 'b', 'c', 'd', 'e', 'f','g', 'h', 'i', 'j', 'k', 'l', 'm', 'n','o', 'p', 'q', 'r', 's', 't', 'u', 'v','w', 'x', 'y', 'z'] ----
+    // console.log(nums36,'-----+')//得到要用的[0,   1,   2,   3,   4,   5,   6,   7,  8,   9,   'a', 'b', 'c', 'd', 'e', 'f','g', 'h', 'i', 'j', 'k', 'l', 'm', 'n','o', 'p', 'q', 'r', 's', 't', 'u', 'v','w', 'x', 'y', 'z'] ----
     return nums36;
 }
 function scale36(n){
@@ -20,11 +20,13 @@ function scale36(n){
     while(n){
         var res=n%36;
         console.log(res,'----')
+        //向数组开头添加得到的余数
         arr.unshift(nums36[res]);//得到相应的数值，大于9就字母代替
         //进位
         n=parseInt(n/36);
         console.log(n,'+++++')
     }
     // 36进制 0-9 a-fgi-z 一直到36位
+    return arr.join('');
 }
-console.log(scale36(36));//输出10
+console.log(scale36(123645));//输出2nel => 2*36^3+23*36^2+14*36+21*36^0=123645
