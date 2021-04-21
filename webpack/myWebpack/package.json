@@ -1,0 +1,18 @@
+{
+  "name": "myWebpack",
+  "version": "1.0.0",
+  "description": "- 需要读到入口文件内容里面的内容\r - 分析入口文件，使用递归的方式去读取模块所需要的文件内容，生成AST语法树(抽象语法树)。\r - 根据AST语法树，生成浏览器能运行的代码",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/parser": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/traverse": "^7.13.17"
+  }
+}
