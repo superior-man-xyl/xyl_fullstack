@@ -19,11 +19,11 @@ GPU拿到渲染树后进行布局绘制叫做重排，当页面上的DOM结点�
 - 改变元素位置
 - 改变元素尺寸
 - 改变窗口大小
-- 读取 offsetWidth offset... clientTop client... 这一定会触发一次重排 
+- 读取 offsetWidth offset... clientTop client...   scroll...这一定会触发一次重排 
 
 怎样触发重绘：
 - 当页面的dom改变了非几何信息的属性时
 
 回流一定重绘，重绘不一定回流
 
-4. 
+4. [重绘回流](https://juejin.cn/post/6844903779700047885)
