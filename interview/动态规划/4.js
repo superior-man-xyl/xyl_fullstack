@@ -1,7 +1,7 @@
 var coinChange = function(coins, amount) {
     //首先找规律公式
     const f=[];//用于保存每种金额的最小所需硬币数
-    f[0]=0;
+    f[0]=0;//这是它的边界，要先设置出来
     for(let i=1;i<=amount;i++){
         f[i]=Infinity;//初始化为无穷大
         //要得到他的上一次的金额加一后的比较
