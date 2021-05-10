@@ -35,30 +35,20 @@
         data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3230329964,3648626334&fm=26&gp=0.jpg"><br />
     <script>
         let imgList = [...document.querySelectorAll('img')];
-
-        const options = {
-            root: null,
-            threshold: [0],
-            rootMargin: '0px',
-        }
-        function lazyLoad(img){
-            const ob = new IntersectionObserver((entries, observer) => {
-                console.log('xxxxxxx');
-                entries.forEach((img) => {
-                    // intersectionRatio
-                    console.log(img)
-                    if (img.isIntersecting) {
-                        console.log('出现了');
-                        img.target.src = img.target.dataset.src;
-                        ob.unobserve(img.target)
-                    }
-                })
-            },options)
-            ob.observe(img);
-        }
-        
-        imgList.forEach((img)=>{
-            lazyLoad(img)
+        const io = new IntersectionObserver((entries) => {
+            console.log('xxxxxxx');
+            entries.forEach((img) => {
+                // intersectionRatio
+                console.log(img)
+                if (img.isIntersecting) {
+                    console.log('出现了');
+                    img.target.src = img.target.dataset.src;
+                    io.unobserve(img.target)
+                }
+            })
+        })
+        imgList.forEach((img) => {
+            io.observe(img)
         })
     </script>
 </body>
