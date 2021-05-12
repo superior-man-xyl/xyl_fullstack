@@ -26,10 +26,12 @@
         let length=imgList.length;
         // console.log(imgList[0].dataset.src,'-------');
         function imgLazyload(){
-            let count=0;//看有多少张图片已近加载了
-            return function(){
-                console.log('xxxx');//检查监听事件
+            let count = 0;//看有多少张图片已近加载了
+            let num=1;
+            return function () {
+                console.log(`xxxx${length-count}&&${num}`);//检查监听事件
                 let deleteIndexList=[];//用于装已加载图片的下标，然后在每一次遍历后去除已经加载的图片
+                num++;
                 imgList.forEach((img,index)=>{
                     //Element.getBoundingClientRect() 方法返回元素的大小及其相对于视口的位置。
                     let rect=img.getBoundingClientRect()//rect 是一个具有四个属性 left、top、right、bottom 的 DOMRect 对象

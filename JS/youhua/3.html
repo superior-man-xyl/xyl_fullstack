@@ -43,7 +43,7 @@
         */
         const throttle=(fn,interval)=>{
             let last=0;//上一次触发回调的时间
-            return function(){//需要返回一个函数，因为原来位置就是要执行一个函数
+            return function(){//需要返回一个函数，因为原来位置就是要执行一个函数，
                 // fn();throttle在这完成了封装，还不能节流
                 let now= +new Date();//返回时间戳
                 if(now-last>=interval){//在一定时间内只会执行一次，这样就能节流了

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="./zhanwei.jpg" alt=""
+        data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=356729307,4069453690&fm=26&gp=0.jpg"><br />
+    <img src="./zhanwei.jpg" alt=""
+        data-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3710650262,1181062705&fm=26&gp=0.jpg"><br />
+    <img src="./zhanwei.jpg" alt=""
+        data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3230329964,3648626334&fm=26&gp=0.jpg"><br />
+    <img src="./zhanwei.jpg" alt=""
+        data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=356729307,4069453690&fm=26&gp=0.jpg"><br />
+    <img src="./zhanwei.jpg" alt=""
+        data-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3710650262,1181062705&fm=26&gp=0.jpg"><br />
+    <img src="./zhanwei.jpg" alt=""
+        data-src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1056629638,148331236&fm=26&gp=0.jpg"><br />
+    <img src="./zhanwei.jpg" alt=""
+        data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=356729307,4069453690&fm=26&gp=0.jpg"><br />
+    <img src="./zhanwei.jpg" alt=""
+        data-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3710650262,1181062705&fm=26&gp=0.jpg"><br />
+    <img src="./zhanwei.jpg" alt=""
+        data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3230329964,3648626334&fm=26&gp=0.jpg"><br />
+    <img src="./zhanwei.jpg" alt=""
+        data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=356729307,4069453690&fm=26&gp=0.jpg"><br />
+    <img src="./zhanwei.jpg" alt=""
+        data-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3710650262,1181062705&fm=26&gp=0.jpg"><br />
+    <img src="./zhanwei.jpg" alt=""
+        data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3230329964,3648626334&fm=26&gp=0.jpg"><br />
+    <script>
+        let imgList = [...document.querySelectorAll('img')];//将获得的节点对象转为数组
+        let length = imgList.length;
+        // console.log(imgList[0].dataset.src,'-------');
+        function imgLazyload() {
+            let count = 0;//看有多少张图片已近加载了
+            return function () {
+                console.log('xxxx');//检查监听事件
+                let deleteIndexList = [];//用于装已加载图片的下标，然后在每一次遍历后去除已经加载的图片
+
+                imgList.forEach((img, index) => {
+                    //Element.getBoundingClientRect() 方法返回元素的大小及其相对于视口的位置。
+                    let rect = img.getBoundingClientRect()//rect 是一个具有四个属性 left、top、right、bottom 的 DOMRect 对象
+                    console.log(img, '++++');
+                    if (rect.top < window.innerHeight) {
+                        img.src = img.dataset.src;
+                        deleteIndexList.push(index);
+                        count++;
+                        if (count === length) {
+                            //当所有图片都加载后就移除监听事件,不能加载完了，还一直监听着
+                            document.removeEventListener('scroll', listener)
+                        }
+                    }
+                })
+                imgList = imgList.filter((img, index) => {
+                    return !deleteIndexList.includes(index)
+                })
+            }
+
+        }
+
+        let listener = imgLazyload();
+        //该函数用于作为事件监听器函数，且保证添加事件监听和取消时对应的回调是同一个函数(闭包)
+        //添加监听事件
+        function throttle(func, wait) {
+            var timeout = null;
+            return function () {
+                var that = this;
+                if (!timeout) {//判断是否有过触发
+                    timeout = setTimeout(() => {
+                        func.apply(that, arguments);
+                        timeout = null;
+                    }, wait)
+                }
+            }
+        }
+        document.addEventListener('scroll', throttle(listener, 1000));//当滚动时就运行回调函数
+    </script>
+</body>
+
+</html>
