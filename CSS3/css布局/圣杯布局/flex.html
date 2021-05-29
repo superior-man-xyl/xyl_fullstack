@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header,.footer{
+            background-color: yellow;
+            text-align: center;
+            border: 5px solid #ccc;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+        }
+        .left{
+            width: 200px;
+            background-color: red;
+            flex:0 0 auto;
+        }
+        .center{
+            width: 100%;
+            background-color: #ccc;
+            flex: 1;
+        }
+        .right{
+            width: 200px;
+            background-color: red;
+            flex:0 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h4>header</h4>
+    </div>
+
+    <div class="container">
+        <div class="left">
+            <h4>left</h4>
+            <p>left-content</p>
+        </div>
+
+        <div class="middle">
+            <h4>middle</h4>
+            <p>middle-content</p>
+        </div>
+
+        <div class="right">
+            <h4>right</h4>
+            <p>right-content</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h4>footer</h4>
+    </div>
+</body>
+
+</html>
