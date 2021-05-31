@@ -1,7 +1,7 @@
 function parseParam(url){
     // 协议：域名/路径：端口？
     //(.+)这个括号内的东西会单独拿到数组的第二位
-    const paramsStr=/.+\?(.+)$/.exec(url)[1];
+    const paramsStr=/.+\?(.+)$/.exec(url)[1];//，表示任意字符，+表示一到多个
     const paramsArr=paramsStr.split('&');//按&切割开来
     // console.log(paramsStr);
     let paramsObj={};

@@ -1,3 +1,4 @@
+//但是对复杂数据类型不友好
 function flatten(arr){
     return arr.toString().split(',');
 }
