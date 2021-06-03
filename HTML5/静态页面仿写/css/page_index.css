@@ -1,0 +1,340 @@
+body{
+    /*设置body的背景图片水平方向重复*/
+    background: url(../img/bj1.png) repeat-x;
+}
+/*设置居中样式和固定宽度，要居中和该宽度的就使用该类*/
+.wid{
+    width:940px;
+    margin: 0 auto;
+}
+/*设置头部header div*/
+.header{
+    /* background-color: #bbffaa; */
+    /*设置一个上内边距*/
+    padding-top: 37px;
+    /*设置一个下内边距*/
+    padding-bottom: 46px;
+}
+/*解决高度塌陷,有问题的就引用*/
+.clearfix:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.clearfix{
+    zoom: 1;
+}
+/*设置logo*/
+.logo{
+    /*设置左边距离*/
+    margin-left: 15px;
+    float: left;
+}
+/*设置导航条*/
+.nav{
+    float: right;
+}
+.nav li{
+    /*设置向左浮动*/
+    float:left;
+    /*设置左右内边距*/
+    padding:0 10px;
+    /*设置左边框*/
+    /* border-left:1px dotted #d6d6d6; */
+    /*设置一个上外边距*/
+    margin-top :20px ;
+    padding-bottom: 8px;
+}
+/*设置导航条中的链接*/
+.nav a{
+    /*设置字体*/
+    font-family: Georgia;
+    font-size: 14px;
+    font-weight:bold ;
+    /*或使用简写：font:bold 14px Georgia;*/
+    /*去除链接下划线*/
+    text-decoration: none;
+    /*设置颜色*/
+    color: #666666;
+}
+/*设置超链接的移入效果*/
+.nav a:hover{
+    text-decoration: underline;
+    color:black;
+    /* font-size: 16px; */
+}
+/*设置导航条小标题
+注意：在chrome浏览器中，字体最小为12px，1-11都显示为12px*/
+.nav p{
+    /*使用简写属性*/
+    font:11px Tahoma;
+    color: #b7b7b7;
+}
+/*设置banner*/
+.banner{
+    /*设置高度*/
+     height: 356px; 
+    /*设置背景底部阴影,底部居中不重复*/
+    background: url(../img/banner-bj-shade.png) no-repeat bottom center;
+    /*为了圆点能相对父元素定位，所以开启相对定位*/
+    position: relative;
+}
+/*设置pointer*/
+.pointerDiv{
+    /*开启个绝对定位，不在文档流留位子，使圆圈点到图片右下角*/
+    position: absolute;
+    top: 314px;
+    left: 15px;
+}
+.pointerDiv a{
+    /*设置a浮动，以具有块元素性质，以设置宽高*/
+    float: left;
+    /*设置宽高*/
+    width: 17px;
+    height: 17px;
+    /*将圆点设置为背景图片*/
+    background: url("../img/pointer.png") no-repeat;
+    /*设置圆点距离*/
+    margin-right: 4px;
+}
+.pointerDiv .active,
+.pointerDiv a:hover{
+    background: url("../img/pointer2.png") no-repeat;
+}
+/*设置content部分*/
+.content{
+    background-color: #bbffaa;
+    /*添加底部阴影线*/
+    background:url(../img/content-bj-shade.png) no-repeat bottom center;
+}
+.content h1{
+    /*设置文本居中*/
+    text-align: center;
+    /*文本字体和大小加粗*/
+    font-weight: bold;
+    font-size: 24px;
+    font-family: Georgia;
+    /*设置一个上内边距，设置外边距重叠会传递给父元素*/
+    padding-top: 6px;
+    /*设置下内边距*/
+    padding-bottom: 21px;
+    /*设置背景阴影*/
+    background:url("../img/content-bj-shade.png") no-repeat bottom center;
+}
+/*设置content内div*/
+.pl,.cs,.uc{
+    width:300px ;
+    height: 435px;
+    /* background-color: red; */
+    float: left;
+    padding-top: 38px;/*然后height：473-38=435px*/
+}
+/*中间的div(content和contact)添加左右外边距，实现间隔*/
+.cs,.co{
+    margin:0 18px;
+}
+/*中间三个标题的样式*/
+.content-h2{
+    font:21px Georgia;
+    color: #11719e;
+}
+.content .p1{
+    font:12px Helvetica;
+}
+/*设置图片背景与宽高*/
+.images{
+    width:300px;
+    height: 192px;
+    /*上下外边距*/
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background: url(../img/img-bj.png) no-repeat;
+    /*设置图片位置水平居中（内联元素用text-align）*/
+    text-align: center;
+    /*设置图片垂直居中，设置个上内边距，设置后要height要减去12，不然框就大了*/
+    padding-top:12px;
+}
+/*设置图片下方的一段文字的样式*/
+.p2{
+    /*定死个高度*/
+    height: 92px;
+    /*设置字体大小和字体*/
+    font:13px Helvetica;
+    color: #3e3e3e;
+}
+/*为按钮设置样式*/
+.content .btn{
+    /*设置块元素*/
+    display: block;
+    /*设置宽和高*/
+    width: 163px;
+    height: 40px;
+    /*按钮设置*/
+    background:url(../img/btn-bj.png) no-repeat;
+    text-decoration:none;
+    color: #016999;
+    /*行高设置为height值就能居中*/
+    font:12px/40px Helvetica;
+    /*首行缩进*/
+    text-indent:1em;
+}
+.content .btn:hover{
+    font-size:14px;
+    color:red;
+}
+/*contact样式*/
+/*设置contact里div*/
+.sc,.co,.nu{
+    width:300px ;
+    height: 381px;
+    /* background-color: yellow; */
+    float: left;
+}
+/*标题*/
+.contact h2{
+    color: #444444;
+    font-size: 18px;
+    font-family: Georgia;
+    /*设置下边框*/
+    border-bottom:1px dashed #d3d3d3;
+    /*设置上下内边距*/
+    padding:44px 0px 10px;
+    /*设置一个下外边距*/
+    margin-bottom:15px ;
+}
+/*设置联系栏中的表单项*/
+.contact .txt{
+    width: 276px;
+    height: 33px;
+    /*去除原有默认边框*/
+    border:none;
+    /*设置表单背景图片,带圆弧的框*/
+    background: url(../img/input.png) no-repeat;
+    /*去除默认的内外边距,并设置新的*/
+    padding: 0px 10px;/*防止文字贴着边,所以添加内边距,width要记得减二十,296-20,textarea一样*/
+    margin: 0px 0px 16px;
+    /*保证输入文字能垂直居中*/
+    line-height: 33px;
+    /*为ie6设置一个背景不随元素滚动*/
+    _background-attachment: fixed;
+}
+/*设置textarea文本域*/
+.contact .tArea{
+    width: 276px;
+    height: 114px;
+    border:none;
+    background: url(../img/textarea.png) no-repeat;
+    /*去除滚动条*/
+    overflow: auto;
+    /*设置文本域不能调整大小,也就是不能用鼠标拉右下角那个灰色区域改变大小*/
+    resize: none; 
+    /*去除默认的内外边距*/
+    padding:10px 10px;/*保证上下不贴*/
+    margin: 0px;
+     /*为ie6设置一个背景不随元素滚动*/
+     _background-attachment: fixed;
+}
+/*设置按钮*/
+.contact .btn{
+    width: 163px;
+    height: 32px;
+    background:url(../img/btn2-bj.png) no-repeat;
+    border:none;
+    /*设置上下外边距*/
+    margin: 11px 0px 23px;
+    /*设置按钮内文字*/
+    color: white;
+    font: 13px Georgia;
+    /*文字靠右并且缩进一个字符*/
+    text-align: left;
+    text-indent: 1em;
+    /*cursor可以设置鼠标的样式，这里设置鼠标移入按钮时的样式*/
+    cursor: pointer;/*小手*/
+}
+.contact .btn:hover{
+    color: red;
+    text-decoration: underline;
+}
+/*左边div*/
+/*设置文本框*/
+.contact .txt2{
+    /*消除之前为该txt类设置的margin,因为按钮有上外边距*/
+    margin: 0px;
+}
+/*设置文字样式*/
+.contact .p3{
+    /*要设置行高,默认行高有影响,每个浏览器都不同*/
+    font:12px/1 Helvetica;
+    color: #444444;
+    margin-bottom: 6px;
+}
+/*设置h2的样式*/
+.sc h3{
+    font:bold 18px/1 Georgia;
+    padding: 40px 0px 10px;
+    border-bottom:1px dashed #d3d3d3 ;
+    margin-bottom: 10px;
+    color:#444444;
+}
+/*设置左边div内的小图标*/
+.icon{
+    /*去除图标间的空格,使其排成一列,空袭来源于代码有转行,但是这样可以解除影响*/
+    font-size: 0px;
+    margin-top: 4px;
+}
+.icon a{
+    margin-right: 2px;
+}
+/*设置contact最右边div*/
+/*设置文字*/
+.nu p{
+    border-bottom: 1px dashed #d3d3d3;
+    font:12px/1 Helvetica;
+    padding:14px 0px 9px;
+    color: #444444;
+}
+/*设置图片浮动，让文字包裹图片*/
+.nu img{
+    float: left;
+    margin-right: 8px;
+}
+/*调整.nu下h2的下外边距*/
+.nu h2{
+    margin-bottom :0px; 
+}
+/*设置底部*/
+.footer{
+    height: 173px;
+    background-color:#333333;
+    /*设置一个上边框*/
+    border-top: 10px solid #4c4c4c;
+}
+/*设置文字*/
+.footer .wz{
+    width: 940px;
+    margin: 0 auto;
+    padding-top: 16px;
+    font:11px Helvetica;
+    color: #6a6a6a;
+}
+.footer a{
+    margin:0px;
+    padding: 0px;
+    color: #6a6a6a;
+    text-decoration: none;
+}
+.footer .p4{
+    float: right;
+}
+.footer p{
+    margin-bottom: 8px;
+    margin-left: 8px;
+    margin-right: 23px;
+}
+.footer a:hover{
+    color: yellow;
+    text-decoration: underline;
+}
+
+/*最后要压缩，将空格和换行，注释全部删除
+使用在线或其他工具压缩，比如JsCsszip*/
