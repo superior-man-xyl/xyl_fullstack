@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 {
+            width: 50px;
+            height: 50px;
+            float: left;
+            border: 1px solid #aaa;
+            color: red;
+            padding: 10px;
+            margin-bottom: -70px;
+            margin-right: -70px;
+        }
+
+        #image {
+            margin-bottom: 0;
+            margin-right: 0;
+        }
+
+        /* .div1:hover{
+            margin-bottom: 0;
+            margin-right: 0;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="div1" id="image"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <div class=" div1"></div>
+    <script>
+        var image = document.getElementById('image');
+        function TheClick() {
+            var div1 = document.getElementsByClassName('div1');
+            div1 = Array.prototype.slice.call(div1);
+            var change = false;
+            return function () {
+                console.log(change);
+                if (change) {
+                    div1.forEach(element => {
+                        element.style.marginBottom = "-70px";
+                        element.style.marginRight = "-70px";
+                    });
+                    image.style.marginBottom = "0px";
+                    image.style.marginRight = "0px";
+                    image.innerText="放开"
+                    change=false;
+                } else {
+                    div1.forEach(element => {
+                        element.style.marginBottom = "0px";
+                        element.style.marginRight = "0px";
+                    });
+                    image.innerText="合起"
+                    change = true;
+                }
+            }
+        }
+        image.onclick = TheClick();
+    </script>
+</body>
+
+</html>
