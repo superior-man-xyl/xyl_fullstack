@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model='searchName'/>
+        <ul>
+            <li v-for="(item,index) in filterPerson" v-bind:key="index">
+                {{index}}----{{item.name}}----{{item.age}}
+            </li>
+        </ul>
+        <button v-on:click="orderType=1">年龄升序</button>
+        <button v-on:click="orderType=2">年龄降序</button>
+        <button v-on:click="orderType=0">原来顺序</button>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                searchName:'',
+                orderType:0,//0 代表原本顺序，1，代表升序，2 代表降序
+                person: [
+                    { name: 'Tom', age: 18 },
+                    { name: 'Jack', age: 16 }, 
+                    { name: 'Rose', age: 21 }, 
+                    { name: 'Bob', age: 19 }
+                ]
+            },
+            computed:{
+                filterPerson(){
+                    //取出相关数据
+                    const {searchName,person,orderType} =this;
+                    let fPerson=[];
+                    //获得结果数组
+                    fPerson=person.filter((item)=>item.name.includes(searchName));
+                    if(orderType!==0){
+                        return fPerson.sort((a,b)=>{
+                            if(orderType==1){
+                                return a.age-b.age;
+                            }else{
+                                return b.age-a.age;
+                            }
+                        })
+                    }
+                    return fPerson;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
