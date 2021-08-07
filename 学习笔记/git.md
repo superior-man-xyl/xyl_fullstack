@@ -28,3 +28,8 @@ git merge {分支名} 合并分支
 变基：rebase    base指commit
 
 git rebase --continue  用于手动解决冲突时，排列commit
+
+如果不小心在master上进行了开发，这时不能切换新分支
+- 可以先 git stash 将改动的代码暂存到另一个空间
+- 接着 git cheeckout -b 到另一个新分支
+- 在新分支那 git stash pop 
