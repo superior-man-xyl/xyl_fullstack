@@ -2,50 +2,54 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        body {
             display: flex;
             justify-content: center;
             margin-top: 100px;
         }
-        #click{
+
+        #click {
             width: 100px;
             height: 50px;
         }
     </style>
 </head>
+
 <body>
     <button id="click">点击我</button>
     <script>
         //使用闭包实现对防抖函数的封装
-        function debounce(func,wait){
-            var timer=null;
-            return function(){
-                var that=this;
+        function debounce(func, wait) {
+            var timer = null;
+            return function () {
+                var that = this;
                 //如果已经存在定时器就取消，到下面重新启动一个定时器
-                if(timer){
+                if (timer) {
                     clearTimeout(timer);
-                    timer=null;
+                    timer = null;
                 }
                 //设置定时器
-                timer=setTimeout(()=>{
-                    func.apply(that,arguments)
-                },wait)
+                timer = setTimeout(() => {
+                    func.apply(that, arguments)
+                }, wait)
             };
         }
-        
-        var click=document.getElementById('click');
-        var fun=function(){
+
+        var click = document.getElementById('click');
+        var fun = function () {
             console.log('点击了');
-            console.log(this,arguments);
+            console.log(this, arguments);//this是button文档对象
         }
         //加有防抖的点击事件
-        click.onclick=debounce(fun,1000);
+        click.onclick = debounce(fun, 1000);
     </script>
 </body>
+
 </html>

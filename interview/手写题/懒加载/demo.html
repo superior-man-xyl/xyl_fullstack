@@ -34,22 +34,30 @@
     <img src="./zhanwei.jpg" alt=""
         data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3230329964,3648626334&fm=26&gp=0.jpg"><br />
     <script>
-        let imgList = [...document.querySelectorAll('img')];
-        const io = new IntersectionObserver((entries) => {
-            console.log('xxxxxxx');
-            entries.forEach((img) => {
-                // intersectionRatio
-                console.log(img)
-                if (img.isIntersecting) {
-                    console.log('出现了', img.isIntersecting);
-                    img.target.src = img.target.dataset.src;
-                    io.unobserve(img.target)
-                }
-            })
-        })
-        imgList.forEach((img) => {
-            io.observe(img)
-        })
+        const imgList = [...document.getElementsByTagName('img')];
+        let length = imgList.length;
+        const imgLazyload = function () {
+            let count = 0;
+            return function () {
+                let deleteList = [];
+                imgList.forEach((img, index) => {
+                    let rect = img.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        img.src = img.dataset.src;
+                        count++;
+                        deleteList.push(index);
+                        if (count === length) {
+                            document.removeEventListener('scroll', listener);
+                        }
+                    }
+                });
+                imgList.filter((img, index) => {
+                    return !deleteList.includes(index);
+                })
+            }
+        }
+        let listener = imgLazyload();
+        document.addEventListener('scroll', listener);
     </script>
 </body>
 
