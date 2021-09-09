@@ -23,8 +23,8 @@ function bindEvent(elem, type, select, fn) {
     const target = event.target;//e.target获取触发元素
     if (select) {
       //表示有select,代理绑定，要筛选出被代理的
-      if (target.matches(select)) {
-        //matches表示一个触发的元素是不是符合一个选择器
+      if (target.matches(select)) {// 如果元素被指定的选择器字符串选择，Element.matches()  方法返回true; 否则返回false。
+        //matches表示一个触发的元素是不是**符合**一个选择器
         fn.call(target, event);
       }
     } else {
