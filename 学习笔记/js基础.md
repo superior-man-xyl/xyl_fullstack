@@ -50,5 +50,35 @@ String.prototype.trim= function(){
 }
 ```
 # 如何获取js程序中的异常
+## 手动捕获异常
+```js
+try{
+
+}catch{
+
+}finally{
+
+}
+```
+## 自动捕获
+```js
+window.onerror = function(message, source, lineNum, colNum, error){
+
+}
+```
+有短板：
+- 对于跨域的js，比如CDN的，不会有详细的报错信息
+- 对于压缩的js，需要配合sourceMap 反查到未压缩时的行和列
 # 什么是JSON
+- json是一种数据格式，本质是一段字符串
+- json格式和js对象结构一致，对js语言更加友好
+- window.JSON是一个全局对象：JSON.stringify JSON.parse
 # 获取当前页面的url参数
+- 传统方式，查找location.search
+```js
+    function query(name){
+        const search = location.search.substr(1); // 类似于 array.slice(1),因为search返回的是 ?a=1&XXXXX
+        const reg = new RegExp(``,i)
+    }
+```
+- 新API，URLSearchParmaParams
