@@ -35,7 +35,7 @@ React.createElement(
 ```
 ```js
 //转译后
-const imgElem = React.createElement("div", {id:"div1"}, React.createElement("p", null, "some text"), React.createElement("img", {src: imgURl}));
+const imgElem = React.createElement("div", {id:"div1"},React.createElement("p", null, "some text"), React.createElement("img", {src: imgURl}));
 ```
 # 合成事件
 React 的事件都是挂载在document上的，event不是原生的，是SyntheticEvent合成事件对象，和vue的不同，和DOM事件也不同
@@ -61,6 +61,17 @@ React 的事件都是挂载在document上的，event不是原生的，是Synthet
 ## transaction(事务)机制
 ![](https://i.bmp.ovh/imgs/2021/09/3e61ab2984714dc3.png)
 
+## 总结
+setState流程还是很复杂的，设计也很精巧，避免了重复无谓的刷新组件。它的主要流程如下：
+
+- enqueueSetState将state放入队列中，并调用enqueueUpdate处理要更新的Component
+- 如果组件当前正处于update事务中，则先将Component存入dirtyComponent中。否则调用batchedUpdates处理。
+- batchedUpdates发起一次transaction.perform()事务
+- 开始执行事务初始化，运行，结束三个阶段
+    - 初始化：事务初始化阶段没有注册方法，故无方法要执行
+    - 运行：执行setSate时传入的callback方法，一般不会传callback参数
+    - 结束：更新isBatchingUpdates为false，并执行FLUSH_BATCHED_UPDATES这个wrapper中的close方法
+
 # 组件渲染与更新过程
 - jsx如何渲染为页面，setState之后如何更新页面，讲解全流程
 ## 具体渲染
@@ -83,3 +94,14 @@ React 的事件都是挂载在document上的，event不是原生的，是Synthet
 - 将reconciliation阶段进行任务拆分（commit无法拆分，因为其里面是DOM渲染，要拆分DOM渲染那么就需要浏览器进行很大的支持）
 - 在DOM需要渲染的时候暂停更新，空闲的时候继续
 - 通过window.requestIdleCallback这个API来知道什么时候DOM需要渲染，一些老浏览器不支持
+
+## React性能优化
+- 渲染列表时加key
+- 自定义事件，DOM事件及时销毁
+- 合理使用异步组件
+- 减少函数 bind this 的次数
+- 合理使用SCU，PureComponent和memo
+- 合理使用Immutable.js
+- webpack的一些优化（重要，面试问过，对公司项目weback配置的优化）
+- 前端通用的性能优化，比如图片懒加载
+- 使用SSR

@@ -1,6 +1,6 @@
 //判断是否是数组或者对象，一般不会比较函数
 function isObject(obj) {
-    return typeof obj === 'object' || obj !== null;
+    return typeof obj === 'object' && obj !== null;
 }
 
 function isEquel(obj1, obj2) {

@@ -1,12 +1,30 @@
 # react组件如何通信
+- 父子组件 props
+- 子父组件，父组件传递一个函数给子组件，然后子组件调用该函数
+- 自定义事件
+- redux context
+
 # JSX本质是什么
+
+# 函数组件和class组件的区别
+
+
 # react的方法为什么要绑定this
 # react的event，事件机制
 # context是什么，有何用途
+- 父组件可用来向其下所有子孙组件传递信息，比如一些公共信息：主题色，语言
+- 复杂的公共信息请用redux
+# React组件生命周期
+- 单组件生命周期
+- 父子组件生命周期关系
+- 注意SCU
+# React 发起ajax应该在哪个生命周期中
+- 和Vue一样
+- componentDidMount，这个DOM已经渲染完成的生命周期里
 # componentShouldUpdate的用途
 
 # 描述redux单向数据流
-# setState是同步还是异步？（场景题）
+# setState是同步还是异步？（与场景题有关）
 - 首先操作state不能直接修改state，要使用不可变值，通过setState修改
 - 不可变值就是要改变结果时的赋值不会影响到原来state的值，例如 ``list : this.list.concat(100)``,concat返回一个新数组  
 ```js
@@ -26,11 +44,12 @@ this.setState({
 对象也同理，使用assign或者解构{...obj,xxx},来获得新数组
 
 这些都是react的基础，react基于不可变值，这些函数式编程，纯函数等概念
-- setState比较灵活，如果直接使用时是异步的，如果在setTimeout或者自定义的DOM事件中使用是同步的。
+- setState比较灵活，如果直接使用和在组件生命周期或React合成事件中时是异步的，如果在setTimeout或者自定义的DOM事件中使用是同步的。
 - setState可能会合并
 https://zhuanlan.zhihu.com/p/44537887
 https://blog.csdn.net/wuyxinu/article/details/113902057
 
+![](https://i.bmp.ovh/imgs/2021/09/97c0a9fb59e63230.png)
 # 知识点
 将数据和方法都放在父组件，将方法和数据传给子组件，子组件这些低级组件更多的作为一个展示，这样一个状态（数据）提升的设计原则
 
@@ -42,10 +61,31 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
 
 # 高级特性
-## 函数组件
+## 函数组件和class组件的区别（下面以函数组件来比较class组件）
 - 纯函数，输入props，输出jsx
 - 没有实例，没有生命周期，没有state
 - 不能扩展其他方法
+具体分析：
+
+### class组件特点：
+
+- 有组件实例
+- 有生命周期
+- 有 state 和 setState
+### 函数组件特点：
+
+- 没有组件实例
+- 没有生命周期
+- 没有 state 和 setState，只能接收 props
+- 函数组件是一个纯函数，执行完即销毁，无法存储 state
+
+### class 组件存在的问题：
+
+- 大型组件很难拆分和重构，变得难以测试
+- 相同业务逻辑分散到各个方法中，可能会变得混乱
+- 复用逻辑可能变得复杂，如 HOC 、Render Props
+
+所以 react 中更提倡函数式编程，因为函数更灵活，更易拆分，但函数组件太简单，所以出现了hook，hook就是用来增强函数组件功能的。
 ## 非受控组件
 - ref
 与Vue中ref相似，但使用上区别较大
@@ -67,7 +107,7 @@ alertName=()=>{
 
 总结下非受控组件的使用场景
 - 必须手动操控DOM元素，setState实现不了
-- 文件上传 <input type='file'/>
+- 文件上传 ``<input type='file'/>``
 - 某些富文本编辑器，需要传入DOM元素
 
 - 优先使用受控组件，符合react设计原则，必须操作DOM时就使用非受控组件
@@ -89,7 +129,9 @@ render(){
 - fixed需要放到body第一层级
 ## context
 当公共信息需要传递给每个组件时，而使用props又太繁琐，使用redux又有点小题大作
+
 https://react.docschina.org/docs/context.html
+
 应用场景：最外层组件向下传递数据，比如影响语言和主题等。
 ## 异步组件
 引入一个动态组件
@@ -217,7 +259,9 @@ export default React.memo(Child)
     - mapStateToProps  mapDispatchToProps
 - 异步action（即action如何处理异步）
     - 与redux-thunk有关
+
 <img src = 'https://i.bmp.ovh/imgs/2021/09/58815c2a09333996.png' />
+
 - 中间件 
     - 通常中间件是在dispatch里进行操作
     ![](https://i.bmp.ovh/imgs/2021/09/c4653975c41519aa.png)
@@ -227,6 +271,9 @@ export default React.memo(Child)
         - redux-promise
         - redux-saga
 
+## redux如何进行异步请求
+- 使用异步action（同步action和异步action的区别）
+- redux-thunk
 ## react-router
 - hash，H5 history 和vue同
 - 基本使用
