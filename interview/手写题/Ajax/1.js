@@ -2,7 +2,7 @@
 const getJson = function (url) {
     return promise = new Promise((resolve, reject) => {
         const xhr = XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Mscrosoft.XMLHttp');
-        xhr.open('GET', url, false);//创建http请求
+        xhr.open('GET', url, false);//创建http请求，第三个参数表示是否异步执行操作，默认为true。如果值为false
         xhr.setRequestHeader('Accept', 'application/json');
         xhr.onreadystatechange = function () {//设置状态监听函数
             if (this.readyState !== 4) {

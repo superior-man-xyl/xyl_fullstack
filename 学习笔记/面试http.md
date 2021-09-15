@@ -160,4 +160,5 @@ https://zhuanlan.zhihu.com/p/266578819
 - 头部压缩，HTTP2.0使用encoder来减少需要传输的header大小，通讯双方各自cache一份header_files表，既避免重复header的传输，又减少了需要传输的大小。高效的压缩算法可以很大的压缩header，减少发送包的数量从而降低延迟。
 - 服务器推送，服务器除了最初请求的响应外，服务器还可以额外向客户端推送资源，而无需客户端明确的需求。比如浏览器像服务器请求html资源，服务器首先会向其发送html资源。然后不会等浏览器请求css和js资源，而是在发送完html后主动再向浏览器发送css和js资源
 
-## http3.0
+https://www.jianshu.com/p/e57ca4fec26f
+## http3
