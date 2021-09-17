@@ -23,7 +23,7 @@ if(obj.a==null)相当于if(obj.a===null||obj.a===undefined)
 ```
 
 # jsonp是不是AJAX
-- 浏览器的同源策略（服务端没有同源策略，后端可能只是转发）和跨域
+- 浏览器的同源策略（服务端没有同源策略，后端可能只是转发）和跨域(https://www.cnblogs.com/kgwei520blog/p/13667378.html)
 - img，script等标签可以跨域，因为它们不得不具有请求外部资源的能力
 
 # 函数声明和函数表达式的区别

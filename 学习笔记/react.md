@@ -1,8 +1,72 @@
 # react组件如何通信
 - 父子组件 props
 - 子父组件，父组件传递一个函数给子组件，然后子组件调用该函数
-- 自定义事件
-- redux context
+- 自定义事件(自定义事件是典型的发布/订阅模式，没有嵌套关系的组件（如兄弟组件）之间的通信，可以通过自定义事件的方式来进行)
+    - 首先引入一个event包  npm install events --save
+    - 新建一个event.js, 引入events包，向外提供一个事件对象，供通信时使用
+    ```js
+    import { EventEmitter } from "events";
+    export default new EventEmitter();
+    ```
+    - 在不相关的组件间使用实例, 注意：要在componentDidMount，即组件挂载完成之后声明自定义事件
+    ```js
+    // a.js
+    import React,{ Component } from "react";
+    import emitter from "./ev"
+
+    export default class Foo extends Component{
+        constructor(props) {
+            super(props);
+            this.state = {
+                msg:null,
+            };
+        }
+        componentDidMount(){
+            // 声明一个自定义事件
+            // 在组件装载完成以后
+            this.eventEmitter = emitter.addListener("callMe",(msg)=>{
+                this.setState({
+                    msg
+                })
+            });
+        }
+        // 组件销毁前移除事件监听
+        componentWillUnmount(){
+            emitter.removeListener(this.eventEmitter);// this.eventEmitter 这个是创建的事件监听
+        }
+        render(){
+            return(
+                <div>
+                    { this.state.msg }
+                    我是非嵌套 1 号
+                </div>
+            );
+        }
+    }
+    ```
+    ```js
+    import React,{ Component } from "react";
+    import emitter from "./ev"
+
+    export default class Boo extends Component{
+        render(){
+            const cb = (msg) => {
+                return () => {
+                    // 触发自定义事件
+                    emitter.emit("callMe","Hello")
+                }
+            }
+            return(
+                <div>
+                    我是非嵌套 2 号
+                    <button onClick = { cb("blue") }>点击我</button>
+                </div>
+            );
+        }
+    }
+
+    ```
+- redux && context
 
 # JSX本质是什么
 
@@ -66,9 +130,13 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 - 没有实例，没有生命周期，没有state
 - 不能扩展其他方法
 具体分析：
-
+class组件和函数组件都可以构建React元素，比如``<div>Foo</div>``。
+这些React元素最终被渲染成DOM。
+class组件通过new关键，实例化之后，再调用实例的render函数获得React元素。
+而函数组件是函数直接返回了React元素(没有实例化)。
+再将这些元素通过ReactDOM.render(  React元素,  目标dom节点);
+函数渲染到指定节点。
 ### class组件特点：
-
 - 有组件实例
 - 有生命周期
 - 有 state 和 setState
@@ -143,7 +211,8 @@ class App extends React.Component {
     }
     render(){
         return <>
-            <React.Suspense fallback={<div>Loading.....</div>}>{//未加载之前会有loading....字样}
+            <React.Suspense fallback={<div>Loading.....</div>}> 
+            {/*未加载之前会有loading....字样*/}
                 <ContextDeme />
             </React.Suspense>
         </>

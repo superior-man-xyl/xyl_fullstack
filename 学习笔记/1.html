@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+        .a{
+            width: 100px;
+            height: 100px;
+            position:absolute;
+            left: 0;
+            top:0;
+            background-color: greenyellow;
+            color:aliceblue;
+            font-size: 30px;
+            z-index: 200;
+        }
+        .b{
+            width: 100px;
+            height: 100px;
+            position:absolute;
+            left: 0;
+            top:0;
+            background-color: rgba(14, 14, 13, 0.5);
+            color:red;
+            font-size: 25px;
+            z-index: 100;
+        }
+        .a:hover{
+            z-index:50;
+        }
+        .b:hover{
+            z-index:300;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="a">xxxx</div>
+        <div class="b">YYYYY</div>
+    </div>
+</body>
+</html>
