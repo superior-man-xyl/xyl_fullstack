@@ -1,7 +1,7 @@
 # vue 原理
 
 - 组件化和 MVVM
-  组件化开发是为了提高代码的可复用性复用性，灵活性，提高系统设计，从而提高开发效率，方便团队分工协作开发。
+  组件化开发是为了提高代码的可复用性，灵活性，提高系统设计，从而提高开发效率，方便团队分工协作开发。
   怎么理解组件化：传统组件，只是静态渲染，更新还要依赖 DOM 的操作，而现在的 vue MVVM & react setState 则对组件化做了一个创新，是数据驱动视图的组件化，不用再多考虑 DOM 操作中的一些兼容性什么的
   MVVM: 根据模型图说说（其中 viewModle 比较抽象，更多的是整个 view 和 model 的连接部分，不能以一个独立的代码片段来表达），再说说数据驱动视图什么的，一些好处和以前传统组件的区别。
 
@@ -71,7 +71,7 @@ vdom重点是 patch(elem,vnode)和patch(vnode,newVnode)
         console.log(event.oldURL,event.newURL);
     }
     ```
-    - 可以通过 location.hash he location.href 来获取url信息和hash
+    - 可以通过 location.hash 和 location.href 来获取url信息和hash
 2. history路由
     - 用url规范的路由，但跳转时不刷新页面
     监听使用：

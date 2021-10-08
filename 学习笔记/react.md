@@ -86,7 +86,7 @@
 # React 发起ajax应该在哪个生命周期中
 - 和Vue一样
 - componentDidMount，这个DOM已经渲染完成的生命周期里
-# componentShouldUpdate的用途
+# shouldComponentUpdate的用途
 
 # 描述redux单向数据流
 # setState是同步还是异步？（与场景题有关）
@@ -133,7 +133,7 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 具体分析：
 class组件和函数组件都可以构建React元素，比如``<div>Foo</div>``。
 这些React元素最终被渲染成DOM。
-class组件通过new关键，实例化之后，再调用实例的render函数获得React元素。
+class组件通过new关键字，实例化之后，再调用实例的render函数获得React元素。
 而函数组件是函数直接返回了React元素(没有实例化)。
 再将这些元素通过ReactDOM.render(  React元素,  目标dom节点);
 函数渲染到指定节点。
